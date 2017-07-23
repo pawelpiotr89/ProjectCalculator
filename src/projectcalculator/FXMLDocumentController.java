@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  * @author Roxven89
  */
 public class FXMLDocumentController implements Initializable {
-  
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
