@@ -11,53 +11,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-border-color: grey; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.WelcomePaneController">
+<Pane fx:id="welcomePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.WelcomePaneController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-         <children>
-            <Label layoutX="109.0" layoutY="94.0" text="PROJECT_CALCULATOR v. 1.0" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana Bold" size="63.0" />
-               </font>
-            </Label>
-            <Label layoutX="424.0" layoutY="450.0" text="by Paweł Jamnicki" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana Bold" size="40.0" />
-               </font>
-            </Label>
-            <Label layoutX="568.0" layoutY="550.0" text="all rights reserved" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana Bold Italic" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="535.0" layoutY="248.0" text="Login:" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="476.0" layoutY="314.0" text="Password:" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana" size="30.0" />
-               </font>
-            </Label>
-            <TextField fx:id="loginName" layoutX="632.0" layoutY="248.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login">
-               <font>
-                  <Font name="Verdana" size="14.0" />
-               </font>
-            </TextField>
-            <PasswordField fx:id="passwordLogin" layoutX="632.0" layoutY="314.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password">
-               <font>
-                  <Font name="Verdana" size="14.0" />
-               </font>
-            </PasswordField>
-            <Button fx:id="confirmButton" layoutX="565.0" layoutY="383.0" mnemonicParsing="false" onAction="#loginPasswordConfirmation" onMouseEntered="#mouseEnteredOnButton" onMouseExited="#mouseExitedOffButton" text="CONFIRM">
-               <font>
-                  <Font name="Verdana Bold" size="20.0" />
-               </font>
-            </Button>
-         </children></Pane>
+      <Label layoutX="109.0" layoutY="94.0" text="PROJECT_CALCULATOR v. 1.0" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana Bold" size="63.0" />
+         </font>
+      </Label>
+      <Label layoutX="413.0" layoutY="506.0" text="by Paweł Jamnicki" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="557.0" layoutY="626.0" text="all rights reserved" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="525.0" layoutY="248.0" text="Login:" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="464.0" layoutY="314.0" text="Password:" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loginName" layoutX="619.0" layoutY="248.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login" style="-fx-border-color: grey;">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordLogin" layoutX="619.0" layoutY="314.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password" style="-fx-border-color: grey;">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="confirmButton" layoutX="530.0" layoutY="402.0" mnemonicParsing="false" onAction="#loginPasswordConfirmation" onMouseEntered="#mouseEnteredOnButton" onMouseExited="#mouseExitedOffButton" pickOnBounds="false" prefHeight="51.0" prefWidth="179.0" style="-fx-border-color: grey;" text="CONFIRM">
+         <font>
+            <Font name="Verdana Bold" size="22.0" />
+         </font>
+      </Button>
    </children>
-   <opaqueInsets>
-      <Insets />
-   </opaqueInsets>
-</AnchorPane>
+</Pane>

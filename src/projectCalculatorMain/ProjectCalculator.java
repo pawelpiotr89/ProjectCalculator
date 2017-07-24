@@ -4,10 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import projectCalculatorControllers.WelcomePaneController;
+import projectCalculatorControllers.MainPaneController;
 /**
  *
  * @author Roxven89
@@ -15,8 +15,8 @@ import projectCalculatorControllers.WelcomePaneController;
 public class ProjectCalculator extends Application {
 
     private Stage mainStage;
-    private Scene welcomeScene;
-    private Pane welcomePane;
+    private Scene mainScene;
+    private AnchorPane mainPane;
     private Cursor cursor;
     
     @Override
@@ -25,19 +25,19 @@ public class ProjectCalculator extends Application {
         mainStage = stage;
         cursor = Cursor.CROSSHAIR;
      
-        FXMLLoader welcomeLayoutLoader = new FXMLLoader();
-        welcomeLayoutLoader.setLocation(ProjectCalculator.class.getResource("/projectCalculatorsFXML/FXMLWelcomePane.fxml"));
-        welcomePane = welcomeLayoutLoader.load();
+        FXMLLoader mainPaneLoader = new FXMLLoader();
+        mainPaneLoader.setLocation(ProjectCalculator.class.getResource("/projectCalculatorsFXML/FXMLMainPane.fxml"));
+        mainPane = mainPaneLoader.load();
         
-        WelcomePaneController welcomePaneController = welcomeLayoutLoader.getController();
-            
-        welcomeScene = new Scene(welcomePane);
-        welcomeScene.setCursor(cursor);
+        MainPaneController mainPaneController = mainPaneLoader.getController();
+        
+        mainScene = new Scene(mainPane);
+        mainScene.setCursor(cursor);
         
         mainStage.setTitle("PROJECT_CALCULATOR v. 1.0");
         mainStage.initStyle(StageStyle.UNIFIED);
         mainStage.setResizable(false);
-        mainStage.setScene(welcomeScene);
+        mainStage.setScene(mainScene);
         mainStage.show();
     }
    

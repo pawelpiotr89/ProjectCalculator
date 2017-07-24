@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.Pane;
 
 /**
  *
@@ -13,6 +14,9 @@ import javafx.scene.effect.DropShadow;
  */
 public class WelcomePaneController{
     
+    @FXML
+    private Pane welcomePane;
+      
     @FXML
     private TextField loginName;
     
