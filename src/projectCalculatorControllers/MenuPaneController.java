@@ -5,7 +5,6 @@ package projectCalculatorControllers;
  * @author Roxven89
  */
 public class MenuPaneController{
-    
     public void initialize() {
-    }     
+    }
 }
