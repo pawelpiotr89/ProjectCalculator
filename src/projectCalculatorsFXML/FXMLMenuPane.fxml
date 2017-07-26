@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,18 +8,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.MenuPaneController">
+<Pane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.MenuPaneController">
    <children>
-      <Label layoutX="14.0" layoutY="723.0" text="User:">
-         <font>
-            <Font name="Verdana Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="76.0" layoutY="723.0" text="UserName">
-         <font>
-            <Font name="Verdana" size="18.0" />
-         </font>
-      </Label>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="190.0" prefWidth="1240.0" text="COST CENTER" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="60.0" />
+               </font></Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="190.0" prefWidth="1240.0" text="CALCULATIONS" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="60.0" />
+               </font></Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="190.0" prefWidth="1240.0" text="OPTIONS">
+               <font>
+                  <Font name="Verdana Bold" size="60.0" />
+               </font></Button>
+            <Button fx:id="exitButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#programExit" prefHeight="190.0" prefWidth="1240.0" text="EXIT" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="60.0" />
+               </font></Button>
+         </children>
+      </VBox>
    </children>
 </Pane>
