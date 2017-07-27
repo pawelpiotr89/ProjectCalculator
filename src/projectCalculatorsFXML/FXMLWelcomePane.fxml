@@ -11,7 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="welcomePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.WelcomePaneController">
+<Pane fx:id="welcomePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="760.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.WelcomePaneController">
    <children>
       <Label layoutX="109.0" layoutY="94.0" text="PROJECT_CALCULATOR v. 1.0" textAlignment="CENTER">
          <font>
@@ -38,20 +38,23 @@
             <Font name="Verdana" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="loginName" layoutX="619.0" layoutY="248.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login" style="-fx-border-color: grey;">
+      <TextField fx:id="loginName" layoutX="619.0" layoutY="248.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login" style="-fx-border-color: silver;">
          <font>
             <Font name="Verdana" size="14.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordLogin" layoutX="619.0" layoutY="314.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password" style="-fx-border-color: grey;">
+      <PasswordField fx:id="passwordLogin" layoutX="619.0" layoutY="314.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password" style="-fx-border-color: silver;">
          <font>
             <Font name="Verdana" size="14.0" />
          </font>
       </PasswordField>
-      <Button fx:id="confirmButton" layoutX="530.0" layoutY="402.0" mnemonicParsing="false" onAction="#loginPasswordConfirmation" onMouseEntered="#mouseEnteredOnButton" onMouseExited="#mouseExitedOffButton" pickOnBounds="false" prefHeight="51.0" prefWidth="179.0" style="-fx-border-color: grey;" text="CONFIRM">
+      <Button fx:id="confirmButton" layoutX="542.0" layoutY="402.0" mnemonicParsing="false" onAction="#loginPasswordConfirmation" onMouseEntered="#mouseEnteredOnButton" onMouseExited="#mouseExitedOffButton" pickOnBounds="false" prefHeight="51.0" prefWidth="179.0" style="-fx-border-color: silver;" text="CONFIRM">
          <font>
             <Font name="Verdana Bold" size="22.0" />
          </font>
       </Button>
    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </Pane>

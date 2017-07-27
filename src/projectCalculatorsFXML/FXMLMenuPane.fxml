@@ -8,27 +8,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.MenuPaneController">
+<Pane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.MenuPaneController">
    <children>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0">
-         <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="190.0" prefWidth="1240.0" text="COST CENTER" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana Bold" size="60.0" />
-               </font></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="190.0" prefWidth="1240.0" text="CALCULATIONS" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana Bold" size="60.0" />
-               </font></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="190.0" prefWidth="1240.0" text="OPTIONS">
-               <font>
-                  <Font name="Verdana Bold" size="60.0" />
-               </font></Button>
-            <Button fx:id="exitButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#programExit" prefHeight="190.0" prefWidth="1240.0" text="EXIT" textAlignment="CENTER">
-               <font>
-                  <Font name="Verdana Bold" size="60.0" />
-               </font></Button>
-         </children>
-      </VBox>
+      <Button fx:id="exitButton" layoutX="310.0" layoutY="611.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#programExit" prefHeight="95.0" prefWidth="620.0" text="EXIT" textAlignment="CENTER" textFill="#5e5e5e">
+         <font>
+            <Font name="Verdana Bold" size="50.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="426.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="OPTIONS" textFill="#5e5e5e">
+         <font>
+            <Font name="Verdana Bold" size="50.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="COST CENTER" textAlignment="CENTER" textFill="#5e5e5e">
+         <font>
+            <Font name="Verdana Bold" size="50.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="CALCULATIONS" textAlignment="CENTER" textFill="#5e5e5e">
+         <font>
+            <Font name="Verdana Bold" size="50.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Accordion fx:id="costCenterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projectCalculatorControllers.CostCenterPaneController">
+  <panes>
+    <TitledPane animated="false" text="MATERIAL COSTS" />
+    <TitledPane animated="false" text="SUBCONSTRUCTOR COSTS" />
+    <TitledPane animated="false" text="LABOUR COSTS" />
+      <TitledPane animated="false" text="LOGISTIC COST" />
+      <TitledPane text="OTHER COSTS" />
+  </panes>
+</Accordion>
