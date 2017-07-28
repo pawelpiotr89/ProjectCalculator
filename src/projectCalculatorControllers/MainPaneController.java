@@ -3,7 +3,6 @@ package projectCalculatorControllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 /**
@@ -14,16 +13,22 @@ import javafx.scene.layout.Pane;
 public class MainPaneController {
     
     @FXML
-    private AnchorPane mainPane;
+    private Pane mainPane;
 
     public void initialize() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorsFXML/FXMLWelcomePane.fxml"));
-        Pane welcomePane = null;
+        Pane pane = null;
         try{
-            welcomePane = loader.load();
+            pane = loader.load();
            }catch(IOException e){
-               e.printStackTrace();
             }
-        mainPane.getChildren().add(welcomePane);
+        WelcomePaneController welcomePaneController = loader.getController();
+        welcomePaneController.setMainPaneController(this);
+        setPane(pane);
+        
+    }
+    public void setPane(Pane pane){
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(pane);
     }
 }
