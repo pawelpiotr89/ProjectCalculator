@@ -1,17 +1,306 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Accordion fx:id="costCenterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1240.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projectCalculatorControllers.CostCenterPaneController">
-  <panes>
-    <TitledPane animated="false" text="MATERIAL COSTS" />
-    <TitledPane animated="false" text="SUBCONSTRUCTOR COSTS" />
-    <TitledPane animated="false" text="LABOUR COSTS" />
-      <TitledPane animated="false" text="LOGISTIC COST" />
-      <TitledPane text="OTHER COSTS" />
-  </panes>
-</Accordion>
+<Pane fx:id="costCenterPane" prefHeight="760.0" prefWidth="1240.0" stylesheets="@../projectCalculatorMain/MenuStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.CostCenterPaneController">
+    <children>
+        <SplitPane fx:id="costCenterSplitPane" dividerPositions="0.05" orientation="VERTICAL" prefHeight="760.0" prefWidth="1240.0">
+            <items>
+                <AnchorPane maxHeight="38.0" minHeight="38.0" prefHeight="38.0" prefWidth="1240.0">
+                    <children>
+                        <Button fx:id="backFromCostCenterToMenuButton" alignment="CENTER" mnemonicParsing="false" onAction="#backToMenu" prefHeight="38.0" prefWidth="1240.0" text="BACK" textAlignment="CENTER" textFill="#5f5f5f">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxHeight="722.0" minHeight="722.0" prefHeight="722.0" prefWidth="1240.0">
+                    <children>
+                        <Accordion prefHeight="722.0" prefWidth="1240.0">
+                            <panes>
+                                <TitledPane fx:id="materialCostTitledPane" text="MATERIAL COSTS">
+                                    <font>
+                                        <Font name="Verdana Bold" size="20.0" />
+                                    </font>
+                                    <content>
+                                        <Accordion>
+                                            <panes>
+                                                <TitledPane fx:id="addNewMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="ADD NEW MATERIAL COST">
+                                                    <font>
+                                                        <Font name="Verdana Bold" size="14.0" />
+                                                    </font>
+                                       <content>
+                                          <GridPane alignment="CENTER" focusTraversable="true" maxWidth="1260.0" AnchorPane.bottomAnchor="19.399999999999977" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="18.40000000000009" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="MATERIAL NAME: " textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="Verdana Bold Italic" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="UNIT OF MEASURE: " textAlignment="CENTER" GridPane.columnIndex="2">
+                                                   <font>
+                                                      <Font name="Verdana Bold Italic" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="NET PRICE: " textAlignment="CENTER" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="Verdana Bold Italic" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="VAT RATE: " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="Verdana Bold Italic" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="DAY OF PRICE: " textAlignment="CENTER" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="Verdana Bold Italic" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="SUPPLIER: " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="Verdana Bold Italic" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="610.0" text="ENTER DATA" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                                                   <font>
+                                                      <Font name="Verdana Bold" size="20.0" />
+                                                   </font>
+                                                </Button>
+                                                <TextField prefWidth="310.0" promptText="Enter Name Of Supplier" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <TextField prefWidth="310.0" promptText="Enter Net Price" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField prefWidth="310.0" promptText="Enter Material Name" GridPane.columnIndex="1" />
+                                                <DatePicker prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <ChoiceBox prefWidth="310.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <ChoiceBox prefWidth="310.0" GridPane.columnIndex="3" />
+                                             </children>
+                                          </GridPane>
+                                       </content>
+                                                </TitledPane>
+                                                <TitledPane fx:id="changeMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="CHANGE MATERIAL COST">
+                                                    <font>
+                                                        <Font name="Verdana Bold" size="14.0" />
+                                                    </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                                </TitledPane>
+                                                <TitledPane fx:id="displayMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="DISPLAY MATERIAL COST">
+                                                    <font>
+                                                        <Font name="Verdana Bold" size="14.0" />
+                                                    </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                                </TitledPane>
+                                                <TitledPane fx:id="removeMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="REMOVE MATERIAL COST">
+                                                    <font>
+                                                        <Font name="Verdana Bold" size="14.0" />
+                                                    </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                                </TitledPane>
+                                            </panes>
+                                        </Accordion>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane fx:id="subconstructorsCostTitledPane" text="SUBCONSTRUCTOR COSTS">
+                                    <font>
+                                        <Font name="Verdana Bold" size="20.0" />
+                                    </font>
+                           <content>
+                              <Accordion>
+                                <panes>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="ADD NEW SUBCONSTRUCTOR COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="CHANGE SUBCOSTRUCTOR COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="DISPLAY SUBCONSTRUCTOR COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="REMOVE SUBCONSTRUCTOR COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </content>
+                                </TitledPane>
+                                <TitledPane fx:id="labourCostTitledPane" text="LABOUR COSTS">
+                                    <font>
+                                        <Font name="Verdana Bold" size="20.0" />
+                                    </font>
+                           <content>
+                              <Accordion>
+                                <panes>
+                                  <TitledPane text="ADD NEW LABOUR COST">
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                    </TitledPane>
+                                  <TitledPane text="CHANGE LABOUR COST">
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="DISPLAY LABOUR COST">
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="REMOVE LABOUR COST">
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </content>
+                                </TitledPane>
+                                <TitledPane fx:id="logisticCostTitledPane" text="LOGISTIC COSTS">
+                                    <font>
+                                        <Font name="Verdana Bold" size="20.0" />
+                                    </font>
+                           <content>
+                              <Accordion>
+                                <panes>
+                                  <TitledPane animated="false" text="ADD NEW LOGISTIC COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                  <TitledPane animated="false" text="CHANGE LOGISTIC COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="DISPLAY LOGISTIC COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="REMOVE LOGISTIC COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </content>
+                                </TitledPane>
+                                <TitledPane fx:id="otherCostTitledPane" text="OTHER COSTS">
+                                    <font>
+                                        <Font name="Verdana Bold" size="20.0" />
+                                    </font>
+                           <content>
+                              <Accordion>
+                                <panes>
+                                  <TitledPane animated="false" text="ADD NEW OTHER COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                  <TitledPane animated="false" text="CHANGE OTHER COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="DISPLAY OTHER COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="REMOVE OTHER COST">
+                                       <font>
+                                          <Font name="Verdana Bold" size="14.0" />
+                                       </font>
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                       </content>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </content>
+                                </TitledPane>
+                            </panes>
+                        </Accordion>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</Pane>
