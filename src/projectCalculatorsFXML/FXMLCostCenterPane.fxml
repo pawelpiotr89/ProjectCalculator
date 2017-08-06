@@ -25,7 +25,7 @@
                     <children>
                         <Accordion prefHeight="722.0" prefWidth="1240.0">
                             <panes>
-                                <TitledPane fx:id="materialCostTitledPane" text="MATERIAL COSTS">
+                                <TitledPane fx:id="materialCostTitledPane" onMouseReleased="#onMouseReleased" text="MATERIAL COSTS">
                                     <font>
                                         <Font name="Verdana Bold" size="20.0" />
                                     </font>
@@ -81,17 +81,38 @@
                                                       <Font name="Verdana Bold Italic" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="610.0" text="ENTER DATA" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="610.0" text="ENTER DATA" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
                                                    <font>
                                                       <Font name="Verdana Bold" size="20.0" />
                                                    </font>
                                                 </Button>
-                                                <TextField prefWidth="310.0" promptText="Enter Name Of Supplier" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                <TextField prefWidth="310.0" promptText="Enter Net Price" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <TextField prefWidth="310.0" promptText="Enter Material Name" GridPane.columnIndex="1" />
-                                                <DatePicker prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField prefWidth="310.0" promptText="Enter Name Of Supplier" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="Verdana" size="14.0" />
+                                                   </font></TextField>
+                                                <TextField prefWidth="310.0" promptText="Enter Net Price" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <tooltip>
+                                                      <Tooltip autoHide="true" text="Only Numbers In Format 0,00 Allowed" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font name="Verdana" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                   <font>
+                                                      <Font name="Verdana" size="14.0" />
+                                                   </font></TextField>
+                                                <TextField prefWidth="310.0" promptText="Enter Material Name" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="Verdana" size="14.0" />
+                                                   </font></TextField>
+                                                <DatePicker fx:id="datePickerMaterial" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                 <ChoiceBox prefWidth="310.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                                 <ChoiceBox prefWidth="310.0" GridPane.columnIndex="3" />
+                                                <Label alignment="CENTER" prefHeight="70.0" prefWidth="610.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="Verdana" size="18.0" />
+                                                   </font>
+                                                </Label>
                                              </children>
                                           </GridPane>
                                        </content>
@@ -124,7 +145,7 @@
                                         </Accordion>
                                     </content>
                                 </TitledPane>
-                                <TitledPane fx:id="subconstructorsCostTitledPane" text="SUBCONSTRUCTOR COSTS">
+                                <TitledPane fx:id="subconstructorsCostTitledPane" onMouseReleased="#onMouseReleased" text="SUBCONSTRUCTOR COSTS">
                                     <font>
                                         <Font name="Verdana Bold" size="20.0" />
                                     </font>
@@ -167,7 +188,7 @@
                               </Accordion>
                            </content>
                                 </TitledPane>
-                                <TitledPane fx:id="labourCostTitledPane" text="LABOUR COSTS">
+                                <TitledPane fx:id="labourCostTitledPane" onMouseReleased="#onMouseReleased" text="LABOUR COSTS">
                                     <font>
                                         <Font name="Verdana Bold" size="20.0" />
                                     </font>
@@ -210,7 +231,7 @@
                               </Accordion>
                            </content>
                                 </TitledPane>
-                                <TitledPane fx:id="logisticCostTitledPane" text="LOGISTIC COSTS">
+                                <TitledPane fx:id="logisticCostTitledPane" onMouseReleased="#onMouseReleased" text="LOGISTIC COSTS">
                                     <font>
                                         <Font name="Verdana Bold" size="20.0" />
                                     </font>
@@ -253,7 +274,7 @@
                               </Accordion>
                            </content>
                                 </TitledPane>
-                                <TitledPane fx:id="otherCostTitledPane" text="OTHER COSTS">
+                                <TitledPane fx:id="otherCostTitledPane" onMouseReleased="#onMouseReleased" text="OTHER COSTS">
                                     <font>
                                         <Font name="Verdana Bold" size="20.0" />
                                     </font>

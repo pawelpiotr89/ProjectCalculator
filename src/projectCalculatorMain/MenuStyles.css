@@ -1,0 +1,112 @@
+#mainStage{
+    -fx-border-style: none;
+}
+
+#mainPane{
+    -fx-border-style: none;
+}
+
+#welcomePane{
+    -fx-background-color: #FFFFFF;
+}
+
+#menuPane{
+    -fx-background-color: #FFFFFF;
+}
+
+#costCenterPane{
+    -fx-background-color: #FFFFFF;
+}
+
+.split-pane{
+    -fx-box-border: transparent;
+    -fx-resize: false;
+}
+
+.titled-pane{
+    -fx-text-fill: #5F5F5F;
+    -fx-background-color: #5F5F5F;
+}
+
+.titled-pane > .title{
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 0.7em 0.7em 0.7em 0.7em;
+}
+
+.titled-pane > .title:hover{
+    -fx-background-color: #8FC7FF;
+}
+
+.titled-pane:expanded > .title{
+    -fx-background-color: #8FC7FF;
+}
+
+
+.label{
+    -fx-text-fill: #5F5F5F;
+}
+
+.text-field {
+    -fx-accent: #8FC7FF;
+    -fx-text-fill: #5F5F5F;
+}
+
+.button{
+    -fx-background-color: #5F5F5F;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-width: 0%;
+    -fx-border-radius: 5%;
+}
+
+.button:hover{
+    -fx-background-color: #8FC7FF;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+    -fx-effect: null;
+}
+
+.date-picker{
+   -fx-font-size: 14px;
+}
+
+.date-picker-popup > .month-year-pane{
+    -fx-background-color: #8FC7FF;
+}
+
+.date-picker > .arrow-button{
+    -fx-background-color: #8FC7FF;
+}
+
+.date-picker > .arrow-button > .arrow{
+    -fx-background-color: #5F5F5F;
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-background-color: #8FC7FF;
+}
+
+.date-picker-popup > .calendar-grid{
+    -fx-background-color: #8FC7FF;
+}
+
+.date-picker-popup > * > .date-cell{
+    -fx-background-color: #5F5F5F;
+    -fx-text-fill: #FFFFFF;
+}
+
+.date-picker-popup > * > .day-cell:focused,
+.date-picker-popup > * > .date-cell:hover{
+    -fx-background-color: #8FC7FF;
+}
+
+.date-picker-popup > * > .today {
+    -fx-background-color: #5F5F5F;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #8FC7FF;
+}
+
+.date-picker-popup > * > .previous-month,
+.date-picker-popup > * > .next-month{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #5F5F5F;
+}

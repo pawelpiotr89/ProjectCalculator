@@ -11,23 +11,24 @@ import javafx.scene.layout.Pane;
  * @author Roxven89
  */
 public class MainPaneController {
-    
+
     @FXML
     private Pane mainPane;
 
     public void initialize() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorsFXML/FXMLWelcomePane.fxml"));
         Pane pane = null;
-        try{
+        try {
             pane = loader.load();
-           }catch(IOException e){
-            }
+        } catch (IOException e) {
+        }
         WelcomePaneController welcomePaneController = loader.getController();
         welcomePaneController.setMainPaneController(this);
         setPane(pane);
-        
+
     }
-    public void setPane(Pane pane){
+
+    public void setPane(Pane pane) {
         mainPane.getChildren().clear();
         mainPane.getChildren().add(pane);
     }

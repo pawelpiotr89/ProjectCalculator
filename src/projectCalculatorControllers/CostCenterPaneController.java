@@ -3,6 +3,7 @@ package projectCalculatorControllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.Pane;
 
@@ -41,30 +42,31 @@ public class CostCenterPaneController {
 
     @FXML
     private TitledPane removeMaterialCostTitledPane;
-
+    
     @FXML
-    private void onMouseReleased() {
-        if (addNewMaterialCostTitledPane.isExpanded()
-                || changeMaterialCostTitledPane.isExpanded()
-                || displayMaterialCostTitledPane.isExpanded()
-                || removeMaterialCostTitledPane.isExpanded()) {
-            materialCostTitledPane.setCollapsible(false);
-            subconstructorsCostTitledPane.setCollapsible(false);
-            labourCostTitledPane.setCollapsible(false);
-            logisticCostTitledPane.setCollapsible(false);
-            otherCostTitledPane.setCollapsible(false);
-        } else {
-            materialCostTitledPane.setCollapsible(true);
-            subconstructorsCostTitledPane.setCollapsible(true);
-            labourCostTitledPane.setCollapsible(true);
-            logisticCostTitledPane.setCollapsible(true);
-            otherCostTitledPane.setCollapsible(true);
-        }
+    private DatePicker datePickerMaterial;
+    
+    @FXML
+    private void initialize(){
+        datePickerMaterial.setEditable(false);
+        datePickerMaterial.setShowWeekNumbers(false);
     }
 
     @FXML
+    private void onMouseReleased() {
+        if(!materialCostTitledPane.isExpanded()){
+            addNewMaterialCostTitledPane.setExpanded(false); 
+            changeMaterialCostTitledPane.setExpanded(false);
+            displayMaterialCostTitledPane.setExpanded(false);
+            removeMaterialCostTitledPane.setExpanded(false);
+        }
+    }
+    
+
+    @FXML
     public void backToMenu() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorsFXML/FXMLMenuPane.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource
+        ("/projectCalculatorsFXML/FXMLMenuPane.fxml"));
         Pane pane = null;
         try {
             pane = loader.load();

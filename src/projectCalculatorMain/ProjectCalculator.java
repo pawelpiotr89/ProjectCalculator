@@ -1,5 +1,6 @@
 package projectCalculatorMain;
 
+import DataBase.DataBaseConnector;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
@@ -8,7 +9,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import projectCalculatorControllers.MainPaneController;
-
 /**
  *
  * @author Roxven89
@@ -20,17 +20,18 @@ public class ProjectCalculator extends Application {
     private Pane mainPane;
     private Cursor cursor;
     private ExitAlertWindow exitAlertWindow;
-
+    private DataBaseConnector dbc;
+    
     @Override
     public void start(Stage stage) throws Exception {
 
         setPrimaryStage(stage);
         cursor = Cursor.DEFAULT;
 
-        FXMLLoader mainPaneLoader = new FXMLLoader();
-        mainPaneLoader.setLocation(ProjectCalculator.class.getResource("/projectCalculatorsFXML/FXMLMainPane.fxml"));
-        mainPane = mainPaneLoader.load();
-        MainPaneController mainPaneController = mainPaneLoader.getController();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ProjectCalculator.class.getResource("/projectCalculatorsFXML/FXMLMainPane.fxml"));
+        mainPane = loader.load();
+        MainPaneController mainPaneController = loader.getController();
 
         mainScene = new Scene(mainPane);
         mainScene.setCursor(cursor);
@@ -46,6 +47,8 @@ public class ProjectCalculator extends Application {
         mainStage.setResizable(false);
         mainStage.setScene(mainScene);
         mainStage.show();
+        
+        dbc = new DataBaseConnector();
     }
 
     private void setPrimaryStage(Stage stage) {
@@ -55,7 +58,6 @@ public class ProjectCalculator extends Application {
     static public Stage getPrimaryStage() {
         return mainStage;
     }
-
     /**
      * @param args the command line arguments
      */
