@@ -66,6 +66,7 @@
 }
 
 .date-picker{
+   -fx-text-fill: #5F5F5F;
    -fx-font-size: 14px;
 }
 
@@ -91,7 +92,14 @@
 
 .date-picker-popup > * > .date-cell{
     -fx-background-color: #5F5F5F;
+    -fx-border-color: #FFFFFF;
     -fx-text-fill: #FFFFFF;
+}
+
+.date-picker-popup > * > .day-name-cell{
+    -fx-background-color: #8FC7FF;
+    -fx-border-color: #8FC7FF;
+    -fx-text-fill: #5F5F5F;
 }
 
 .date-picker-popup > * > .day-cell:focused,
@@ -102,11 +110,36 @@
 .date-picker-popup > * > .today {
     -fx-background-color: #5F5F5F;
     -fx-text-fill: #FFFFFF;
-    -fx-border-color: #8FC7FF;
+    -fx-border-color: #FFFFFF;
 }
 
 .date-picker-popup > * > .previous-month,
 .date-picker-popup > * > .next-month{
     -fx-background-color: #FFFFFF;
     -fx-text-fill: #5F5F5F;
+}
+
+.choice-box {
+    -fx-text-fill: #5F5F5F;
+    -fx-font-size: 14px;
+    -fx-border-color: #5F5F5F;
+}
+
+.choice-box .context-menu{
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #5F5F5F;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: #8FC7FF;
+}
+
+.text-field {
+    -fx-border-color: #5F5F5F;
+    -fx-text-fill: #5F5F5F;
+    -fx-font-size: 14px; 
+}
+
+.text-field:focused {
+    -fx-border-color: #8FC7FF;
 }

@@ -1,6 +1,5 @@
 package projectCalculatorMain;
 
-import DataBase.DataBaseConnector;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
@@ -20,7 +19,6 @@ public class ProjectCalculator extends Application {
     private Pane mainPane;
     private Cursor cursor;
     private ExitAlertWindow exitAlertWindow;
-    private DataBaseConnector dbc;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -48,7 +46,6 @@ public class ProjectCalculator extends Application {
         mainStage.setScene(mainScene);
         mainStage.show();
         
-        dbc = new DataBaseConnector();
     }
 
     private void setPrimaryStage(Stage stage) {
@@ -63,6 +60,5 @@ public class ProjectCalculator extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-
     }
 }

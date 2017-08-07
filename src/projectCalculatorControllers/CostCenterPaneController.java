@@ -1,9 +1,14 @@
 package projectCalculatorControllers;
 
+import DataBase.DataBaseCenter;
 import java.io.IOException;
+import java.time.LocalDate;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.Pane;
 
@@ -15,6 +20,7 @@ import javafx.scene.layout.Pane;
 public class CostCenterPaneController {
 
     private MainPaneController mainPaneController;
+    private DataBaseCenter dataBaseCenter;
 
     @FXML
     private TitledPane materialCostTitledPane;
@@ -47,9 +53,28 @@ public class CostCenterPaneController {
     private DatePicker datePickerMaterial;
     
     @FXML
+    private TextField materialNameTextField;
+    
+    @FXML
+    private ChoiceBox vatRateChoiceBox;
+    
+    @FXML
+    private ChoiceBox unitsOfMeasureChoiceBox;
+    
+    @FXML
     private void initialize(){
+        
+        dataBaseCenter = new DataBaseCenter();
+        
         datePickerMaterial.setEditable(false);
         datePickerMaterial.setShowWeekNumbers(false);
+        datePickerMaterial.setValue(LocalDate.now());
+        
+        vatRateChoiceBox.setItems(FXCollections.observableArrayList(dataBaseCenter.getVatRateList()));
+        vatRateChoiceBox.getSelectionModel().selectFirst();
+       
+        unitsOfMeasureChoiceBox.setItems(FXCollections.observableArrayList(dataBaseCenter.getUnitOfMeasureList()));
+        unitsOfMeasureChoiceBox.getSelectionModel().selectFirst();
     }
 
     @FXML

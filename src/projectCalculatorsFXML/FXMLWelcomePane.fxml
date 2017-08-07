@@ -38,12 +38,12 @@
                 <Font name="Verdana" size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="loginName" layoutX="619.0" layoutY="248.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login" style="-fx-border-color: silver;">
+        <TextField fx:id="loginName" layoutX="619.0" layoutY="248.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login">
             <font>
                 <Font name="Verdana" size="14.0" />
             </font>
         </TextField>
-        <PasswordField fx:id="passwordLogin" layoutX="619.0" layoutY="314.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password" style="-fx-border-color: silver;">
+        <PasswordField fx:id="passwordLogin" layoutX="619.0" layoutY="314.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password">
             <font>
                 <Font name="Verdana" size="14.0" />
             </font>
