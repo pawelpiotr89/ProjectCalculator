@@ -10,8 +10,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-
 /**
  * FXML Controller class
  *
@@ -62,6 +62,10 @@ public class CostCenterPaneController {
     private ChoiceBox unitsOfMeasureChoiceBox;
     
     @FXML
+    private TextField materialNetPriceTextField;
+    
+    
+    @FXML
     private void initialize(){
         
         dataBaseCenter = new DataBaseCenter();
@@ -87,6 +91,38 @@ public class CostCenterPaneController {
         }
     }
     
+    @FXML
+    private void processKeyEventPrice(KeyEvent event) {
+    String character = event.getCharacter();
+    String charSequence = materialNetPriceTextField.getText();
+    
+    if("1234567890.".contains(character)){
+        if(charSequence.startsWith(".")){
+                materialNetPriceTextField.setText("0.");
+                materialNetPriceTextField.requestFocus();
+                materialNetPriceTextField.end();
+            }
+        if(charSequence.contains(".")){
+            int index = charSequence.indexOf(".");
+            if(charSequence.length() > (index + 2)){
+                event.consume();
+            }
+            if(".".contains(character)){
+                event.consume();
+            }
+        }
+    }
+    else{
+        event.consume();
+    }
+    if(charSequence.length() > 9 && !charSequence.contains(".")){
+        if(".".contains(character)){
+        }
+        else{
+            event.consume();
+        }
+    }
+    } 
 
     @FXML
     public void backToMenu() {

@@ -97,9 +97,9 @@
                                                          </font>
                                                       </Tooltip>
                                                    </tooltip></TextField>
-                                                <TextField prefWidth="310.0" promptText="Enter Net Price" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <TextField fx:id="materialNetPriceTextField" onKeyTyped="#processKeyEventPrice" prefWidth="310.0" promptText="Enter Net Price" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <tooltip>
-                                                      <Tooltip autoHide="true" text="Only Numbers In Format 0 000 000 000,00 Allowed" textAlignment="CENTER">
+                                                      <Tooltip autoHide="true" text="Only Numbers In Format 0000000000.00 or In Format 0000000000 Allowed" textAlignment="CENTER">
                                                          <font>
                                                             <Font name="Verdana Bold" size="14.0" />
                                                          </font>

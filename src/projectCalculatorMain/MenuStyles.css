@@ -41,13 +41,7 @@
     -fx-background-color: #8FC7FF;
 }
 
-
 .label{
-    -fx-text-fill: #5F5F5F;
-}
-
-.text-field {
-    -fx-accent: #8FC7FF;
     -fx-text-fill: #5F5F5F;
 }
 
@@ -67,7 +61,7 @@
 
 .date-picker{
    -fx-text-fill: #5F5F5F;
-   -fx-font-size: 14px;
+   -fx-font: 14 verdana;
 }
 
 .date-picker-popup > .month-year-pane{
@@ -76,6 +70,11 @@
 
 .date-picker > .arrow-button{
     -fx-background-color: #8FC7FF;
+    -fx-border-color: #5F5F5F;
+    -fx-background-radius: 0%;
+}
+.date-picker > .arrow-button:hover{
+    -fx-border-color: #8FC7FF;
 }
 
 .date-picker > .arrow-button > .arrow{
@@ -121,13 +120,21 @@
 
 .choice-box {
     -fx-text-fill: #5F5F5F;
-    -fx-font-size: 14px;
+    -fx-font: 14 verdana ;
     -fx-border-color: #5F5F5F;
+}
+
+.choice-box:hover,
+.choice-box:focused{
+    -fx-text-fill: #5F5F5F;
+    -fx-font-size: 14px;
+    -fx-border-color: #8FC7FF;
 }
 
 .choice-box .context-menu{
     -fx-background-color: #FFFFFF;
     -fx-border-color: #5F5F5F;
+    -fx-pref-width: 280;
 }
 
 .choice-box .menu-item:focused {
@@ -137,9 +144,10 @@
 .text-field {
     -fx-border-color: #5F5F5F;
     -fx-text-fill: #5F5F5F;
-    -fx-font-size: 14px; 
+    -fx-font: 14 verdana;  
 }
 
-.text-field:focused {
+.text-field:focused,
+.text-field:hover{
     -fx-border-color: #8FC7FF;
 }
