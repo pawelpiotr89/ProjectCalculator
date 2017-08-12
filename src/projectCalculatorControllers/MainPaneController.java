@@ -16,7 +16,7 @@ public class MainPaneController {
     private Pane mainPane;
 
     public void initialize() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorsFXML/FXMLWelcomePane.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorFXML/FXMLWelcomePane.fxml"));
         Pane pane = null;
         try {
             pane = loader.load();

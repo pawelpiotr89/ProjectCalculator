@@ -14,17 +14,17 @@ public class DataBaseCenter {
     private final String eightRate = "8%";
     private final String twentyThreeRate = "23%";
     private final String reverseChargeRate = "RC (Reverse Charge)";
-    private final String millimeter = "millimeter (mm)";
-    private final String centimeter = "centimeter (cm)";
-    private final String meter = "meter (m)";
-    private final String kilometer = "kilometer (km)";
-    private final String gram = "gram (g)";
-    private final String kilogram = "kilogram (kg)";
-    private final String ton = "ton (t)";
-    private final String piece = "piece (pc)";
-    private final String pair = "pair (par)";	
+    private final String millimeter = "mm (millimeter)";
+    private final String centimeter = "cm (centimeter)";
+    private final String meter = "m (meter)";
+    private final String kilometer = "km (kilometer)";
+    private final String gram = "g (gram)";
+    private final String kilogram = "kg (kilogram)";
+    private final String ton = "t (ton)";
+    private final String piece = "pc (piece)";
+    private final String pair = "par (pair)";	
     
-    DataBaseConnector dataBaseConnector;
+    DataBaseConnector dataBaseConnector; // zainicjalizować później aby działało
     private final ObservableList vateRatesList;
     private final ObservableList unitOfMeasureList;
     

@@ -19,7 +19,7 @@ public class WelcomePaneController {
 
     @FXML
     private void loginPasswordConfirmation() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorsFXML/FXMLMenuPane.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorFXML/FXMLMenuPane.fxml"));
         Pane pane = null;
         try {
             pane = loader.load();

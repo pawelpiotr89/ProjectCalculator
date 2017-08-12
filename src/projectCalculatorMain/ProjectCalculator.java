@@ -8,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import projectCalculatorControllers.MainPaneController;
+
 /**
  *
  * @author Roxven89
@@ -19,7 +20,7 @@ public class ProjectCalculator extends Application {
     private Pane mainPane;
     private Cursor cursor;
     private ExitAlertWindow exitAlertWindow;
-    
+
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -27,7 +28,7 @@ public class ProjectCalculator extends Application {
         cursor = Cursor.DEFAULT;
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(ProjectCalculator.class.getResource("/projectCalculatorsFXML/FXMLMainPane.fxml"));
+        loader.setLocation(ProjectCalculator.class.getResource("/projectCalculatorFXML/FXMLMainPane.fxml"));
         mainPane = loader.load();
         MainPaneController mainPaneController = loader.getController();
 
@@ -45,7 +46,7 @@ public class ProjectCalculator extends Application {
         mainStage.setResizable(false);
         mainStage.setScene(mainScene);
         mainStage.show();
-        
+
     }
 
     private void setPrimaryStage(Stage stage) {
@@ -55,6 +56,7 @@ public class ProjectCalculator extends Application {
     static public Stage getPrimaryStage() {
         return mainStage;
     }
+
     /**
      * @param args the command line arguments
      */

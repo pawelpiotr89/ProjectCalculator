@@ -18,7 +18,7 @@ public class MenuPaneController {
 
     @FXML
     private void enterCostCenter() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorsFXML/FXMLCostCenterPane.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorFXML/FXMLCostCenterPane.fxml"));
         Pane pane = null;
         try {
             pane = loader.load();

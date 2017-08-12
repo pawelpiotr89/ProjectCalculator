@@ -2,26 +2,36 @@ package projectCalculatorControllers;
 
 import DataBase.DataBaseCenter;
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import projectCalculatorMain.EnterDataConfirmationWindow;
 /**
  * FXML Controller class
  *
  * @author Roxven89
  */
-public class CostCenterPaneController {
+public class CostCenterPaneController implements Initializable {
 
     private MainPaneController mainPaneController;
     private DataBaseCenter dataBaseCenter;
-
+    private EnterDataConfirmationWindow enterDataConfirmationWindow;
+    
+    private TextField myTextField = new TextField();
+    
     @FXML
     private TitledPane materialCostTitledPane;
 
@@ -64,9 +74,14 @@ public class CostCenterPaneController {
     @FXML
     private TextField materialNetPriceTextField;
     
+    @FXML
+    private TextField supplierNameTextField;
     
     @FXML
-    private void initialize(){
+    private Label materialEnterDataOutputInfo;
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
         
         dataBaseCenter = new DataBaseCenter();
         
@@ -79,6 +94,8 @@ public class CostCenterPaneController {
        
         unitsOfMeasureChoiceBox.setItems(FXCollections.observableArrayList(dataBaseCenter.getUnitOfMeasureList()));
         unitsOfMeasureChoiceBox.getSelectionModel().selectFirst();
+        
+        materialNetPriceTextField.setAlignment(Pos.CENTER_RIGHT);
     }
 
     @FXML
@@ -92,16 +109,36 @@ public class CostCenterPaneController {
     }
     
     @FXML
+    private void standardTextFieldActions(KeyEvent event){
+       TextField textFieldSource = (TextField) event.getSource();
+       String character = event.getCharacter();
+       String charSequence = "";
+       if(event.getSource().equals(textFieldSource)){
+           charSequence = textFieldSource.getText();
+       }          
+       if(charSequence.length() > 39 || charSequence.startsWith(" ") || 
+          charSequence.isEmpty() && " ".contains(character)){
+           event.consume();
+       }   
+    }
+    
+    @FXML
     private void processKeyEventPrice(KeyEvent event) {
+    TextField textFieldSource = (TextField) event.getSource();
     String character = event.getCharacter();
-    String charSequence = materialNetPriceTextField.getText();
+    String charSequence = textFieldSource.getText();
     
     if("1234567890.".contains(character)){
-        if(charSequence.startsWith(".")){
-                materialNetPriceTextField.setText("0.");
-                materialNetPriceTextField.requestFocus();
-                materialNetPriceTextField.end();
+        if(charSequence.startsWith("0") && !charSequence.startsWith("0.") && "1234567890".contains(character)){
+            event.consume();
+        }
+        if(charSequence.startsWith(".") && !".".contains(character)){
+            if(".".contains(character)){
+                event.consume();
             }
+            textFieldSource.setText("0.");
+            textFieldSource.end();
+        }
         if(charSequence.contains(".")){
             int index = charSequence.indexOf(".");
             if(charSequence.length() > (index + 2)){
@@ -122,12 +159,34 @@ public class CostCenterPaneController {
             event.consume();
         }
     }
-    } 
-
+    }
+    
     @FXML
-    public void backToMenu() {
+    private void materialEnterDataOnAction(){
+        final String incorrectDataInput = "PLEASE ENTER CORRECT DATA!";
+        final String correctDataInput = "DATA IS CORRECT!";
+        final String priceData = materialNetPriceTextField.getText();
+        if(materialNameTextField.getText().trim().isEmpty() || 
+            materialNetPriceTextField.getText().isEmpty() || 
+            supplierNameTextField.getText().trim().isEmpty() ||
+            priceData.matches("[^1234567890.]")){
+            materialEnterDataOutputInfo.setText(incorrectDataInput);
+        }
+        else{
+            materialEnterDataOutputInfo.setText(correctDataInput);
+            enterDataConfirmationWindow = new EnterDataConfirmationWindow();
+            enterDataConfirmationWindow.askingQuestion(materialNameTextField.getText(), 
+                    materialNetPriceTextField.getText(),
+                    datePickerMaterial.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), 
+                    unitsOfMeasureChoiceBox.getValue().toString(), vatRateChoiceBox.getValue().toString(), 
+                    supplierNameTextField.getText());
+        }
+    }
+  
+    @FXML
+    private void backToMenu() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource
-        ("/projectCalculatorsFXML/FXMLMenuPane.fxml"));
+        ("/projectCalculatorFXML/FXMLMenuPane.fxml"));
         Pane pane = null;
         try {
             pane = loader.load();

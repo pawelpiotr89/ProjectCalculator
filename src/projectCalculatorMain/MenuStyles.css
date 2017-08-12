@@ -144,7 +144,7 @@
 .text-field {
     -fx-border-color: #5F5F5F;
     -fx-text-fill: #5F5F5F;
-    -fx-font: 14 verdana;  
+    -fx-font: 14 verdana;
 }
 
 .text-field:focused,
