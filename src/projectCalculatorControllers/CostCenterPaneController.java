@@ -3,14 +3,17 @@ package projectCalculatorControllers;
 import DataBase.DataBaseCenter;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -29,8 +32,6 @@ public class CostCenterPaneController implements Initializable {
     private MainPaneController mainPaneController;
     private DataBaseCenter dataBaseCenter;
     private EnterDataConfirmationWindow enterDataConfirmationWindow;
-    
-    private TextField myTextField = new TextField();
     
     @FXML
     private TitledPane materialCostTitledPane;
@@ -84,6 +85,7 @@ public class CostCenterPaneController implements Initializable {
     public void initialize(URL location, ResourceBundle resources){
         
         dataBaseCenter = new DataBaseCenter();
+        dataBaseCenter.checkAndCreateDatabase();
         
         datePickerMaterial.setEditable(false);
         datePickerMaterial.setShowWeekNumbers(false);
@@ -163,24 +165,9 @@ public class CostCenterPaneController implements Initializable {
     
     @FXML
     private void materialEnterDataOnAction(){
-        final String incorrectDataInput = "PLEASE ENTER CORRECT DATA!";
-        final String correctDataInput = "DATA IS CORRECT!";
-        final String priceData = materialNetPriceTextField.getText();
-        if(materialNameTextField.getText().trim().isEmpty() || 
-            materialNetPriceTextField.getText().isEmpty() || 
-            supplierNameTextField.getText().trim().isEmpty() ||
-            priceData.matches("[^1234567890.]")){
-            materialEnterDataOutputInfo.setText(incorrectDataInput);
-        }
-        else{
-            materialEnterDataOutputInfo.setText(correctDataInput);
-            enterDataConfirmationWindow = new EnterDataConfirmationWindow();
-            enterDataConfirmationWindow.askingQuestion(materialNameTextField.getText(), 
-                    materialNetPriceTextField.getText(),
-                    datePickerMaterial.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), 
-                    unitsOfMeasureChoiceBox.getValue().toString(), vatRateChoiceBox.getValue().toString(), 
-                    supplierNameTextField.getText());
-        }
+        costEnterDataOnAction(materialNetPriceTextField, materialNameTextField, 
+                supplierNameTextField, materialEnterDataOutputInfo, datePickerMaterial,
+                unitsOfMeasureChoiceBox, vatRateChoiceBox, dataBaseCenter.getInsertNewMaterial());
     }
   
     @FXML
@@ -199,5 +186,46 @@ public class CostCenterPaneController implements Initializable {
 
     public void setMainPaneController(MainPaneController mainPaneController) {
         this.mainPaneController = mainPaneController;
+    }
+    
+    private void costEnterDataOnAction(TextField costNetPriceTF, TextField costNameTF, 
+            TextField costSupplierTF, Label costOutputInfoTF, DatePicker costDatePicker, 
+            ChoiceBox costUnitOfMeasureTF, ChoiceBox costVatRate, String insertCost){
+        final String incorrectDataInput = "PLEASE ENTER CORRECT DATA!";
+        final String correctDataInput = "DATA IS CORRECT!";
+        final String confirmation = "DATA ENTERD CORRECTLY!";
+        final String priceData = costNetPriceTF.getText();
+        final String insertNewCost = insertCost;
+        if(costNameTF.getText().trim().isEmpty() || 
+            costNetPriceTF.getText().isEmpty() || 
+            costSupplierTF.getText().trim().isEmpty() ||
+            priceData.matches("[^1234567890.]")){
+            costOutputInfoTF.setText(incorrectDataInput);
+        }
+        else{
+            costOutputInfoTF.setText(correctDataInput);
+            enterDataConfirmationWindow = new EnterDataConfirmationWindow();
+            enterDataConfirmationWindow.askingQuestion(costNameTF.getText(), 
+                    costNetPriceTF.getText(),
+                    costDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), 
+                    costUnitOfMeasureTF.getValue().toString(), costVatRate.getValue().toString(), 
+                    costSupplierTF.getText());
+            
+            Optional<ButtonType> result = enterDataConfirmationWindow.getAlert().showAndWait();
+            if (result.get() == ButtonType.YES) {
+                double price = Double.parseDouble(costNetPriceTF.getText());
+                Date date = Date.valueOf(costDatePicker.getValue());
+                String newCost = insertNewCost + costNameTF.getText() + "', '" + 
+                        costUnitOfMeasureTF.getValue().toString() + "', " + 
+                        price + ", '" + costVatRate.getValue().toString() + "', '" + 
+                        costSupplierTF.getText() + "', '" + 
+                        date + "')";
+                dataBaseCenter.makeConnection();
+                dataBaseCenter.addNewCost(newCost);
+                costOutputInfoTF.setText(confirmation);
+            } 
+            else {
+            }
+        }
     }
 }

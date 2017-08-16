@@ -22,14 +22,18 @@ public class DataBaseCenter {
     private final String kilogram = "kg (kilogram)";
     private final String ton = "t (ton)";
     private final String piece = "pc (piece)";
-    private final String pair = "par (pair)";	
+    private final String pair = "par (pair)";
     
-    DataBaseConnector dataBaseConnector; // zainicjalizować później aby działało
+    private final String insertNewMaterial = "INSERT INTO MATERIALS " + "(MATERIAL_NAME, MATERIAL_UNIT,"
+                        + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY)" + 
+                        " VALUES('";
+    
+    DataBaseConnector dataBaseConnector;
     private final ObservableList vateRatesList;
     private final ObservableList unitOfMeasureList;
     
     public DataBaseCenter(){
-        
+          
         vateRatesList = FXCollections.observableArrayList(zeroRate, fiveRate, 
                         eightRate, twentyThreeRate, reverseChargeRate);  
         
@@ -46,5 +50,21 @@ public class DataBaseCenter {
     public ObservableList getUnitOfMeasureList(){
         
         return unitOfMeasureList;
+    }
+    
+    public void checkAndCreateDatabase(){
+        dataBaseConnector = new DataBaseConnector();
+    }
+    
+    public void makeConnection(){
+        dataBaseConnector.connectToDataBase();
+    }
+    
+    public void addNewCost(String newCost){
+        dataBaseConnector.addToDataBase(newCost);
+    }
+    
+    public String getInsertNewMaterial(){
+        return insertNewMaterial;
     }
 }
