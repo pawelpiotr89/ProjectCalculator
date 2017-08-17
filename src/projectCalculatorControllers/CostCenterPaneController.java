@@ -9,19 +9,24 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.SplitPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import projectCalculatorMain.DataBaseDetails;
 import projectCalculatorMain.EnterDataConfirmationWindow;
 /**
  * FXML Controller class
@@ -86,7 +91,42 @@ public class CostCenterPaneController implements Initializable {
     private TextField searchMaterialTextField;
     
     @FXML
-    private ListView materialListView;
+    private Pane costCenterPane;
+    
+    @FXML
+    private SplitPane costCenterSplitPane;
+    
+    @FXML
+    private Button backFromCostCenterToMenuButton;
+    
+    @FXML
+    private Button materialEnterData;
+    
+    @FXML
+    private Button materialSearchButton;
+    
+    @FXML
+    private TableView<DataBaseDetails> materialDisplayTable;
+    
+    @FXML
+    private TableColumn<DataBaseDetails, String> materialNameColumn;
+    
+    @FXML
+    private TableColumn<DataBaseDetails, String> materialUnitColumn;
+    
+    @FXML
+    private TableColumn<DataBaseDetails, String> materialPriceColumn;
+    
+    @FXML
+    private TableColumn<DataBaseDetails, String> materialVatColumn;
+    
+    @FXML
+    private TableColumn<DataBaseDetails, String> materialVendorColumn;
+    
+    @FXML
+    private TableColumn<DataBaseDetails, String> materialDateColumn;
+    
+    ObservableList<DataBaseDetails> data;
     
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -105,6 +145,9 @@ public class CostCenterPaneController implements Initializable {
         unitsOfMeasureChoiceBox.getSelectionModel().selectFirst();
         
         materialNetPriceTextField.setAlignment(Pos.CENTER_RIGHT);
+        
+        materialPriceColumn.setStyle("-fx-alignment: CENTER-RIGHT;");
+        materialVatColumn.setStyle("-fx-alignment: CENTER-RIGHT;");
     }
 
     @FXML
@@ -182,9 +225,11 @@ public class CostCenterPaneController implements Initializable {
         if(searchMaterialTextField.getText().trim().isEmpty()){   
         }
         else{
-           String fraze = "'%" + searchMaterialTextField.getText() + "%'";
+           String fraze = "('%" + searchMaterialTextField.getText() + "%')";
            dataBaseCenter.makeConnection();
-           dataBaseCenter.getFromDataBaseToListView(dataBaseCenter.getselectFromMaterial(), fraze, materialListView);
+           dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getselectFromMaterial(), 
+                   fraze, materialDisplayTable, materialNameColumn, materialUnitColumn,
+                   materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
         }
     }
   
