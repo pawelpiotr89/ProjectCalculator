@@ -16,7 +16,7 @@
             <items>
                 <AnchorPane maxHeight="38.0" minHeight="38.0" prefHeight="38.0" prefWidth="1240.0">
                     <children>
-                        <Button fx:id="backFromCostCenterToMenuButton" alignment="CENTER" mnemonicParsing="false" onAction="#backToMenu" prefHeight="38.0" prefWidth="1240.0" text="BACK" textAlignment="CENTER" textFill="#5f5f5f">
+                        <Button fx:id="backFromCostCenterToMenuButton" alignment="CENTER" mnemonicParsing="false" onAction="#backToMenu" prefHeight="38.0" prefWidth="1240.0" text="BACK" textAlignment="CENTER" textFill="#5f5f5f" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
                                 <Font name="Verdana Bold" size="20.0" />
                             </font>
@@ -25,7 +25,7 @@
                 </AnchorPane>
                 <AnchorPane maxHeight="722.0" minHeight="722.0" prefHeight="722.0" prefWidth="1240.0">
                     <children>
-                        <Accordion prefHeight="722.0" prefWidth="1240.0">
+                        <Accordion prefHeight="722.0" prefWidth="1240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <panes>
                                 <TitledPane fx:id="materialCostTitledPane" onMouseReleased="#onMouseReleased" text="MATERIAL COSTS">
                                     <font>
@@ -39,109 +39,114 @@
                                                         <Font name="Verdana Bold" size="14.0" />
                                                     </font>
                                        <content>
-                                          <GridPane alignment="CENTER" focusTraversable="true" maxWidth="1260.0" AnchorPane.bottomAnchor="19.399999999999977" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="18.40000000000009" AnchorPane.topAnchor="0.0">
-                                            <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
-                                                <ColumnConstraints hgrow="SOMETIMES" />
-                                                <ColumnConstraints hgrow="SOMETIMES" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                              <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
-                                              <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
-                                              <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
-                                                <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
-                                            </rowConstraints>
+                                          <AnchorPane>
                                              <children>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="MATERIAL NAME: " textAlignment="CENTER">
-                                                   <font>
-                                                      <Font name="Verdana Bold Italic" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="UNIT OF MEASURE: " textAlignment="CENTER" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Verdana Bold Italic" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="NET PRICE: " textAlignment="CENTER" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Verdana Bold Italic" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="VAT RATE: " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Verdana Bold Italic" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="DAY OF PRICE: " textAlignment="CENTER" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Verdana Bold Italic" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="304.0" text="SUPPLIER: " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Verdana Bold Italic" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <Button fx:id="materialEnterData" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#materialEnterDataOnAction" prefHeight="70.0" prefWidth="610.0" text="ENTER DATA" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
-                                                   <font>
-                                                      <Font name="Verdana Bold" size="20.0" />
-                                                   </font>
-                                                </Button>
-                                                <TextField fx:id="supplierNameTextField" onKeyTyped="#standardTextFieldActions" prefWidth="310.0" promptText="Enter Name Of Supplier" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Verdana" size="14.0" />
-                                                   </font>
-                                                   <tooltip>
-                                                      <Tooltip text="Max 40 Characters Allowed" textAlignment="CENTER">
-                                                         <font>
-                                                            <Font name="Verdana Bold" size="14.0" />
-                                                         </font>
-                                                      </Tooltip>
-                                                   </tooltip></TextField>
-                                                <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <GridPane alignment="CENTER" focusTraversable="true" maxWidth="1240.0" prefWidth="1240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
                                                    <children>
-                                                      <TextField fx:id="materialNetPriceTextField" onKeyTyped="#processKeyEventPrice" prefWidth="260.0" promptText="Enter Net Price" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="310.0" text="MATERIAL NAME: " textAlignment="CENTER">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="310.0" text="UNIT OF MEASURE: " textAlignment="CENTER" GridPane.columnIndex="2">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="310.0" text="NET PRICE: " textAlignment="CENTER" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="310.0" text="VAT RATE: " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="310.0" text="DAY OF PRICE: " textAlignment="CENTER" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="310.0" text="SUPPLIER: " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Button fx:id="materialEnterData" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#materialEnterDataOnAction" prefHeight="70.0" prefWidth="620.0" text="ENTER DATA" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                                                         <font>
+                                                            <Font name="Verdana Bold" size="20.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <TextField fx:id="supplierNameTextField" onKeyTyped="#standardTextFieldActions" prefWidth="310.0" promptText="Enter Name Of Supplier" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="Verdana" size="14.0" />
+                                                         </font>
                                                          <tooltip>
-                                                            <Tooltip autoHide="true" text="Only Numbers In Format 0000000000.00 or In Format 0000000000 Allowed" textAlignment="CENTER">
+                                                            <Tooltip text="Max 40 Characters Allowed" textAlignment="CENTER">
                                                                <font>
                                                                   <Font name="Verdana Bold" size="14.0" />
                                                                </font>
                                                             </Tooltip>
                                                          </tooltip>
+                                                      </TextField>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <TextField fx:id="materialNetPriceTextField" onKeyTyped="#processKeyEventPrice" prefWidth="260.0" promptText="Enter Net Price" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <tooltip>
+                                                                  <Tooltip autoHide="true" text="Only Numbers In Format 0000000000.00 or In Format 0000000000 Allowed" textAlignment="CENTER">
+                                                                     <font>
+                                                                        <Font name="Verdana Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Tooltip>
+                                                               </tooltip>
+                                                               <font>
+                                                                  <Font name="Verdana" size="14.0" />
+                                                               </font>
+                                                            </TextField>
+                                                            <Label prefWidth="50.0" text=" PLN">
+                                                               <font>
+                                                                  <Font name="Verdana Bold Italic" size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <DatePicker fx:id="datePickerMaterial" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <ChoiceBox fx:id="vatRateChoiceBox" prefWidth="310.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                      <ChoiceBox fx:id="unitsOfMeasureChoiceBox" prefWidth="310.0" GridPane.columnIndex="3" />
+                                                      <Label fx:id="materialEnterDataOutputInfo" alignment="CENTER" prefHeight="70.0" prefWidth="610.0" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="Verdana" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="materialNameTextField" onKeyTyped="#standardTextFieldActions" prefWidth="310.0" promptText="Enter Material Name" GridPane.columnIndex="1">
                                                          <font>
                                                             <Font name="Verdana" size="14.0" />
                                                          </font>
+                                                         <tooltip>
+                                                            <Tooltip text="Max 40 Characters Allowed">
+                                                               <font>
+                                                                  <Font name="Verdana Bold" size="14.0" />
+                                                               </font>
+                                                            </Tooltip>
+                                                         </tooltip>
                                                       </TextField>
-                                                      <Label prefWidth="50.0" text=" PLN">
-                                                         <font>
-                                                            <Font name="Verdana Bold Italic" size="18.0" />
-                                                         </font>
-                                                      </Label>
                                                    </children>
-                                                </HBox>
-                                                <DatePicker fx:id="datePickerMaterial" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <ChoiceBox fx:id="vatRateChoiceBox" prefWidth="310.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                                <ChoiceBox fx:id="unitsOfMeasureChoiceBox" prefWidth="310.0" GridPane.columnIndex="3" />
-                                                <Label fx:id="materialEnterDataOutputInfo" alignment="CENTER" prefHeight="70.0" prefWidth="610.0" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Verdana" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextField fx:id="materialNameTextField" onKeyTyped="#standardTextFieldActions" prefWidth="310.0" promptText="Enter Material Name" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Verdana" size="14.0" />
-                                                   </font>
-                                                   <tooltip>
-                                                      <Tooltip text="Max 40 Characters Allowed">
-                                                         <font>
-                                                            <Font name="Verdana Bold" size="14.0" />
-                                                         </font>
-                                                      </Tooltip>
-                                                   </tooltip>
-                                                </TextField>
+                                                </GridPane>
                                              </children>
-                                          </GridPane>
+                                          </AnchorPane>
                                        </content>
                                                 </TitledPane>
                                                 <TitledPane fx:id="changeMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="CHANGE MATERIAL COST">
@@ -152,12 +157,53 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                                        </content>
                                                 </TitledPane>
-                                                <TitledPane fx:id="displayMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="DISPLAY MATERIAL COST">
+                                                <TitledPane fx:id="displayMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="DISPLAY MATERIAL COST" textAlignment="RIGHT">
                                                     <font>
                                                         <Font name="Verdana Bold" size="14.0" />
                                                     </font>
                                        <content>
-                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <GridPane maxWidth="1240.0" prefWidth="1240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="1240.0" textAlignment="CENTER" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="Verdana" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="68.0" prefWidth="310.0" text="SEARCH MATERIAL BY:  " textAlignment="RIGHT">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="searchMaterialTextField" onKeyTyped="#standardTextFieldActions" prefHeight="30.0" prefWidth="310.0" promptText="Enter Searched Fraze" GridPane.columnIndex="1" />
+                                                      <Button fx:id="materialSearchButton" mnemonicParsing="false" onAction="#materialSearchButtonOnAction" prefHeight="68.0" prefWidth="310.0" text="SEARCH" GridPane.columnIndex="3">
+                                                         <font>
+                                                            <Font name="Verdana Bold" size="18.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Label prefHeight="68.0" prefWidth="310.0" GridPane.columnIndex="2" />
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="68.0" prefWidth="310.0" text="MATERIAL LIST: " textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="Verdana Bold" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ListView fx:id="materialListView" prefHeight="68.0" prefWidth="310.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </children></AnchorPane>
                                        </content>
                                                 </TitledPane>
                                                 <TitledPane fx:id="removeMaterialCostTitledPane" onMouseReleased="#onMouseReleased" text="REMOVE MATERIAL COST">

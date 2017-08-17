@@ -17,6 +17,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyEvent;
@@ -80,6 +81,12 @@ public class CostCenterPaneController implements Initializable {
     
     @FXML
     private Label materialEnterDataOutputInfo;
+    
+    @FXML
+    private TextField searchMaterialTextField;
+    
+    @FXML
+    private ListView materialListView;
     
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -168,6 +175,17 @@ public class CostCenterPaneController implements Initializable {
         costEnterDataOnAction(materialNetPriceTextField, materialNameTextField, 
                 supplierNameTextField, materialEnterDataOutputInfo, datePickerMaterial,
                 unitsOfMeasureChoiceBox, vatRateChoiceBox, dataBaseCenter.getInsertNewMaterial());
+    }
+    
+    @FXML
+    private void materialSearchButtonOnAction(){
+        if(searchMaterialTextField.getText().trim().isEmpty()){   
+        }
+        else{
+           String fraze = "'%" + searchMaterialTextField.getText() + "%'";
+           dataBaseCenter.makeConnection();
+           dataBaseCenter.getFromDataBaseToListView(dataBaseCenter.getselectFromMaterial(), fraze, materialListView);
+        }
     }
   
     @FXML

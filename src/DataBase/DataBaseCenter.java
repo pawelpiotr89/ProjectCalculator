@@ -2,6 +2,7 @@ package DataBase;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 
 /**
  *
@@ -27,6 +28,9 @@ public class DataBaseCenter {
     private final String insertNewMaterial = "INSERT INTO MATERIALS " + "(MATERIAL_NAME, MATERIAL_UNIT,"
                         + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY)" + 
                         " VALUES('";
+    
+    private final String selectFromMaterial = "SELECT MATERIAL_NAME FROM MATERIALS " + 
+            "WHERE MATERIAL_NAME LIKE ";
     
     DataBaseConnector dataBaseConnector;
     private final ObservableList vateRatesList;
@@ -66,5 +70,13 @@ public class DataBaseCenter {
     
     public String getInsertNewMaterial(){
         return insertNewMaterial;
+    }
+    
+    public void getFromDataBaseToListView(String materialFormula, String fraze, ListView list){
+        dataBaseConnector.lookForDataBase(materialFormula, fraze, list);
+    }
+    
+    public String getselectFromMaterial(){
+        return selectFromMaterial;
     }
 }

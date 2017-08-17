@@ -3,8 +3,10 @@ package DataBase;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javafx.scene.control.ListView;
 /**
  *
  * @author Roxven89
@@ -124,6 +126,25 @@ public class DataBaseConnector {
             statement.executeUpdate(costType);
             statement.close();
         } catch (SQLException error) {
+             System.out.print(error);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException error) {
+                System.out.print(error);
+            }
+        }
+    }
+    
+    public void lookForDataBase(String formula, String lookingFraze, ListView listView){
+        try{
+            String sentence = formula + lookingFraze;
+            ResultSet result = statement.executeQuery(sentence);
+            while(result.next()){
+                listView.getItems().add(result);
+            }
+            statement.close();
+        } catch (SQLException error){
              System.out.print(error);
         } finally {
             try {
