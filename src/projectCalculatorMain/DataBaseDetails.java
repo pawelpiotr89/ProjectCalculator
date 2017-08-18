@@ -9,6 +9,7 @@ import javafx.beans.property.StringProperty;
  */
 public class DataBaseDetails {
     
+    private final StringProperty id;
     private final StringProperty name;
     private final StringProperty price;
     private final StringProperty unit;
@@ -16,15 +17,20 @@ public class DataBaseDetails {
     private final StringProperty vendor;
     private final StringProperty date;
     
-    public DataBaseDetails(String name, String unit, String price, String vat, 
+    public DataBaseDetails(String id, String name, String unit, String price, String vat, 
             String vendor, String date){
         
+        this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
         this.price = new SimpleStringProperty(price);
         this.unit = new SimpleStringProperty(unit);
         this.vat = new SimpleStringProperty(vat);
         this.vendor = new SimpleStringProperty(vendor);
         this.date = new SimpleStringProperty(date);    
+    }
+    
+    public String getId(){
+        return id.get();
     }
     
     public String getName(){
@@ -51,6 +57,10 @@ public class DataBaseDetails {
         return date.get();
     }
     
+    public void setId(String vale){
+        id.set(vale);
+    }
+    
     public void setName(String vale){
         name.set(vale);
     }
@@ -73,6 +83,10 @@ public class DataBaseDetails {
     
     public void setDate(String vale){
         date.set(vale);
+    }
+    
+    public StringProperty nameId(){
+        return id;
     }
     
     public StringProperty nameProperty(){

@@ -30,7 +30,7 @@ public class DataBaseCenter {
                         + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY)" + 
                         " VALUES('";
     
-    private final String selectFromMaterial = "SELECT MATERIAL_NAME, MATERIAL_UNIT,"
+    private final String selectFromMaterial = "SELECT ID, MATERIAL_NAME, MATERIAL_UNIT,"
             + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY"
             + " FROM MATERIALS WHERE UPPER(MATERIAL_NAME) LIKE UPPER";
     
@@ -75,11 +75,11 @@ public class DataBaseCenter {
     }
     
     public void getFromDataBaseToTableView(String materialFormula, String fraze,
-            TableView table, TableColumn column_1, TableColumn column_2, 
+            TableView table, TableColumn column_0, TableColumn column_1, TableColumn column_2, 
             TableColumn column_3, TableColumn column_4, 
             TableColumn column_5, TableColumn column_6){
         
-            dataBaseConnector.lookForDataBase(materialFormula, fraze, table, column_1, 
+            dataBaseConnector.lookForDataBase(materialFormula, fraze, table, column_0, column_1, 
             column_2, column_3, column_4, column_5, column_6);
     }
     

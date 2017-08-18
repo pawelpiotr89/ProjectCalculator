@@ -166,6 +166,7 @@
 .table-cell {
     -fx-border-color: #5F5F5F;
     -fx-text-fill: #5F5F5F;
+    -fx-alignment: CENTER;
 }
 
 .table-view .column-header {

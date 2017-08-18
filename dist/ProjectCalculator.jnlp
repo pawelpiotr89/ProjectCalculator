@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ProjectCalculator.jar" size="24735" download="eager" />
+    <jar href="ProjectCalculator.jar" size="24883" download="eager" />
     <jar href="lib\derby.jar" size="3230946" download="eager" />
     <jar href="lib\derbyLocale_cs.jar" size="94527" download="eager" />
     <jar href="lib\derbyLocale_de_DE.jar" size="112065" download="eager" />

@@ -126,6 +126,9 @@ public class CostCenterPaneController implements Initializable {
     @FXML
     private TableColumn<DataBaseDetails, String> materialDateColumn;
     
+    @FXML
+    private TableColumn<DataBaseDetails, String> materialIDColumn;
+    
     ObservableList<DataBaseDetails> data;
     
     @Override
@@ -145,9 +148,6 @@ public class CostCenterPaneController implements Initializable {
         unitsOfMeasureChoiceBox.getSelectionModel().selectFirst();
         
         materialNetPriceTextField.setAlignment(Pos.CENTER_RIGHT);
-        
-        materialPriceColumn.setStyle("-fx-alignment: CENTER-RIGHT;");
-        materialVatColumn.setStyle("-fx-alignment: CENTER-RIGHT;");
     }
 
     @FXML
@@ -228,7 +228,7 @@ public class CostCenterPaneController implements Initializable {
            String fraze = "('%" + searchMaterialTextField.getText() + "%')";
            dataBaseCenter.makeConnection();
            dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getselectFromMaterial(), 
-                   fraze, materialDisplayTable, materialNameColumn, materialUnitColumn,
+                   fraze, materialDisplayTable, materialIDColumn, materialNameColumn, materialUnitColumn,
                    materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
         }
     }
