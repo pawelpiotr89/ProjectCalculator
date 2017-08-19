@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -131,6 +132,24 @@ public class CostCenterPaneController implements Initializable {
     
     ObservableList<DataBaseDetails> data;
     
+    @FXML
+    private TextField materialIDTextField;
+    
+    @FXML
+    private Button pickIDButton;
+    
+    @FXML
+    private Label materialToRemoveLabel;
+    
+    @FXML
+    private Label removeMaterialConfirmationLabel;
+    
+    @FXML
+    private Button removeMaterialButton;
+    
+    @FXML
+    private Button resetMaterialID;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources){
         
@@ -148,6 +167,9 @@ public class CostCenterPaneController implements Initializable {
         unitsOfMeasureChoiceBox.getSelectionModel().selectFirst();
         
         materialNetPriceTextField.setAlignment(Pos.CENTER_RIGHT);
+        
+        removeMaterialButton.setDisable(true);
+        resetMaterialID.setDisable(true);
     }
 
     @FXML
@@ -158,6 +180,15 @@ public class CostCenterPaneController implements Initializable {
             displayMaterialCostTitledPane.setExpanded(false);
             removeMaterialCostTitledPane.setExpanded(false);
         }
+    }
+    
+    @FXML
+    private void standardIDTextFieldActions(KeyEvent event){
+       TextField textFieldSource = (TextField) event.getSource();
+       String character = event.getCharacter();
+       if(!"1234567890".contains(character)){
+           event.consume();
+       }
     }
     
     @FXML
@@ -214,14 +245,14 @@ public class CostCenterPaneController implements Initializable {
     }
     
     @FXML
-    private void materialEnterDataOnAction(){
+    private void materialEnterDataOnAction(ActionEvent event){
         costEnterDataOnAction(materialNetPriceTextField, materialNameTextField, 
                 supplierNameTextField, materialEnterDataOutputInfo, datePickerMaterial,
                 unitsOfMeasureChoiceBox, vatRateChoiceBox, dataBaseCenter.getInsertNewMaterial());
     }
     
     @FXML
-    private void materialSearchButtonOnAction(){
+    private void materialSearchButtonOnAction(ActionEvent event){
         if(searchMaterialTextField.getText().trim().isEmpty()){   
         }
         else{
@@ -232,6 +263,33 @@ public class CostCenterPaneController implements Initializable {
                    materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
         }
     }
+    
+    @FXML
+    private void pickIDFromDataBase(ActionEvent event){
+        if(!materialIDTextField.getText().trim().isEmpty()){
+            String materialID = materialIDTextField.getText();
+            dataBaseCenter.makeConnection();
+            dataBaseCenter.getLookForDataBaseByID(dataBaseCenter.getSeleceFromMaterialByID(), 
+                    materialID, materialToRemoveLabel, removeMaterialButton, resetMaterialID, 
+                    pickIDButton);
+        }
+        else{
+            String warrning = "SELECT ID FIRST!";
+            materialToRemoveLabel.setText(warrning);
+        }
+    }
+    
+    @FXML
+    private void resetMaterialIDTextFieldAction(ActionEvent event){
+        materialToRemoveLabel.setText("");
+        removeMaterialButton.setDisable(true);
+        pickIDButton.setDisable(false);
+        resetMaterialID.setDisable(true);
+    }
+    
+    @FXML
+    private void removeMaterialFromDataBaseAction(ActionEvent event) {
+    }
   
     @FXML
     private void backToMenu() {
@@ -240,7 +298,8 @@ public class CostCenterPaneController implements Initializable {
         Pane pane = null;
         try {
             pane = loader.load();
-        } catch (IOException e) {
+        } catch (IOException error) {
+            System.out.println(error);
         }
         MenuPaneController menuPaneController = loader.getController();
         menuPaneController.setMainPaneController(mainPaneController);
@@ -285,6 +344,9 @@ public class CostCenterPaneController implements Initializable {
                         date + "')";
                 dataBaseCenter.makeConnection();
                 dataBaseCenter.addNewCost(newCost);
+                costNetPriceTF.clear();
+                costNameTF.clear(); 
+                costSupplierTF.clear();
                 costOutputInfoTF.setText(confirmation);
             } 
             else {

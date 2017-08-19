@@ -2,6 +2,8 @@ package DataBase;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -26,13 +28,20 @@ public class DataBaseCenter {
     private final String piece = "pc (piece)";
     private final String pair = "par (pair)";
     
-    private final String insertNewMaterial = "INSERT INTO MATERIALS " + "(MATERIAL_NAME, MATERIAL_UNIT,"
-                        + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY)" + 
-                        " VALUES('";
+    private final String insertNewMaterial = "INSERT INTO MATERIALS "
+            + "(MATERIAL_NAME, MATERIAL_UNIT, MATERIAL_PRICE, "
+            + "MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY)"
+            + " VALUES('";
     
     private final String selectFromMaterial = "SELECT ID, MATERIAL_NAME, MATERIAL_UNIT,"
             + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY"
             + " FROM MATERIALS WHERE UPPER(MATERIAL_NAME) LIKE UPPER";
+    
+    private final String seleceFromMaterialByID = "SELECT MATERIAL_NAME, MATERIAL_UNIT, "
+            + "MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, "
+            + "MATERIAL_DATE_OF_ENTRY FROM MATERIALS WHERE ID = ";
+    
+    private final String removeFromMaterial = "DELETE FROM MATERIALS WHERE ID = ";
     
     DataBaseConnector dataBaseConnector;
     private final ObservableList vateRatesList;
@@ -85,5 +94,19 @@ public class DataBaseCenter {
     
     public String getselectFromMaterial(){
         return selectFromMaterial;
+    }
+    
+    public void getRemoveFromDataBase(String materialFormula, String fraze){
+        dataBaseConnector.removeFromDataBase(materialFormula, fraze);
+    }
+    
+    public String getSeleceFromMaterialByID(){
+        return seleceFromMaterialByID;
+    }
+    
+    public void getLookForDataBaseByID(String formula, String lookingFraze, Label infoLabel, 
+            Button removeButton, Button resetButton, Button pickButton){
+        dataBaseConnector.lookForDataBaseByID(formula, lookingFraze, infoLabel, removeButton, 
+                resetButton, pickButton);
     }
 }
