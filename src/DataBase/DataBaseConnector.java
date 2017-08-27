@@ -6,14 +6,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import projectCalculatorMain.DataBaseDetails;
 /**
@@ -194,7 +193,7 @@ public class DataBaseConnector {
     }
     
     public void lookForDataBaseByID(String formula, String lookingFraze, Label infoTextField, 
-            Button removeButton, Button resetButton, Button pickButton){
+            Button removeButton, Button resetButton, Button pickButton, TextField idTextField){
         String correctID = "THIS ID DOES NOT EXIST IN DATABASE!";
         try {
             String sentence = formula + lookingFraze;
@@ -213,6 +212,7 @@ public class DataBaseConnector {
             removeButton.setDisable(false);
             resetButton.setDisable(false);
             pickButton.setDisable(true);
+            idTextField.setDisable(true);
             }
             else{
                 infoTextField.setText(correctID);
@@ -232,7 +232,7 @@ public class DataBaseConnector {
     public void removeFromDataBase(String formula, String lookingFraze){
         try {
             String sentence = formula + lookingFraze;
-            ResultSet result = statement.executeQuery(sentence);
+            int result = statement.executeUpdate(sentence);
             statement.close();
         } catch (SQLException error) {
             System.out.print(error);

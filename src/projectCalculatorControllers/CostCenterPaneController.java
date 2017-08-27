@@ -29,6 +29,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import projectCalculatorMain.DataBaseDetails;
 import projectCalculatorMain.EnterDataConfirmationWindow;
+import projectCalculatorMain.RemoveDataConfirmationWindow;
 /**
  * FXML Controller class
  *
@@ -39,6 +40,7 @@ public class CostCenterPaneController implements Initializable {
     private MainPaneController mainPaneController;
     private DataBaseCenter dataBaseCenter;
     private EnterDataConfirmationWindow enterDataConfirmationWindow;
+    private RemoveDataConfirmationWindow removeDataConfirmationWindow;
     
     @FXML
     private TitledPane materialCostTitledPane;
@@ -149,6 +151,9 @@ public class CostCenterPaneController implements Initializable {
     
     @FXML
     private Button resetMaterialID;
+    
+    @FXML
+    private Button materialDisplaAllButton;
     
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -271,7 +276,7 @@ public class CostCenterPaneController implements Initializable {
             dataBaseCenter.makeConnection();
             dataBaseCenter.getLookForDataBaseByID(dataBaseCenter.getSeleceFromMaterialByID(), 
                     materialID, materialToRemoveLabel, removeMaterialButton, resetMaterialID, 
-                    pickIDButton);
+                    pickIDButton, materialIDTextField);
         }
         else{
             String warrning = "SELECT ID FIRST!";
@@ -285,10 +290,38 @@ public class CostCenterPaneController implements Initializable {
         removeMaterialButton.setDisable(true);
         pickIDButton.setDisable(false);
         resetMaterialID.setDisable(true);
+        materialIDTextField.setDisable(false);
+        materialIDTextField.setText("");
     }
     
     @FXML
     private void removeMaterialFromDataBaseAction(ActionEvent event) {
+        String materialID = materialIDTextField.getText();
+        String materialRemoved = "MATERIAL REMOVED CORRECTLY!";
+        removeDataConfirmationWindow = new RemoveDataConfirmationWindow();
+        removeDataConfirmationWindow.askingQuestion();
+        Optional<ButtonType> result = removeDataConfirmationWindow.getAlert().showAndWait();
+        if(result.get() == ButtonType.YES){
+        dataBaseCenter.makeConnection();
+        dataBaseCenter.getRemoveFromDataBase(dataBaseCenter.getRemoveFromMaterial(), materialID);
+        materialIDTextField.setText("");
+        materialToRemoveLabel.setText(materialRemoved);
+        materialIDTextField.setDisable(false);
+        pickIDButton.setDisable(false);
+        resetMaterialID.setDisable(true);
+        removeMaterialButton.setDisable(true);
+        }
+        else{
+        }
+    }
+    
+    @FXML
+    private void displayAllMaterialButton(){
+        final String fraze = "";
+        dataBaseCenter.makeConnection();
+           dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getSelectAllFromMaterials(), 
+                   fraze, materialDisplayTable, materialIDColumn, materialNameColumn, materialUnitColumn,
+                   materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
     }
   
     @FXML
@@ -329,7 +362,7 @@ public class CostCenterPaneController implements Initializable {
             enterDataConfirmationWindow = new EnterDataConfirmationWindow();
             enterDataConfirmationWindow.askingQuestion(costNameTF.getText(), 
                     costNetPriceTF.getText(),
-                    costDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), 
+                    costDatePicker.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), 
                     costUnitOfMeasureTF.getValue().toString(), costVatRate.getValue().toString(), 
                     costSupplierTF.getText());
             

@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -42,6 +43,8 @@ public class DataBaseCenter {
             + "MATERIAL_DATE_OF_ENTRY FROM MATERIALS WHERE ID = ";
     
     private final String removeFromMaterial = "DELETE FROM MATERIALS WHERE ID = ";
+    
+    private final String selectAllFromMaterial = "SELECT * FROM MATERIALS ";
     
     DataBaseConnector dataBaseConnector;
     private final ObservableList vateRatesList;
@@ -105,8 +108,16 @@ public class DataBaseCenter {
     }
     
     public void getLookForDataBaseByID(String formula, String lookingFraze, Label infoLabel, 
-            Button removeButton, Button resetButton, Button pickButton){
+            Button removeButton, Button resetButton, Button pickButton, TextField idTextField){
         dataBaseConnector.lookForDataBaseByID(formula, lookingFraze, infoLabel, removeButton, 
-                resetButton, pickButton);
+                resetButton, pickButton, idTextField);
+    }
+    
+    public String getRemoveFromMaterial(){
+        return removeFromMaterial;
+    }
+    
+    public String getSelectAllFromMaterials(){
+        return selectAllFromMaterial;
     }
 }
