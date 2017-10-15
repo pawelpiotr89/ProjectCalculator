@@ -304,7 +304,7 @@
                                                             <Font name="Verdana Bold Italic" size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField fx:id="searchMaterialTextField" onKeyTyped="#standardTextFieldActions" prefHeight="30.0" prefWidth="310.0" promptText="Enter Searched Fraze" GridPane.columnIndex="1">
+                                                      <TextField fx:id="searchMaterialTextField" onKeyTyped="#standardTextFieldActions" prefHeight="30.0" prefWidth="310.0" promptText="Enter Searched Name Fraze" GridPane.columnIndex="1">
                                                          <font>
                                                             <Font name="Verdana" size="14.0" />
                                                          </font></TextField>

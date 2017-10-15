@@ -7,9 +7,9 @@ import javafx.scene.control.ButtonType;
  *
  * @author Roxven89
  */
-public class EnterDataConfirmationWindow {
+public class ChangeMaterialConfirmationWindow {
     
-    private final String question = "DO YOU CONFIRM THIS DATA?";
+    private final String question = "DO WANT TO CHANGE THIS DATA?";
     private String dataValue = "";
     private final Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "", ButtonType.YES, ButtonType.NO);
 

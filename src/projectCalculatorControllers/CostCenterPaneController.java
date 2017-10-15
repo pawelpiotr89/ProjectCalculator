@@ -28,6 +28,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import projectCalculatorMain.ChangeMaterialConfirmationWindow;
 import projectCalculatorMain.DataBaseDetails;
 import projectCalculatorMain.EnterDataConfirmationWindow;
 import projectCalculatorMain.RemoveDataConfirmationWindow;
@@ -42,6 +43,7 @@ public class CostCenterPaneController implements Initializable {
     private DataBaseCenter dataBaseCenter;
     private EnterDataConfirmationWindow enterDataConfirmationWindow;
     private RemoveDataConfirmationWindow removeDataConfirmationWindow;
+    private ChangeMaterialConfirmationWindow changeMaterialConfirmationWindow;
     
     @FXML
     private TitledPane materialCostTitledPane;
@@ -394,7 +396,7 @@ public class CostCenterPaneController implements Initializable {
     public void setMainPaneController(MainPaneController mainPaneController) {
         this.mainPaneController = mainPaneController;
     }
-    
+///////////////////////////Adding new cost to database//////////////////////////
     private void costEnterDataOnAction(TextField costNetPriceTF, TextField costNameTF, 
             TextField costSupplierTF, Label costOutputInfoTF, DatePicker costDatePicker, 
             ChoiceBox costUnitOfMeasureTF, ChoiceBox costVatRate, String insertCost){
@@ -438,20 +440,41 @@ public class CostCenterPaneController implements Initializable {
             }
         }
     }
-    
+/////////////////////////Change material data///////////////////////////////////    
     @FXML
     private void saveMaterialDataOnAction(ActionEvent event) {
         if(!materialIDChangeField.getText().trim().isEmpty() 
                 && !materialNetPriceChangeField.getText().trim().isEmpty() 
                 && !materialSupplierChangeField.getText().trim().isEmpty()){
-            dataBaseCenter.makeConnection();
-            BigDecimal bigDecimal = new BigDecimal(materialNetPriceChangeField.getText());
-            dataBaseCenter.getSaveMaterialData(materialNameChangeField.getText(),
+            
+            changeMaterialConfirmationWindow = new ChangeMaterialConfirmationWindow();
+            changeMaterialConfirmationWindow.askingQuestion(materialNameChangeField.getText(),
+                    materialNetPriceChangeField.getText(), 
+                    materialDayOfPriceChangeField.getValue().toString(),
+                    materialUnitChangeChoiceBox.getValue().toString(),
+                    materialVATrateChangeChoiceBox.getValue().toString(), 
+                    materialSupplierChangeField.getText());
+            Optional<ButtonType> result = changeMaterialConfirmationWindow.getAlert().showAndWait();
+            if (result.get() == ButtonType.YES) {
+                dataBaseCenter.makeConnection();
+                BigDecimal bigDecimal = new BigDecimal(materialNetPriceChangeField.getText());
+                dataBaseCenter.getSaveMaterialData(materialNameChangeField.getText(),
                     materialUnitChangeChoiceBox.getValue().toString(), 
                     bigDecimal, materialVATrateChangeChoiceBox.getValue().toString(), 
                     materialSupplierChangeField.getText(), 
                     Date.valueOf(materialDayOfPriceChangeField.getValue()), 
                     Integer.parseInt(materialIDChangeField.getText()));
+                
+                materialIDChangeField.clear();
+                materialNameChangeField.clear();
+                materialNetPriceChangeField.clear();
+                materialSupplierChangeField.clear();
+                pickMaterialToChangeButton.setDisable(false);
+                saveMaterialButton.setDisable(true);
+            }
+            else{
+                
+            }
         }
         else{
         }

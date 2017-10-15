@@ -23,7 +23,7 @@
                 <Font name="Verdana Bold Italic" size="40.0" />
             </font>
         </Label>
-        <Label layoutX="544.0" layoutY="622.0" text="ALL RIGHTS RESERVED" textAlignment="CENTER">
+        <Label layoutX="544.0" layoutY="622.0" text="ALL RIGHTS RESERVED ®." textAlignment="CENTER">
             <font>
                 <Font name="Verdana Italic" size="12.0" />
             </font>
