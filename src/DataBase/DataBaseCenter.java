@@ -1,8 +1,12 @@
 package DataBase;
 
+import java.math.BigDecimal;
+import java.sql.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -38,7 +42,7 @@ public class DataBaseCenter {
             + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY"
             + " FROM MATERIALS WHERE UPPER(MATERIAL_NAME) LIKE UPPER";
     
-    private final String seleceFromMaterialByID = "SELECT MATERIAL_NAME, MATERIAL_UNIT, "
+    private final String selectFromMaterialByID = "SELECT MATERIAL_NAME, MATERIAL_UNIT, "
             + "MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, "
             + "MATERIAL_DATE_OF_ENTRY FROM MATERIALS WHERE ID = ";
     
@@ -103,8 +107,8 @@ public class DataBaseCenter {
         dataBaseConnector.removeFromDataBase(materialFormula, fraze);
     }
     
-    public String getSeleceFromMaterialByID(){
-        return seleceFromMaterialByID;
+    public String getSelectFromMaterialByID(){
+        return selectFromMaterialByID;
     }
     
     public void getLookForDataBaseByID(String formula, String lookingFraze, Label infoLabel, 
@@ -119,5 +123,19 @@ public class DataBaseCenter {
     
     public String getSelectAllFromMaterials(){
         return selectAllFromMaterial;
+    }
+    
+    public void getDataFromMaterialToChange(String formula, String lookingFraze, 
+            TextField iD, TextField materialName, TextField netPrice, 
+            DatePicker dayOfPrice, ChoiceBox unitOfMeasure, ChoiceBox vatRate, 
+            TextField supplier, Button save, ObservableList listUnit, ObservableList listRate){
+        dataBaseConnector.dataFromMaterialToChange(formula, lookingFraze, iD, 
+                materialName, netPrice, dayOfPrice, unitOfMeasure, vatRate, supplier, 
+                save, listUnit, listRate);
+    }
+    
+    public void getSaveMaterialData(String name, String unit, BigDecimal price, String rate,
+            String vendor, Date date, int ID){
+        dataBaseConnector.saveMaterialData(name, unit, price, rate, vendor, date, ID);
     }
 }

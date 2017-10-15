@@ -2,6 +2,7 @@ package projectCalculatorControllers;
 
 import DataBase.DataBaseCenter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -155,6 +156,33 @@ public class CostCenterPaneController implements Initializable {
     @FXML
     private Button materialDisplaAllButton;
     
+    @FXML
+    private TextField materialIDChangeField;
+    
+    @FXML
+    private Button pickMaterialToChangeButton;
+    
+    @FXML
+    private Button saveMaterialButton;
+    
+    @FXML
+    private TextField materialNameChangeField;
+    
+    @FXML
+    private TextField materialNetPriceChangeField;
+    
+    @FXML
+    private DatePicker materialDayOfPriceChangeField;
+    
+    @FXML
+    private ChoiceBox materialUnitChangeChoiceBox;
+    
+    @FXML
+    private ChoiceBox materialVATrateChangeChoiceBox;
+    
+    @FXML
+    private TextField materialSupplierChangeField;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources){
         
@@ -175,8 +203,15 @@ public class CostCenterPaneController implements Initializable {
         
         removeMaterialButton.setDisable(true);
         resetMaterialID.setDisable(true);
+        
+        saveMaterialButton.setDisable(true);
+        
+        materialDayOfPriceChangeField.setEditable(false);
+        materialDayOfPriceChangeField.setShowWeekNumbers(false);
+        materialDayOfPriceChangeField.setValue(LocalDate.now());
+        materialDayOfPriceChangeField.setDisable(true);
     }
-
+/////////////////////Expandable and Closable Cost Cards/////////////////////////
     @FXML
     private void onMouseReleased() {
         if(!materialCostTitledPane.isExpanded()){
@@ -186,7 +221,7 @@ public class CostCenterPaneController implements Initializable {
             removeMaterialCostTitledPane.setExpanded(false);
         }
     }
-    
+///////////////////////ID text field inputs only digits/////////////////////////
     @FXML
     private void standardIDTextFieldActions(KeyEvent event){
        TextField textFieldSource = (TextField) event.getSource();
@@ -195,7 +230,7 @@ public class CostCenterPaneController implements Initializable {
            event.consume();
        }
     }
-    
+//////////////////////40 characters input limit, no blank space///////////////// 
     @FXML
     private void standardTextFieldActions(KeyEvent event){
        TextField textFieldSource = (TextField) event.getSource();
@@ -209,7 +244,7 @@ public class CostCenterPaneController implements Initializable {
            event.consume();
        }   
     }
-    
+/////////////////////////Price input restrictions///////////////////////////////  
     @FXML
     private void processKeyEventPrice(KeyEvent event) {
     TextField textFieldSource = (TextField) event.getSource();
@@ -248,14 +283,14 @@ public class CostCenterPaneController implements Initializable {
         }
     }
     }
-    
+/////////////////////////Adding new material to database////////////////////////   
     @FXML
     private void materialEnterDataOnAction(ActionEvent event){
         costEnterDataOnAction(materialNetPriceTextField, materialNameTextField, 
                 supplierNameTextField, materialEnterDataOutputInfo, datePickerMaterial,
                 unitsOfMeasureChoiceBox, vatRateChoiceBox, dataBaseCenter.getInsertNewMaterial());
     }
-    
+////////////////////////Searching for given material name///////////////////////    
     @FXML
     private void materialSearchButtonOnAction(ActionEvent event){
         if(searchMaterialTextField.getText().trim().isEmpty()){   
@@ -268,13 +303,13 @@ public class CostCenterPaneController implements Initializable {
                    materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
         }
     }
-    
+///////////////////////Searching database by given ID number////////////////////    
     @FXML
     private void pickIDFromDataBase(ActionEvent event){
         if(!materialIDTextField.getText().trim().isEmpty()){
             String materialID = materialIDTextField.getText();
             dataBaseCenter.makeConnection();
-            dataBaseCenter.getLookForDataBaseByID(dataBaseCenter.getSeleceFromMaterialByID(), 
+            dataBaseCenter.getLookForDataBaseByID(dataBaseCenter.getSelectFromMaterialByID(), 
                     materialID, materialToRemoveLabel, removeMaterialButton, resetMaterialID, 
                     pickIDButton, materialIDTextField);
         }
@@ -283,7 +318,7 @@ public class CostCenterPaneController implements Initializable {
             materialToRemoveLabel.setText(warrning);
         }
     }
-    
+//////////////////////Reseting material ID text field///////////////////////////    
     @FXML
     private void resetMaterialIDTextFieldAction(ActionEvent event){
         materialToRemoveLabel.setText("");
@@ -293,7 +328,7 @@ public class CostCenterPaneController implements Initializable {
         materialIDTextField.setDisable(false);
         materialIDTextField.setText("");
     }
-    
+////////////////////Removing material from database/////////////////////////////    
     @FXML
     private void removeMaterialFromDataBaseAction(ActionEvent event) {
         String materialID = materialIDTextField.getText();
@@ -314,7 +349,7 @@ public class CostCenterPaneController implements Initializable {
         else{
         }
     }
-    
+////////////////////Displaing all materials from database///////////////////////    
     @FXML
     private void displayAllMaterialButton(){
         final String fraze = "";
@@ -323,9 +358,9 @@ public class CostCenterPaneController implements Initializable {
                    fraze, materialDisplayTable, materialIDColumn, materialNameColumn, materialUnitColumn,
                    materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
     }
-  
+////////////////////////Going back to menu//////////////////////////////////////  
     @FXML
-    private void backToMenu() {
+    private void backToMenu(ActionEvent event){
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource
         ("/projectCalculatorFXML/FXMLMenuPane.fxml"));
         Pane pane = null;
@@ -337,6 +372,23 @@ public class CostCenterPaneController implements Initializable {
         MenuPaneController menuPaneController = loader.getController();
         menuPaneController.setMainPaneController(mainPaneController);
         mainPaneController.setPane(pane);
+    }
+///////////////Picking material from database to perform change action//////////    
+    @FXML
+    private void pickMaterialIDToChangeOnAction(ActionEvent event){
+        if(!materialIDChangeField.getText().trim().isEmpty()){
+            String materialID = materialIDChangeField.getText();
+            dataBaseCenter.makeConnection();
+            dataBaseCenter.getDataFromMaterialToChange(dataBaseCenter.getSelectFromMaterialByID(), 
+                    materialID, materialIDChangeField, materialNameChangeField, 
+                    materialNetPriceChangeField, materialDayOfPriceChangeField, 
+                    materialUnitChangeChoiceBox, materialVATrateChangeChoiceBox, 
+                    materialSupplierChangeField, saveMaterialButton, 
+                    dataBaseCenter.getUnitOfMeasureList(), dataBaseCenter.getVatRateList());
+            pickMaterialToChangeButton.setDisable(true);
+        }
+        else{ 
+        }
     }
 
     public void setMainPaneController(MainPaneController mainPaneController) {
@@ -384,6 +436,24 @@ public class CostCenterPaneController implements Initializable {
             } 
             else {
             }
+        }
+    }
+    
+    @FXML
+    private void saveMaterialDataOnAction(ActionEvent event) {
+        if(!materialIDChangeField.getText().trim().isEmpty() 
+                && !materialNetPriceChangeField.getText().trim().isEmpty() 
+                && !materialSupplierChangeField.getText().trim().isEmpty()){
+            dataBaseCenter.makeConnection();
+            BigDecimal bigDecimal = new BigDecimal(materialNetPriceChangeField.getText());
+            dataBaseCenter.getSaveMaterialData(materialNameChangeField.getText(),
+                    materialUnitChangeChoiceBox.getValue().toString(), 
+                    bigDecimal, materialVATrateChangeChoiceBox.getValue().toString(), 
+                    materialSupplierChangeField.getText(), 
+                    Date.valueOf(materialDayOfPriceChangeField.getValue()), 
+                    Integer.parseInt(materialIDChangeField.getText()));
+        }
+        else{
         }
     }
 }

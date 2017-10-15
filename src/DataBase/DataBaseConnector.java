@@ -1,14 +1,20 @@
 package DataBase;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -33,7 +39,7 @@ public class DataBaseConnector {
             "MATERIAL_NAME VARCHAR(40), " + 
             "MATERIAL_UNIT VARCHAR(40), " + 
             "MATERIAL_PRICE DECIMAL(12,2), " + 
-            "MATERIAL_VAT_RATE VARCHAR(5), " + 
+            "MATERIAL_VAT_RATE VARCHAR(40), " + 
             "MATERIAL_VENDOR VARCHAR(40), " + 
             "MATERIAL_DATE_OF_ENTRY DATE)";
     
@@ -42,7 +48,7 @@ public class DataBaseConnector {
             "SUBCONSTRUCTOR_NAME VARCHAR(40), " + 
             "SUBCONSTRUCTOR_UNIT VARCHAR(40), " + 
             "SUBCONSTRUCTOR_PRICE DECIMAL(12,2), " + 
-            "SUBCONSTRUCTOR_VAT_RATE VARCHAR(5), " + 
+            "SUBCONSTRUCTOR_VAT_RATE VARCHAR(40), " + 
             "SUBCONSTRUCTOR_VENDOR VARCHAR(40), " + 
             "SUBCONSTRUCTOR_DATE_OF_ENTRY DATE)";
     
@@ -51,7 +57,7 @@ public class DataBaseConnector {
             "LABOUR_EMPLOYEE_NAME VARCHAR(40), " + 
             "LABOUR_UNIT VARCHAR(40), " + 
             "LABOUR_COST_ DECIMAL(12,2), " + 
-            "LABOUR_GROSS_OVERHEAD VARCHAR(5), " + 
+            "LABOUR_GROSS_OVERHEAD VARCHAR(40), " + 
             "LABOUR_EMPLOYEE_TYPE VARCHAR(40), " + 
             "LABOUR_DATE_OF_ENTRY DATE)";
     
@@ -60,7 +66,7 @@ public class DataBaseConnector {
             "LOGISTIC_NAME VARCHAR(40), " + 
             "LOGISTIC_UNIT VARCHAR(40), " + 
             "LOGISTIC_PRICE DECIMAL(12,2), " + 
-            "LOGISTIC_VAT_RATE VARCHAR(5), " + 
+            "LOGISTIC_VAT_RATE VARCHAR(40), " + 
             "LOGISTIC_VENDOR VARCHAR(40), " + 
             "LOGISTIC_DATE_OF_ENTRY DATE)";
     
@@ -69,7 +75,7 @@ public class DataBaseConnector {
             "OTHERCOSTS_NAME VARCHAR(40), " + 
             "OTHERCOSTS_UNIT VARCHAR(40), " + 
             "OTHERCOSTS_PRICE DECIMAL(12,2), " + 
-            "OTHERCOSTS_VAT_RATE VARCHAR(5), " + 
+            "OTHERCOSTS_VAT_RATE VARCHAR(40), " + 
             "OTHERCOSTS_VENDOR VARCHAR(40), " + 
             "OTHERCOSTS_DATE_OF_ENTRY DATE)";
     
@@ -237,6 +243,125 @@ public class DataBaseConnector {
         } catch (SQLException error) {
             System.out.print(error);
         } finally {
+            try {
+                connection = DriverManager.getConnection(end);
+            } catch (SQLException error) {
+                System.out.print(error);
+            }
+        }
+    }
+    
+    public void dataFromMaterialToChange(String formula, String lookingFraze, 
+            TextField iD, TextField materialName, TextField netPrice, 
+            DatePicker dayOfPrice, ChoiceBox unitOfMeasure, ChoiceBox vatRate, 
+            TextField supplier, Button save, ObservableList listUnit, ObservableList listRate){
+      
+        try {
+            String sentence = formula + lookingFraze;
+            ResultSet result = statement.executeQuery(sentence);
+            
+            if(result.next()){
+            dayOfPrice.setDisable(false);
+            save.setDisable(false);
+            iD.setDisable(true);
+            
+            String name = result.getString(1);
+            materialName.setText(name);
+            unitOfMeasure.setItems(FXCollections.observableArrayList(listUnit));
+            String unit = result.getString(2);
+            switch(unit){
+                case "mm (millimeter)":
+                    unitOfMeasure.getSelectionModel().select(0);
+                    break;
+                case "cm (centimeter)":
+                    unitOfMeasure.getSelectionModel().select(1);
+                    break;
+                case "m (meter)":
+                    unitOfMeasure.getSelectionModel().select(2);
+                    break;
+                case "km (kilometer)":
+                    unitOfMeasure.getSelectionModel().select(3);
+                    break;
+                case "g (gram)":
+                    unitOfMeasure.getSelectionModel().select(4);
+                    break;
+                case "kg (kilogram)":
+                    unitOfMeasure.getSelectionModel().select(5);
+                    break;
+                case "t (ton)":
+                    unitOfMeasure.getSelectionModel().select(6);
+                    break;
+                case "pc (piece)":
+                    unitOfMeasure.getSelectionModel().select(7);
+                    break;
+                case "par (pair)":
+                    unitOfMeasure.getSelectionModel().select(8);
+                    break;
+            }
+            String price = String.valueOf(result.getDouble(3));
+            netPrice.setText(price);
+            vatRate.setItems(FXCollections.observableArrayList(listRate));
+            String rate = result.getString(4);
+            switch(rate){
+                case "0%":
+                    vatRate.getSelectionModel().select(0);
+                    break;
+                case "5%":
+                    vatRate.getSelectionModel().select(1);
+                    break;
+                case "8%":
+                    vatRate.getSelectionModel().select(2);
+                    break;
+                case "23%":
+                    vatRate.getSelectionModel().select(3);
+                    break;
+                case "RC (Reverse Charge)":
+                    vatRate.getSelectionModel().select(4);
+                    break;
+            }
+            String vendor = result.getString(5);
+            supplier.setText(vendor);
+            String date = String.valueOf(result.getDate(6));
+            dayOfPrice.setValue(LocalDate.parse(date));
+            }
+            else{
+                materialName.clear();
+                netPrice.clear();
+                supplier.clear();
+            }
+            statement.close();
+        } catch (SQLException error) {
+             System.out.print(error);
+        } finally {
+            try {
+                connection = DriverManager.getConnection(end);
+            } catch (SQLException error) {
+                System.out.print(error);
+            }
+        }
+    }
+    
+    public void saveMaterialData(String name, String unit, BigDecimal price,
+            String rate, String vendor, Date date, int ID) {
+        
+        final String updateMaterialFields = "UPDATE MATERIALS SET MATERIAL_NAME = ?, "
+            + "MATERIAL_UNIT = ?, MATERIAL_PRICE = ?, MATERIAL_VAT_RATE = ?, "
+            + "MATERIAL_VENDOR = ?, MATERIAL_DATE_OF_ENTRY = ? WHERE ID = ?";
+ 
+        try (PreparedStatement pstmt = connection.prepareStatement(updateMaterialFields)) {
+            
+            pstmt.setInt(7, ID);
+            pstmt.setString(1, name);
+            pstmt.setString(2, unit);
+            pstmt.setBigDecimal(3, price);
+            pstmt.setString(4, rate);
+            pstmt.setString(5, vendor);
+            pstmt.setDate(6, date);
+            
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }finally {
             try {
                 connection = DriverManager.getConnection(end);
             } catch (SQLException error) {
