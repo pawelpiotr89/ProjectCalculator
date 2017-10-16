@@ -394,7 +394,7 @@
                                                             <Font name="Verdana" size="14.0" />
                                                          </font>
                                                       </TextField>
-                                                      <Button fx:id="pickIDButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pickIDFromDataBase" prefHeight="68.0" prefWidth="310.0" text="PICK" textAlignment="CENTER" GridPane.columnIndex="3">
+                                                      <Button fx:id="pickIDButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pickMaterialIDFromDataBase" prefHeight="68.0" prefWidth="310.0" text="PICK" textAlignment="CENTER" GridPane.columnIndex="3">
                                                          <font>
                                                             <Font name="Verdana Bold" size="20.0" />
                                                          </font>

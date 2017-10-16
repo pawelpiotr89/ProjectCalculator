@@ -285,40 +285,27 @@ public class CostCenterPaneController implements Initializable {
         }
     }
     }
-/////////////////////////Adding new material to database////////////////////////   
+/////////////////////////Adding new material cost to database///////////////////  
     @FXML
     private void materialEnterDataOnAction(ActionEvent event){
         costEnterDataOnAction(materialNetPriceTextField, materialNameTextField, 
                 supplierNameTextField, materialEnterDataOutputInfo, datePickerMaterial,
                 unitsOfMeasureChoiceBox, vatRateChoiceBox, dataBaseCenter.getInsertNewMaterial());
     }
-////////////////////////Searching for given material name///////////////////////    
+/////////////////////Searching database for given material name/////////////////  
     @FXML
     private void materialSearchButtonOnAction(ActionEvent event){
-        if(searchMaterialTextField.getText().trim().isEmpty()){   
-        }
-        else{
-           String fraze = "('%" + searchMaterialTextField.getText() + "%')";
-           dataBaseCenter.makeConnection();
-           dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getselectFromMaterial(), 
-                   fraze, materialDisplayTable, materialIDColumn, materialNameColumn, materialUnitColumn,
-                   materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
-        }
+        costSearchButtonOnAction(searchMaterialTextField, dataBaseCenter.getselectFromMaterial(), 
+                materialDisplayTable, materialIDColumn, materialNameColumn, 
+                materialUnitColumn, materialPriceColumn, materialVatColumn, 
+                materialVendorColumn, materialDateColumn);
     }
 ///////////////////////Searching database by given ID number////////////////////    
     @FXML
-    private void pickIDFromDataBase(ActionEvent event){
-        if(!materialIDTextField.getText().trim().isEmpty()){
-            String materialID = materialIDTextField.getText();
-            dataBaseCenter.makeConnection();
-            dataBaseCenter.getLookForDataBaseByID(dataBaseCenter.getSelectFromMaterialByID(), 
-                    materialID, materialToRemoveLabel, removeMaterialButton, resetMaterialID, 
-                    pickIDButton, materialIDTextField);
-        }
-        else{
-            String warrning = "SELECT ID FIRST!";
-            materialToRemoveLabel.setText(warrning);
-        }
+    private void pickMaterialIDFromDataBase(ActionEvent event){
+        pickCostIDFromDataBase(materialIDTextField, dataBaseCenter.getSelectFromMaterialByID(), 
+                materialToRemoveLabel, removeMaterialButton, resetMaterialID, 
+                pickIDButton);
     }
 //////////////////////Reseting material ID text field///////////////////////////    
     @FXML
@@ -396,7 +383,7 @@ public class CostCenterPaneController implements Initializable {
     public void setMainPaneController(MainPaneController mainPaneController) {
         this.mainPaneController = mainPaneController;
     }
-///////////////////////////Adding new cost to database//////////////////////////
+///////////////////Adding new cost to database TEMPLATE/////////////////////////
     private void costEnterDataOnAction(TextField costNetPriceTF, TextField costNameTF, 
             TextField costSupplierTF, Label costOutputInfoTF, DatePicker costDatePicker, 
             ChoiceBox costUnitOfMeasureTF, ChoiceBox costVatRate, String insertCost){
@@ -438,6 +425,39 @@ public class CostCenterPaneController implements Initializable {
             } 
             else {
             }
+        }
+    }
+////////////////////////////Searching cost TEMPLATE/////////////////////////////  
+    private void costSearchButtonOnAction(TextField textField, String sql, 
+            TableView<DataBaseDetails> tableView, TableColumn<DataBaseDetails, String> tableColumn1, 
+            TableColumn<DataBaseDetails, String> tableColumn2, 
+            TableColumn<DataBaseDetails, String> tableColumn3, 
+            TableColumn<DataBaseDetails, String> tableColumn4, 
+            TableColumn<DataBaseDetails, String> tableColumn5, 
+            TableColumn<DataBaseDetails, String> tableColumn6, 
+            TableColumn<DataBaseDetails, String> tableColumn7){
+        if(textField.getText().trim().isEmpty()){   
+        }
+        else{
+           String fraze = "('%" + textField.getText() + "%')";
+           dataBaseCenter.makeConnection();
+           dataBaseCenter.getFromDataBaseToTableView(sql, fraze, tableView, 
+                   tableColumn1, tableColumn2, tableColumn3,
+                   tableColumn4, tableColumn5, tableColumn6, tableColumn7);
+        }
+    }
+////////////////////////////Pick cost ID TEMPLATE///////////////////////////////    
+    private void pickCostIDFromDataBase(TextField textField, String sql, Label label1, 
+            Button button1, Button button2, Button button3){
+        if(!textField.getText().trim().isEmpty()){
+            String materialID = textField.getText();
+            dataBaseCenter.makeConnection();
+            dataBaseCenter.getLookForDataBaseByID(sql, materialID, label1, 
+                    button1, button2, button3, textField);
+        }
+        else{
+            String warrning = "SELECT ID FIRST!";
+            label1.setText(warrning);
         }
     }
 /////////////////////////Change material data///////////////////////////////////    
