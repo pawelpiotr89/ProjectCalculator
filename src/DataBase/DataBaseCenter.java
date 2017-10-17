@@ -22,7 +22,7 @@ public class DataBaseCenter {
     private final String fiveRate = "5%";
     private final String eightRate = "8%";
     private final String twentyThreeRate = "23%";
-    private final String reverseChargeRate = "RC (Reverse Charge)";
+    private final String reverseChargeRate = "RC (reverse charge)";
     private final String millimeter = "mm (millimeter)";
     private final String centimeter = "cm (centimeter)";
     private final String meter = "m (meter)";

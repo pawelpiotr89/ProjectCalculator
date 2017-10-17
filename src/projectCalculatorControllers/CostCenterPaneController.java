@@ -44,147 +44,101 @@ public class CostCenterPaneController implements Initializable {
     private EnterDataConfirmationWindow enterDataConfirmationWindow;
     private RemoveDataConfirmationWindow removeDataConfirmationWindow;
     private ChangeMaterialConfirmationWindow changeMaterialConfirmationWindow;
-    
+    ObservableList<DataBaseDetails> data;
+///////////////////////////Material cost FXML///////////////////////////////////    
     @FXML
     private TitledPane materialCostTitledPane;
-
     @FXML
     private TitledPane subconstructorsCostTitledPane;
-
     @FXML
     private TitledPane labourCostTitledPane;
-
     @FXML
     private TitledPane logisticCostTitledPane;
-
     @FXML
     private TitledPane otherCostTitledPane;
-
     @FXML
     private TitledPane addNewMaterialCostTitledPane;
-
     @FXML
     private TitledPane changeMaterialCostTitledPane;
-
     @FXML
     private TitledPane displayMaterialCostTitledPane;
-
     @FXML
     private TitledPane removeMaterialCostTitledPane;
-    
     @FXML
     private DatePicker datePickerMaterial;
-    
     @FXML
     private TextField materialNameTextField;
-    
     @FXML
     private ChoiceBox vatRateChoiceBox;
-    
     @FXML
     private ChoiceBox unitsOfMeasureChoiceBox;
-    
     @FXML
     private TextField materialNetPriceTextField;
-    
     @FXML
     private TextField supplierNameTextField;
-    
     @FXML
     private Label materialEnterDataOutputInfo;
-    
     @FXML
     private TextField searchMaterialTextField;
-    
     @FXML
     private Pane costCenterPane;
-    
     @FXML
     private SplitPane costCenterSplitPane;
-    
     @FXML
     private Button backFromCostCenterToMenuButton;
-    
     @FXML
     private Button materialEnterData;
-    
     @FXML
     private Button materialSearchButton;
-    
     @FXML
     private TableView<DataBaseDetails> materialDisplayTable;
-    
     @FXML
     private TableColumn<DataBaseDetails, String> materialNameColumn;
-    
     @FXML
     private TableColumn<DataBaseDetails, String> materialUnitColumn;
-    
     @FXML
     private TableColumn<DataBaseDetails, String> materialPriceColumn;
-    
     @FXML
     private TableColumn<DataBaseDetails, String> materialVatColumn;
-    
     @FXML
     private TableColumn<DataBaseDetails, String> materialVendorColumn;
-    
     @FXML
     private TableColumn<DataBaseDetails, String> materialDateColumn;
-    
     @FXML
     private TableColumn<DataBaseDetails, String> materialIDColumn;
-    
-    ObservableList<DataBaseDetails> data;
-    
     @FXML
     private TextField materialIDTextField;
-    
     @FXML
     private Button pickIDButton;
-    
     @FXML
     private Label materialToRemoveLabel;
-    
     @FXML
     private Label removeMaterialConfirmationLabel;
-    
     @FXML
     private Button removeMaterialButton;
-    
     @FXML
     private Button resetMaterialID;
-    
     @FXML
     private Button materialDisplaAllButton;
-    
     @FXML
     private TextField materialIDChangeField;
-    
     @FXML
     private Button pickMaterialToChangeButton;
-    
     @FXML
     private Button saveMaterialButton;
-    
     @FXML
     private TextField materialNameChangeField;
-    
     @FXML
     private TextField materialNetPriceChangeField;
-    
     @FXML
     private DatePicker materialDayOfPriceChangeField;
-    
     @FXML
     private ChoiceBox materialUnitChangeChoiceBox;
-    
     @FXML
     private ChoiceBox materialVATrateChangeChoiceBox;
-    
     @FXML
     private TextField materialSupplierChangeField;
-    
+////////////////////////////////////////////////////////////////////////////////    
     @Override
     public void initialize(URL location, ResourceBundle resources){
         
@@ -300,52 +254,31 @@ public class CostCenterPaneController implements Initializable {
                 materialUnitColumn, materialPriceColumn, materialVatColumn, 
                 materialVendorColumn, materialDateColumn);
     }
-///////////////////////Searching database by given ID number////////////////////    
+///////////////////////Searching material database by given ID number///////////
     @FXML
     private void pickMaterialIDFromDataBase(ActionEvent event){
         pickCostIDFromDataBase(materialIDTextField, dataBaseCenter.getSelectFromMaterialByID(), 
                 materialToRemoveLabel, removeMaterialButton, resetMaterialID, 
                 pickIDButton);
     }
-//////////////////////Reseting material ID text field///////////////////////////    
+//////////////////////Resetting material ID text field//////////////////////////
     @FXML
     private void resetMaterialIDTextFieldAction(ActionEvent event){
-        materialToRemoveLabel.setText("");
-        removeMaterialButton.setDisable(true);
-        pickIDButton.setDisable(false);
-        resetMaterialID.setDisable(true);
-        materialIDTextField.setDisable(false);
-        materialIDTextField.setText("");
+        resetCostIDTextFieldAction(materialToRemoveLabel, removeMaterialButton, 
+                pickIDButton, resetMaterialID, materialIDTextField);
     }
 ////////////////////Removing material from database/////////////////////////////    
     @FXML
     private void removeMaterialFromDataBaseAction(ActionEvent event) {
-        String materialID = materialIDTextField.getText();
-        String materialRemoved = "MATERIAL REMOVED CORRECTLY!";
-        removeDataConfirmationWindow = new RemoveDataConfirmationWindow();
-        removeDataConfirmationWindow.askingQuestion();
-        Optional<ButtonType> result = removeDataConfirmationWindow.getAlert().showAndWait();
-        if(result.get() == ButtonType.YES){
-        dataBaseCenter.makeConnection();
-        dataBaseCenter.getRemoveFromDataBase(dataBaseCenter.getRemoveFromMaterial(), materialID);
-        materialIDTextField.setText("");
-        materialToRemoveLabel.setText(materialRemoved);
-        materialIDTextField.setDisable(false);
-        pickIDButton.setDisable(false);
-        resetMaterialID.setDisable(true);
-        removeMaterialButton.setDisable(true);
-        }
-        else{
-        }
+        removeCostFromDataBaseAction(materialIDTextField, materialToRemoveLabel, 
+                pickIDButton, resetMaterialID, removeMaterialButton);
     }
 ////////////////////Displaing all materials from database///////////////////////    
     @FXML
     private void displayAllMaterialButton(){
-        final String fraze = "";
-        dataBaseCenter.makeConnection();
-           dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getSelectAllFromMaterials(), 
-                   fraze, materialDisplayTable, materialIDColumn, materialNameColumn, materialUnitColumn,
-                   materialPriceColumn, materialVatColumn, materialVendorColumn, materialDateColumn);
+        displayAllCostsButton(materialDisplayTable, materialIDColumn, materialNameColumn, 
+                materialUnitColumn, materialPriceColumn, materialVatColumn, 
+                materialVendorColumn, materialDateColumn);
     }
 ////////////////////////Going back to menu//////////////////////////////////////  
     @FXML
@@ -379,7 +312,45 @@ public class CostCenterPaneController implements Initializable {
         else{ 
         }
     }
-
+/////////////////////////Change material data///////////////////////////////////    
+    @FXML
+    private void saveMaterialDataOnAction(ActionEvent event) {
+        if(!materialIDChangeField.getText().trim().isEmpty() 
+                && !materialNetPriceChangeField.getText().trim().isEmpty() 
+                && !materialSupplierChangeField.getText().trim().isEmpty()){
+            
+            changeMaterialConfirmationWindow = new ChangeMaterialConfirmationWindow();
+            changeMaterialConfirmationWindow.askingQuestion(materialNameChangeField.getText(),
+                    materialNetPriceChangeField.getText(), 
+                    materialDayOfPriceChangeField.getValue().toString(),
+                    materialUnitChangeChoiceBox.getValue().toString(),
+                    materialVATrateChangeChoiceBox.getValue().toString(), 
+                    materialSupplierChangeField.getText());
+            Optional<ButtonType> result = changeMaterialConfirmationWindow.getAlert().showAndWait();
+            if (result.get() == ButtonType.YES) {
+                dataBaseCenter.makeConnection();
+                BigDecimal bigDecimal = new BigDecimal(materialNetPriceChangeField.getText());
+                dataBaseCenter.getSaveMaterialData(materialNameChangeField.getText(),
+                    materialUnitChangeChoiceBox.getValue().toString(), 
+                    bigDecimal, materialVATrateChangeChoiceBox.getValue().toString(), 
+                    materialSupplierChangeField.getText(), 
+                    Date.valueOf(materialDayOfPriceChangeField.getValue()), 
+                    Integer.parseInt(materialIDChangeField.getText()));
+                
+                materialIDChangeField.clear();
+                materialNameChangeField.clear();
+                materialNetPriceChangeField.clear();
+                materialSupplierChangeField.clear();
+                pickMaterialToChangeButton.setDisable(false);
+                saveMaterialButton.setDisable(true);
+            }
+            else{    
+            }
+        }
+        else{
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////
     public void setMainPaneController(MainPaneController mainPaneController) {
         this.mainPaneController = mainPaneController;
     }
@@ -460,43 +431,49 @@ public class CostCenterPaneController implements Initializable {
             label1.setText(warrning);
         }
     }
-/////////////////////////Change material data///////////////////////////////////    
-    @FXML
-    private void saveMaterialDataOnAction(ActionEvent event) {
-        if(!materialIDChangeField.getText().trim().isEmpty() 
-                && !materialNetPriceChangeField.getText().trim().isEmpty() 
-                && !materialSupplierChangeField.getText().trim().isEmpty()){
-            
-            changeMaterialConfirmationWindow = new ChangeMaterialConfirmationWindow();
-            changeMaterialConfirmationWindow.askingQuestion(materialNameChangeField.getText(),
-                    materialNetPriceChangeField.getText(), 
-                    materialDayOfPriceChangeField.getValue().toString(),
-                    materialUnitChangeChoiceBox.getValue().toString(),
-                    materialVATrateChangeChoiceBox.getValue().toString(), 
-                    materialSupplierChangeField.getText());
-            Optional<ButtonType> result = changeMaterialConfirmationWindow.getAlert().showAndWait();
-            if (result.get() == ButtonType.YES) {
-                dataBaseCenter.makeConnection();
-                BigDecimal bigDecimal = new BigDecimal(materialNetPriceChangeField.getText());
-                dataBaseCenter.getSaveMaterialData(materialNameChangeField.getText(),
-                    materialUnitChangeChoiceBox.getValue().toString(), 
-                    bigDecimal, materialVATrateChangeChoiceBox.getValue().toString(), 
-                    materialSupplierChangeField.getText(), 
-                    Date.valueOf(materialDayOfPriceChangeField.getValue()), 
-                    Integer.parseInt(materialIDChangeField.getText()));
-                
-                materialIDChangeField.clear();
-                materialNameChangeField.clear();
-                materialNetPriceChangeField.clear();
-                materialSupplierChangeField.clear();
-                pickMaterialToChangeButton.setDisable(false);
-                saveMaterialButton.setDisable(true);
-            }
-            else{
-                
-            }
+/////////////////////////Resed Cost ID TEMPLATE/////////////////////////////////
+    private void resetCostIDTextFieldAction(Label label, Button button1, 
+            Button button2, Button button3, TextField textField){
+        label.setText("");
+        button1.setDisable(true);
+        button2.setDisable(false);
+        button3.setDisable(true);
+        textField.setDisable(false);
+        textField.setText("");
+    }
+////////////////////////Remove cost from database TEMPLATE//////////////////////
+    private void removeCostFromDataBaseAction(TextField textField, Label label, 
+            Button button1, Button button2, Button button3){
+        String materialID = textField.getText();
+        String materialRemoved = "MATERIAL REMOVED CORRECTLY!";
+        removeDataConfirmationWindow = new RemoveDataConfirmationWindow();
+        removeDataConfirmationWindow.askingQuestion();
+        Optional<ButtonType> result = removeDataConfirmationWindow.getAlert().showAndWait();
+        if(result.get() == ButtonType.YES){
+        dataBaseCenter.makeConnection();
+        dataBaseCenter.getRemoveFromDataBase(dataBaseCenter.getRemoveFromMaterial(), materialID);
+        textField.setText("");
+        label.setText(materialRemoved);
+        textField.setDisable(false);
+        button1.setDisable(false);
+        button2.setDisable(true);
+        button3.setDisable(true);
         }
         else{
         }
+    }
+//////////////////////Display all costs TEMPLATE////////////////////////////////
+    private void displayAllCostsButton(TableView<DataBaseDetails> tableView, TableColumn<DataBaseDetails, 
+            String> tableColumn1, TableColumn<DataBaseDetails, String> tableColumn2, 
+            TableColumn<DataBaseDetails, String> tableColumn3, 
+            TableColumn<DataBaseDetails, String> tableColumn4, 
+            TableColumn<DataBaseDetails, String> tableColumn5, 
+            TableColumn<DataBaseDetails, String> tableColumn6, 
+            TableColumn<DataBaseDetails, String> tableColumn7){
+        final String fraze = "";
+        dataBaseCenter.makeConnection();
+           dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getSelectAllFromMaterials(), 
+                   fraze, tableView, tableColumn1, tableColumn2, tableColumn3,
+                   tableColumn4, tableColumn5, tableColumn6, tableColumn7);
     }
 }

@@ -327,8 +327,8 @@
                                                           <TableColumn fx:id="materialNameColumn" editable="false" maxWidth="215.0" minWidth="215.0" prefWidth="215.0" resizable="false" text="NAME" />
                                                           <TableColumn fx:id="materialUnitColumn" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="UNIT" />
                                                             <TableColumn fx:id="materialPriceColumn" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="PRICE NET" />
-                                                            <TableColumn fx:id="materialVatColumn" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="VAT RATE" />
-                                                            <TableColumn fx:id="materialVendorColumn" editable="false" maxWidth="215.0" minWidth="215.0" prefWidth="215.0" resizable="false" text="SUPPLIER" />
+                                                            <TableColumn fx:id="materialVatColumn" editable="false" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="VAT RATE" />
+                                                            <TableColumn fx:id="materialVendorColumn" editable="false" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" resizable="false" text="SUPPLIER" />
                                                             <TableColumn fx:id="materialDateColumn" editable="false" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" resizable="false" text="PRICE DATE" />
                                                         </columns>
                                                          <columnResizePolicy>
