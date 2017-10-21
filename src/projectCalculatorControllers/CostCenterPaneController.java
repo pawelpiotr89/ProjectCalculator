@@ -280,6 +280,22 @@ public class CostCenterPaneController implements Initializable {
                 materialUnitColumn, materialPriceColumn, materialVatColumn, 
                 materialVendorColumn, materialDateColumn);
     }
+///////////////Picking material from database to perform change action//////////    
+    @FXML
+    private void pickMaterialIDToChangeOnAction(ActionEvent event){
+        pickCostIDToChangeOnAction(materialIDChangeField, materialNameChangeField, 
+                materialNetPriceChangeField, materialDayOfPriceChangeField, 
+                materialUnitChangeChoiceBox, materialVATrateChangeChoiceBox, 
+                materialSupplierChangeField, saveMaterialButton, pickMaterialToChangeButton);
+    }
+/////////////////////////Change material data///////////////////////////////////    
+    @FXML
+    private void saveMaterialDataOnAction(ActionEvent event) {
+        saveCostDataOnAction(materialIDChangeField, materialNetPriceChangeField, 
+                materialSupplierChangeField, materialNameChangeField, materialDayOfPriceChangeField, 
+                materialUnitChangeChoiceBox, materialVATrateChangeChoiceBox, 
+                pickMaterialToChangeButton, saveMaterialButton);
+    }
 ////////////////////////Going back to menu//////////////////////////////////////  
     @FXML
     private void backToMenu(ActionEvent event){
@@ -294,61 +310,6 @@ public class CostCenterPaneController implements Initializable {
         MenuPaneController menuPaneController = loader.getController();
         menuPaneController.setMainPaneController(mainPaneController);
         mainPaneController.setPane(pane);
-    }
-///////////////Picking material from database to perform change action//////////    
-    @FXML
-    private void pickMaterialIDToChangeOnAction(ActionEvent event){
-        if(!materialIDChangeField.getText().trim().isEmpty()){
-            String materialID = materialIDChangeField.getText();
-            dataBaseCenter.makeConnection();
-            dataBaseCenter.getDataFromMaterialToChange(dataBaseCenter.getSelectFromMaterialByID(), 
-                    materialID, materialIDChangeField, materialNameChangeField, 
-                    materialNetPriceChangeField, materialDayOfPriceChangeField, 
-                    materialUnitChangeChoiceBox, materialVATrateChangeChoiceBox, 
-                    materialSupplierChangeField, saveMaterialButton, 
-                    dataBaseCenter.getUnitOfMeasureList(), dataBaseCenter.getVatRateList());
-            pickMaterialToChangeButton.setDisable(true);
-        }
-        else{ 
-        }
-    }
-/////////////////////////Change material data///////////////////////////////////    
-    @FXML
-    private void saveMaterialDataOnAction(ActionEvent event) {
-        if(!materialIDChangeField.getText().trim().isEmpty() 
-                && !materialNetPriceChangeField.getText().trim().isEmpty() 
-                && !materialSupplierChangeField.getText().trim().isEmpty()){
-            
-            changeMaterialConfirmationWindow = new ChangeMaterialConfirmationWindow();
-            changeMaterialConfirmationWindow.askingQuestion(materialNameChangeField.getText(),
-                    materialNetPriceChangeField.getText(), 
-                    materialDayOfPriceChangeField.getValue().toString(),
-                    materialUnitChangeChoiceBox.getValue().toString(),
-                    materialVATrateChangeChoiceBox.getValue().toString(), 
-                    materialSupplierChangeField.getText());
-            Optional<ButtonType> result = changeMaterialConfirmationWindow.getAlert().showAndWait();
-            if (result.get() == ButtonType.YES) {
-                dataBaseCenter.makeConnection();
-                BigDecimal bigDecimal = new BigDecimal(materialNetPriceChangeField.getText());
-                dataBaseCenter.getSaveMaterialData(materialNameChangeField.getText(),
-                    materialUnitChangeChoiceBox.getValue().toString(), 
-                    bigDecimal, materialVATrateChangeChoiceBox.getValue().toString(), 
-                    materialSupplierChangeField.getText(), 
-                    Date.valueOf(materialDayOfPriceChangeField.getValue()), 
-                    Integer.parseInt(materialIDChangeField.getText()));
-                
-                materialIDChangeField.clear();
-                materialNameChangeField.clear();
-                materialNetPriceChangeField.clear();
-                materialSupplierChangeField.clear();
-                pickMaterialToChangeButton.setDisable(false);
-                saveMaterialButton.setDisable(true);
-            }
-            else{    
-            }
-        }
-        else{
-        }
     }
 ////////////////////////////////////////////////////////////////////////////////
     public void setMainPaneController(MainPaneController mainPaneController) {
@@ -475,5 +436,58 @@ public class CostCenterPaneController implements Initializable {
            dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getSelectAllFromMaterials(), 
                    fraze, tableView, tableColumn1, tableColumn2, tableColumn3,
                    tableColumn4, tableColumn5, tableColumn6, tableColumn7);
+    }
+//////////Picking costs from database to perform change action TEMPLATE/////////
+    private void pickCostIDToChangeOnAction(TextField textField1, TextField textField2, 
+            TextField textField3, DatePicker datePicker, ChoiceBox choiceBox1, 
+            ChoiceBox choiceBox2, TextField textField4, Button button1, Button button2){
+    if(!textField1.getText().trim().isEmpty()){
+            String materialID = textField1.getText();
+            dataBaseCenter.makeConnection();
+            dataBaseCenter.getDataFromMaterialToChange(dataBaseCenter.getSelectFromMaterialByID(), 
+                    materialID, textField1, textField2, textField3, datePicker, choiceBox1, choiceBox2, 
+                    textField4, button1, dataBaseCenter.getUnitOfMeasureList(), dataBaseCenter.getVatRateList());
+            button2.setDisable(true);
+        }
+        else{ 
+        }
+    }
+////////////////////////Change cost data TEMPLATE///////////////////////////////  
+    private void saveCostDataOnAction(TextField textField1, TextField textField2, 
+            TextField textField3, TextField textField4, DatePicker datePicker1, 
+            ChoiceBox choiceBox1, ChoiceBox choiceBox2, Button button1, Button button2){
+        if(!textField1.getText().trim().isEmpty() 
+                && !textField2.getText().trim().isEmpty() 
+                && !textField3.getText().trim().isEmpty()){
+            changeMaterialConfirmationWindow = new ChangeMaterialConfirmationWindow();
+            changeMaterialConfirmationWindow.askingQuestion(textField4.getText(),
+                    textField2.getText(), 
+                    datePicker1.getValue().toString(),
+                    choiceBox1.getValue().toString(),
+                    choiceBox2.getValue().toString(), 
+                    textField3.getText());
+            Optional<ButtonType> result = changeMaterialConfirmationWindow.getAlert().showAndWait();
+            if (result.get() == ButtonType.YES) {
+                dataBaseCenter.makeConnection();
+                BigDecimal bigDecimal = new BigDecimal(textField2.getText());
+                dataBaseCenter.getSaveMaterialData(textField4.getText(),
+                    choiceBox1.getValue().toString(), 
+                    bigDecimal, choiceBox2.getValue().toString(), 
+                    textField3.getText(), 
+                    Date.valueOf(datePicker1.getValue()), 
+                    Integer.parseInt(textField1.getText()));
+                
+                textField1.clear();
+                textField4.clear();
+                textField2.clear();
+                textField3.clear();
+                button1.setDisable(false);
+                button2.setDisable(true);
+            }
+            else{    
+            }
+        }
+        else{
+        }
     }
 }
