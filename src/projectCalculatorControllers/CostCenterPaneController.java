@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
@@ -343,11 +344,13 @@ public class CostCenterPaneController implements Initializable {
             if (result.get() == ButtonType.YES) {
                 double price = Double.parseDouble(costNetPriceTF.getText());
                 Date date = Date.valueOf(costDatePicker.getValue());
+                SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
+                String newDate = DATE_FORMAT.format(date);
                 String newCost = insertNewCost + costNameTF.getText() + "', '" + 
                         costUnitOfMeasureTF.getValue().toString() + "', " + 
                         price + ", '" + costVatRate.getValue().toString() + "', '" + 
                         costSupplierTF.getText() + "', '" + 
-                        date + "')";
+                        newDate + "')";
                 dataBaseCenter.makeConnection();
                 dataBaseCenter.addNewCost(newCost);
                 costNetPriceTF.clear();
@@ -446,8 +449,7 @@ public class CostCenterPaneController implements Initializable {
             dataBaseCenter.makeConnection();
             dataBaseCenter.getDataFromMaterialToChange(dataBaseCenter.getSelectFromMaterialByID(), 
                     materialID, textField1, textField2, textField3, datePicker, choiceBox1, choiceBox2, 
-                    textField4, button1, dataBaseCenter.getUnitOfMeasureList(), dataBaseCenter.getVatRateList());
-            button2.setDisable(true);
+                    textField4, button1, button2, dataBaseCenter.getUnitOfMeasureList(), dataBaseCenter.getVatRateList());
         }
         else{ 
         }
@@ -476,13 +478,13 @@ public class CostCenterPaneController implements Initializable {
                     textField3.getText(), 
                     Date.valueOf(datePicker1.getValue()), 
                     Integer.parseInt(textField1.getText()));
-                
                 textField1.clear();
                 textField4.clear();
                 textField2.clear();
                 textField3.clear();
                 button1.setDisable(false);
                 button2.setDisable(true);
+                textField1.setDisable(false);
             }
             else{    
             }

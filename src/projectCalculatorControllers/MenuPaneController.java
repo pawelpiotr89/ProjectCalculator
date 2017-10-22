@@ -28,6 +28,19 @@ public class MenuPaneController {
         costCenterPaneController.setMainPaneController(mainPaneController);
         mainPaneController.setPane(pane);
     }
+    
+    @FXML
+    private void enterCalculationsCenter() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorFXML/FXMLCalculationsPane.fxml"));
+        Pane pane = null;
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+        }
+        CalculationsPaneController calculationsPaneController = loader.getController();
+        calculationsPaneController.setMainPaneController(mainPaneController);
+        mainPaneController.setPane(pane);
+    }
 
     public void programExit() {
         exitAlertWindow = new ExitAlertWindow();

@@ -254,7 +254,7 @@ public class DataBaseConnector {
     public void dataFromMaterialToChange(String formula, String lookingFraze, 
             TextField iD, TextField materialName, TextField netPrice, 
             DatePicker dayOfPrice, ChoiceBox unitOfMeasure, ChoiceBox vatRate, 
-            TextField supplier, Button save, ObservableList listUnit, ObservableList listRate){
+            TextField supplier, Button save, Button pick, ObservableList listUnit, ObservableList listRate){
       
         try {
             String sentence = formula + lookingFraze;
@@ -263,6 +263,7 @@ public class DataBaseConnector {
             if(result.next()){
             dayOfPrice.setDisable(false);
             save.setDisable(false);
+            pick.setDisable(true);
             iD.setDisable(true);
             
             String name = result.getString(1);

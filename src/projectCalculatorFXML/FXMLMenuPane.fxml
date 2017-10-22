@@ -33,26 +33,31 @@
                 </Pane>
                 <Pane maxWidth="744.0" minWidth="744.0" prefHeight="1240.0" prefWidth="744.0">
                     <children>
-                        <Button layoutX="62.0" layoutY="82.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="CALCULATIONS" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button fx:id="calculationsMenuButton" layoutX="62.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCalculationsCenter" prefHeight="95.0" prefWidth="620.0" text="CALCULATIONS" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>
                         </Button>
-                        <Button fx:id="costCenterMenuButton" layoutX="62.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCostCenter" prefHeight="95.0" prefWidth="620.0" text="COSTS CENTER" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button fx:id="costCenterMenuButton" layoutX="62.0" layoutY="332.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCostCenter" prefHeight="95.0" prefWidth="620.0" text="COSTS CENTER" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>
                         </Button>
-                        <Button fx:id="exitButton" layoutX="62.0" layoutY="579.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#programExit" prefHeight="95.0" prefWidth="620.0" text="EXIT" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button fx:id="exitButton" layoutX="62.0" layoutY="610.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#programExit" prefHeight="95.0" prefWidth="620.0" text="EXIT" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>
                         </Button>
-                        <Button layoutX="62.0" layoutY="409.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="OPTIONS" textFill="#5e5e5e">
+                        <Button layoutX="62.0" layoutY="469.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="OPTIONS" textFill="#5e5e5e">
                             <font>
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>
                         </Button>
+                  <Button layoutX="62.0" layoutY="191.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="PROJECTS" textAlignment="CENTER" textFill="#5e5e5e">
+                     <font>
+                        <Font name="Verdana Bold" size="50.0" />
+                     </font>
+                  </Button>
                     </children>
                 </Pane>
             </items>

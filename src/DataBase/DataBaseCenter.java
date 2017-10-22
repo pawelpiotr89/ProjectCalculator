@@ -128,10 +128,10 @@ public class DataBaseCenter {
     public void getDataFromMaterialToChange(String formula, String lookingFraze, 
             TextField iD, TextField materialName, TextField netPrice, 
             DatePicker dayOfPrice, ChoiceBox unitOfMeasure, ChoiceBox vatRate, 
-            TextField supplier, Button save, ObservableList listUnit, ObservableList listRate){
+            TextField supplier, Button save, Button pick, ObservableList listUnit, ObservableList listRate){
         dataBaseConnector.dataFromMaterialToChange(formula, lookingFraze, iD, 
                 materialName, netPrice, dayOfPrice, unitOfMeasure, vatRate, supplier, 
-                save, listUnit, listRate);
+                save, pick, listUnit, listRate);
     }
     
     public void getSaveMaterialData(String name, String unit, BigDecimal price, String rate,
