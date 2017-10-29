@@ -65,12 +65,10 @@ public class DataBaseCenter {
     }
     
     public ObservableList getVatRateList(){
-        
         return vateRatesList;
     }
     
     public ObservableList getUnitOfMeasureList(){
-        
         return unitOfMeasureList;
     }
     

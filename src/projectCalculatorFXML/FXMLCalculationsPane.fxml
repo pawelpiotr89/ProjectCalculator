@@ -62,7 +62,7 @@
                                                             <Font name="Verdana Bold Italic" size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="70.0" maxWidth="620.0" minHeight="70.0" minWidth="620.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="620.0" text="START CALCULATION" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                                      <Button fx:id="startCalculationButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="70.0" maxWidth="620.0" minHeight="70.0" minWidth="620.0" mnemonicParsing="false" onAction="#startCalculationOnAction" prefHeight="70.0" prefWidth="620.0" text="START CALCULATION" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
                                                          <font>
                                                             <Font name="Verdana Bold" size="20.0" />
                                                          </font>
@@ -72,10 +72,16 @@
                                                             <Font name="Verdana Bold" size="20.0" />
                                                          </font>
                                                       </Label>
-                                                      <ChoiceBox maxWidth="310.0" minWidth="310.0" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                      <ChoiceBox maxWidth="310.0" minWidth="310.0" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <ChoiceBox fx:id="projectTypeChoiceBox" maxWidth="310.0" minWidth="310.0" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <ChoiceBox fx:id="companyAsChoiceBox" maxWidth="310.0" minWidth="310.0" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                       <Label maxWidth="310.0" minWidth="310.0" prefWidth="310.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                       <Label maxWidth="310.0" minWidth="310.0" prefWidth="310.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="310.0" minWidth="310.0" prefWidth="310.0" text="CUSTOMER: " textAlignment="CENTER" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="Verdana Bold Italic" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ChoiceBox fx:id="customerChoiceBox" maxWidth="310.0" minWidth="310.0" prefWidth="310.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                    </children>
                                                 </GridPane>
                                              </children></AnchorPane>

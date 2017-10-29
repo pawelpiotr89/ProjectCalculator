@@ -46,7 +46,6 @@ public class ProjectCalculator extends Application {
         mainStage.setResizable(false);
         mainStage.setScene(mainScene);
         mainStage.show();
-
     }
 
     private void setPrimaryStage(Stage stage) {
