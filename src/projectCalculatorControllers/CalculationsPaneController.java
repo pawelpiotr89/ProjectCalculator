@@ -10,10 +10,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.Pane;
-import projectCalculatorMain.CalculationWindow;
 import projectCalculatorMain.ExitAlertWindow;
-
 /**
  *
  * @author Roxven89
@@ -23,45 +22,45 @@ public class CalculationsPaneController implements Initializable {
     private ExitAlertWindow exitAlertWindow;
     private MainPaneController mainPaneController;
     private DataBaseCalculations dataBaseCalculations;
-    private CalculationWindow calculationWindow;
+    private SingleCalculationPaneController singleCalculationPaneController;
     
     @FXML
     private ChoiceBox projectTypeChoiceBox;
-    
     @FXML
     private ChoiceBox companyAsChoiceBox;
-    
     @FXML
     private Button startCalculationButton;
+    @FXML
+    private Pane calculationsPane;
+    @FXML
+    private SplitPane costCenterSplitPane;
+    @FXML
+    private Button backFromCostCenterToMenuButton;
+    @FXML
+    private ChoiceBox<?> customerChoiceBox;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
-        dataBaseCalculations = new DataBaseCalculations();
+        startCalculationButton.setDisable(SingleCalculationPaneController.getStartCalculationButtonState());
         
+        dataBaseCalculations = new DataBaseCalculations();
+       
         projectTypeChoiceBox.setItems(dataBaseCalculations.getProjectsList());
         projectTypeChoiceBox.getSelectionModel().selectFirst();
         
         companyAsChoiceBox.setItems(dataBaseCalculations.getCompanyAs());
         companyAsChoiceBox.getSelectionModel().selectFirst();
         
+        backFromCostCenterToMenuButton.setDisable(false);   
     }
     
     @FXML
     public void startCalculationOnAction() throws IOException{
-        calculationWindow = new CalculationWindow(startCalculationButton);
-        startCalculationButton.setDisable(true);
+        singleCalculationPaneController = new SingleCalculationPaneController(startCalculationButton);
+        singleCalculationPaneController.setStartCalculationButtonState(true);
+        startCalculationButton.setDisable(SingleCalculationPaneController.getStartCalculationButtonState());
     }
-
-    public void setMainPaneController(MainPaneController mainPaneController) {
-        this.mainPaneController = mainPaneController;
-    }
-    
-    public void programExit() {
-        exitAlertWindow = new ExitAlertWindow();
-        exitAlertWindow.askingQuestion();
-    }
-    
     @FXML
     private void backToMenu(ActionEvent event){
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource
@@ -75,5 +74,14 @@ public class CalculationsPaneController implements Initializable {
         MenuPaneController menuPaneController = loader.getController();
         menuPaneController.setMainPaneController(mainPaneController);
         mainPaneController.setPane(pane);
+    }
+    
+    public void setMainPaneController(MainPaneController mainPaneController) {
+        this.mainPaneController = mainPaneController;
+    }
+    
+    public void programExit() {
+        exitAlertWindow = new ExitAlertWindow();
+        exitAlertWindow.askingQuestion();
     }
 }
