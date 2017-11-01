@@ -50,7 +50,7 @@ public class CostCenterPaneController implements Initializable {
     @FXML
     private TitledPane materialCostTitledPane;
     @FXML
-    private TitledPane subconstructorsCostTitledPane;
+    private TitledPane subcontractorsCostTitledPane;
     @FXML
     private TitledPane labourCostTitledPane;
     @FXML

@@ -443,14 +443,14 @@
                                         </Accordion>
                                     </content>
                                 </TitledPane>
-                                <TitledPane fx:id="subconstructorsCostTitledPane" onMouseReleased="#onMouseReleased" text="SUBCONSTRUCTOR COSTS">
+                                <TitledPane fx:id="subconstructorsCostTitledPane" onMouseReleased="#onMouseReleased" text="SUBCONTRACTOR COSTS">
                                     <font>
                                         <Font name="Verdana Bold" size="20.0" />
                                     </font>
                            <content>
                               <Accordion>
                                 <panes>
-                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="ADD NEW SUBCONSTRUCTOR COST">
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="ADD NEW SUBCONTRACTOR COST">
                                        <font>
                                           <Font name="Verdana Bold" size="14.0" />
                                        </font>
@@ -458,7 +458,7 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                                        </content>
                                     </TitledPane>
-                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="CHANGE SUBCOSTRUCTOR COST">
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="CHANGE SUBCONTRACTOR COST">
                                        <font>
                                           <Font name="Verdana Bold" size="14.0" />
                                        </font>
@@ -466,7 +466,7 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                                        </content>
                                     </TitledPane>
-                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="DISPLAY SUBCONSTRUCTOR COST">
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="DISPLAY SUBCONTRACTOR COST">
                                        <font>
                                           <Font name="Verdana Bold" size="14.0" />
                                        </font>
@@ -474,7 +474,7 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                                        </content>
                                     </TitledPane>
-                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="REMOVE SUBCONSTRUCTOR COST">
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="REMOVE SUBCONTRACTOR COST">
                                        <font>
                                           <Font name="Verdana Bold" size="14.0" />
                                        </font>

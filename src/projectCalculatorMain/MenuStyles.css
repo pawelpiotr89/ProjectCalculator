@@ -183,3 +183,18 @@
 .table-view .column-header .label {
     -fx-text-fill: #FFFFFF;
 }
+
+.tab-pane > .tab-header-area > .headers-region > .tab{
+    -fx-font: 18 verdana;
+    -fx-text-fill: #5F5F5F;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: #8FC7FF;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-border-color: #FFFFFF;
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0 1 1 0, 1 2 1 1, 2 3 1 2;
+    -fx-background-radius: 3 3 0 0, 2 2 0 0, 1 1 0 0;
+}
