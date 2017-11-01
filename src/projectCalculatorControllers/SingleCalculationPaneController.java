@@ -1,61 +1,33 @@
 package projectCalculatorControllers;
 
-import java.io.IOException;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Cursor;
-import javafx.scene.Scene;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
-import projectCalculatorMain.ProjectCalculator;
+import javafx.scene.control.SplitPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 /**
+ * FXML Controller class
  *
  * @author Roxven89
  */
-public class SingleCalculationPaneController {
+public class SingleCalculationPaneController implements Initializable {
     
-    private final Stage calculationStage;
-    private final Scene calculationScene;
-    private final Pane calculationPane;
-    private final Cursor calculationCursor;
-    private static boolean startCalculationButtonState;
+    private GridPane costsGridPane;
     
-    public SingleCalculationPaneController(Button button) throws IOException{
-        
-        calculationStage = new Stage();
-        calculationCursor = Cursor.CROSSHAIR;
-        
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(ProjectCalculator.class.getResource("/projectCalculatorFXML/calculationPaneFXML.fxml"));
-        calculationPane = loader.load();
-        
-        calculationScene = new Scene(calculationPane);
-        calculationScene.setCursor(calculationCursor);
+    @FXML
+    private AnchorPane costsAnchorPane;
+    @FXML
+    private Button saveCalculationButton;
+    @FXML
+    private SplitPane calculationSplitPane;
 
-        calculationStage.setOnCloseRequest((WindowEvent e) -> {
-            calculationStage.close();
-            setStartCalculationButtonState(false);
-            button.setDisable(getStartCalculationButtonState());
-            e.consume();
-        });
-
-        calculationStage.setTitle("PROJECT_CALCULATOR v. 1.0 - Calculation window");
-        calculationStage.initStyle(StageStyle.DECORATED);
-        calculationStage.setResizable(true);
-        calculationStage.setMaximized(true);
-        calculationStage.setMinHeight(900);
-        calculationStage.setMinWidth(1440);
-        calculationStage.setScene(calculationScene);
-        calculationStage.show();
-    }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
         
-    public static void setStartCalculationButtonState(boolean buttonState){
-        startCalculationButtonState = buttonState;
-    }
-    
-    public static boolean getStartCalculationButtonState(){
-        return startCalculationButtonState;
-    }
+        costsGridPane = new GridPane();
+        costsAnchorPane.getChildren().add(costsGridPane);
+    }    
 }

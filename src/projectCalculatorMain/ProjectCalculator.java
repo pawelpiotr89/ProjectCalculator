@@ -8,7 +8,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import projectCalculatorControllers.MainPaneController;
-
 /**
  *
  * @author Roxven89
@@ -55,7 +54,6 @@ public class ProjectCalculator extends Application {
     static public Stage getPrimaryStage() {
         return mainStage;
     }
-
     /**
      * @param args the command line arguments
      */

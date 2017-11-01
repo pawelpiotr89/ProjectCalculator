@@ -1,5 +1,6 @@
 package projectCalculatorControllers;
 
+import projectCalculatorMain.SingleCalculationStage;
 import DataBase.DataBaseCalculations;
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +23,7 @@ public class CalculationsPaneController implements Initializable {
     private ExitAlertWindow exitAlertWindow;
     private MainPaneController mainPaneController;
     private DataBaseCalculations dataBaseCalculations;
-    private SingleCalculationPaneController singleCalculationPaneController;
+    private SingleCalculationStage singleCalculationStage;
     
     @FXML
     private ChoiceBox projectTypeChoiceBox;
@@ -42,7 +43,7 @@ public class CalculationsPaneController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
-        startCalculationButton.setDisable(SingleCalculationPaneController.getStartCalculationButtonState());
+        startCalculationButton.setDisable(SingleCalculationStage.getStartCalculationButtonState());
         
         dataBaseCalculations = new DataBaseCalculations();
        
@@ -57,9 +58,9 @@ public class CalculationsPaneController implements Initializable {
     
     @FXML
     public void startCalculationOnAction() throws IOException{
-        singleCalculationPaneController = new SingleCalculationPaneController(startCalculationButton);
-        singleCalculationPaneController.setStartCalculationButtonState(true);
-        startCalculationButton.setDisable(SingleCalculationPaneController.getStartCalculationButtonState());
+        singleCalculationStage = new SingleCalculationStage(startCalculationButton);
+        SingleCalculationStage.setStartCalculationButtonState(true);
+        startCalculationButton.setDisable(SingleCalculationStage.getStartCalculationButtonState());
     }
     @FXML
     private void backToMenu(ActionEvent event){
