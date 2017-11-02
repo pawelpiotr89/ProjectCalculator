@@ -14,17 +14,18 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.Pane;
 import projectCalculatorMain.ExitAlertWindow;
+
 /**
  *
  * @author Roxven89
  */
 public class CalculationsPaneController implements Initializable {
-    
+
     private ExitAlertWindow exitAlertWindow;
     private MainPaneController mainPaneController;
     private DataBaseCalculations dataBaseCalculations;
     private SingleCalculationStage singleCalculationStage;
-    
+
     @FXML
     private ChoiceBox projectTypeChoiceBox;
     @FXML
@@ -39,33 +40,33 @@ public class CalculationsPaneController implements Initializable {
     private Button backFromCostCenterToMenuButton;
     @FXML
     private ChoiceBox<?> customerChoiceBox;
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
         startCalculationButton.setDisable(SingleCalculationStage.getStartCalculationButtonState());
-        
+
         dataBaseCalculations = new DataBaseCalculations();
-       
+
         projectTypeChoiceBox.setItems(dataBaseCalculations.getProjectsList());
         projectTypeChoiceBox.getSelectionModel().selectFirst();
-        
+
         companyAsChoiceBox.setItems(dataBaseCalculations.getCompanyAs());
         companyAsChoiceBox.getSelectionModel().selectFirst();
-        
-        backFromCostCenterToMenuButton.setDisable(false);   
+
+        backFromCostCenterToMenuButton.setDisable(false);
     }
-    
+
     @FXML
-    public void startCalculationOnAction() throws IOException{
+    public void startCalculationOnAction() throws IOException {
         singleCalculationStage = new SingleCalculationStage(startCalculationButton);
         SingleCalculationStage.setStartCalculationButtonState(true);
         startCalculationButton.setDisable(SingleCalculationStage.getStartCalculationButtonState());
     }
+
     @FXML
-    private void backToMenu(ActionEvent event){
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource
-        ("/projectCalculatorFXML/FXMLMenuPane.fxml"));
+    private void backToMenu(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorFXML/FXMLMenuPane.fxml"));
         Pane pane = null;
         try {
             pane = loader.load();
@@ -76,11 +77,11 @@ public class CalculationsPaneController implements Initializable {
         menuPaneController.setMainPaneController(mainPaneController);
         mainPaneController.setPane(pane);
     }
-    
+
     public void setMainPaneController(MainPaneController mainPaneController) {
         this.mainPaneController = mainPaneController;
     }
-    
+
     public void programExit() {
         exitAlertWindow = new ExitAlertWindow();
         exitAlertWindow.askingQuestion();

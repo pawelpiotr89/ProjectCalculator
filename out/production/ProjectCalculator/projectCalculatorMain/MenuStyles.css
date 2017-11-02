@@ -60,8 +60,8 @@
 }
 
 .date-picker{
-   -fx-text-fill: #5F5F5F;
-   -fx-font: 14 verdana;
+    -fx-text-fill: #5F5F5F;
+    -fx-font: 14 verdana;
 }
 
 .date-picker-popup > .month-year-pane{

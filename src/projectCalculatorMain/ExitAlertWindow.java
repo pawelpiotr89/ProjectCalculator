@@ -26,8 +26,8 @@ public class ExitAlertWindow {
         } else {
         }
     }
-    
-    public void subAskingQuestion(Stage stage){
+
+    public void subAskingQuestion(Stage stage) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "", ButtonType.YES, ButtonType.NO);
         alert.setHeaderText(subquestion);
         alert.setTitle("");

@@ -8,7 +8,7 @@ import javafx.beans.property.StringProperty;
  * @author Roxven89
  */
 public class DataBaseDetails {
-    
+
     private final StringProperty id;
     private final StringProperty name;
     private final StringProperty price;
@@ -16,100 +16,100 @@ public class DataBaseDetails {
     private final StringProperty vat;
     private final StringProperty vendor;
     private final StringProperty date;
-    
-    public DataBaseDetails(String id, String name, String unit, String price, String vat, 
-            String vendor, String date){
-        
+
+    public DataBaseDetails(String id, String name, String unit, String price, String vat,
+            String vendor, String date) {
+
         this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
         this.price = new SimpleStringProperty(price);
         this.unit = new SimpleStringProperty(unit);
         this.vat = new SimpleStringProperty(vat);
         this.vendor = new SimpleStringProperty(vendor);
-        this.date = new SimpleStringProperty(date);    
+        this.date = new SimpleStringProperty(date);
     }
-    
-    public String getId(){
+
+    public String getId() {
         return id.get();
     }
-    
-    public String getName(){
+
+    public String getName() {
         return name.get();
     }
-    
-    public String getPrice(){
+
+    public String getPrice() {
         return price.get();
     }
-    
-    public String getUnit(){
+
+    public String getUnit() {
         return unit.get();
     }
-    
-    public String getVat(){
+
+    public String getVat() {
         return vat.get();
     }
-    
-    public String getVendor(){
+
+    public String getVendor() {
         return vendor.get();
     }
-    
-    public String getDate(){
+
+    public String getDate() {
         return date.get();
     }
-    
-    public void setId(String vale){
+
+    public void setId(String vale) {
         id.set(vale);
     }
-    
-    public void setName(String vale){
+
+    public void setName(String vale) {
         name.set(vale);
     }
-    
-    public void setPrice(String vale){
+
+    public void setPrice(String vale) {
         price.set(vale);
     }
-    
-    public void setUnit(String vale){
+
+    public void setUnit(String vale) {
         unit.set(vale);
     }
-    
-    public void setVat(String vale){
+
+    public void setVat(String vale) {
         vat.set(vale);
     }
-    
-    public void setVendor(String vale){
+
+    public void setVendor(String vale) {
         vendor.set(vale);
     }
-    
-    public void setDate(String vale){
+
+    public void setDate(String vale) {
         date.set(vale);
     }
-    
-    public StringProperty nameId(){
+
+    public StringProperty nameId() {
         return id;
     }
-    
-    public StringProperty nameProperty(){
+
+    public StringProperty nameProperty() {
         return name;
     }
-    
-    public StringProperty namePrice(){
+
+    public StringProperty namePrice() {
         return price;
     }
-    
-    public StringProperty nameUnit(){
+
+    public StringProperty nameUnit() {
         return unit;
     }
-    
-    public StringProperty nameVat(){
+
+    public StringProperty nameVat() {
         return vat;
     }
-    
-    public StringProperty nameVendor(){
+
+    public StringProperty nameVendor() {
         return vendor;
     }
-    
-    public StringProperty nameDate(){
+
+    public StringProperty nameDate() {
         return date;
     }
 }

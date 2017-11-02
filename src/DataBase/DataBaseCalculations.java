@@ -13,7 +13,7 @@ import javafx.collections.ObservableList;
  * @author Roxven89
  */
 public class DataBaseCalculations {
-    
+
     private final String construction = "Construction";
     private final String maintenance = "Maintenance";
     private final String temporarySignalization = "Temporary Signalization";
@@ -22,25 +22,25 @@ public class DataBaseCalculations {
     private final String other = "Other";
     private final String generalContractor = "General Contractor";
     private final String subContractor = "Subcontractor";
-    
+
     //private final
     private final ObservableList projectsList;
     private final ObservableList companyAs;
-    
-    public DataBaseCalculations(){
-          
-        projectsList = FXCollections.observableArrayList(construction, maintenance, 
-                        temporarySignalization, material, signalizationController, 
-                        other);  
-        
+
+    public DataBaseCalculations() {
+
+        projectsList = FXCollections.observableArrayList(construction, maintenance,
+                temporarySignalization, material, signalizationController,
+                other);
+
         companyAs = FXCollections.observableArrayList(generalContractor, subContractor);
     }
-    
-    public ObservableList getProjectsList(){
+
+    public ObservableList getProjectsList() {
         return projectsList;
     }
-    
-    public ObservableList getCompanyAs(){
+
+    public ObservableList getCompanyAs() {
         return companyAs;
     }
 }

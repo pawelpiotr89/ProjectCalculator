@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
  * @author Roxven89
  */
 public class DataBaseCenter {
-    
+
     private final String zeroRate = "0%";
     private final String fiveRate = "5%";
     private final String eightRate = "8%";
@@ -32,108 +32,108 @@ public class DataBaseCenter {
     private final String ton = "t (ton)";
     private final String piece = "pc (piece)";
     private final String pair = "par (pair)";
-    
+
     private final String insertNewMaterial = "INSERT INTO MATERIALS "
             + "(MATERIAL_NAME, MATERIAL_UNIT, MATERIAL_PRICE, "
             + "MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY)"
             + " VALUES('";
-    
+
     private final String selectFromMaterial = "SELECT ID, MATERIAL_NAME, MATERIAL_UNIT,"
             + " MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, MATERIAL_DATE_OF_ENTRY"
             + " FROM MATERIALS WHERE UPPER(MATERIAL_NAME) LIKE UPPER";
-    
+
     private final String selectFromMaterialByID = "SELECT MATERIAL_NAME, MATERIAL_UNIT, "
             + "MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, "
             + "MATERIAL_DATE_OF_ENTRY FROM MATERIALS WHERE ID = ";
-    
+
     private final String removeFromMaterial = "DELETE FROM MATERIALS WHERE ID = ";
-    
+
     private final String selectAllFromMaterial = "SELECT * FROM MATERIALS ";
-    
+
     DataBaseConnector dataBaseConnector;
     private final ObservableList vateRatesList;
     private final ObservableList unitOfMeasureList;
-    
-    public DataBaseCenter(){
-          
-        vateRatesList = FXCollections.observableArrayList(zeroRate, fiveRate, 
-                        eightRate, twentyThreeRate, reverseChargeRate);  
-        
-        unitOfMeasureList = FXCollections.observableArrayList(millimeter, 
-                        centimeter, meter, kilometer, gram, kilogram, ton,
-                        piece, pair);
+
+    public DataBaseCenter() {
+
+        vateRatesList = FXCollections.observableArrayList(zeroRate, fiveRate,
+                eightRate, twentyThreeRate, reverseChargeRate);
+
+        unitOfMeasureList = FXCollections.observableArrayList(millimeter,
+                centimeter, meter, kilometer, gram, kilogram, ton,
+                piece, pair);
     }
-    
-    public ObservableList getVatRateList(){
+
+    public ObservableList getVatRateList() {
         return vateRatesList;
     }
-    
-    public ObservableList getUnitOfMeasureList(){
+
+    public ObservableList getUnitOfMeasureList() {
         return unitOfMeasureList;
     }
-    
-    public void checkAndCreateDatabase(){
+
+    public void checkAndCreateDatabase() {
         dataBaseConnector = new DataBaseConnector();
     }
-    
-    public void makeConnection(){
+
+    public void makeConnection() {
         dataBaseConnector.connectToDataBase();
     }
-    
-    public void addNewCost(String newCost){
+
+    public void addNewCost(String newCost) {
         dataBaseConnector.addToDataBase(newCost);
     }
-    
-    public String getInsertNewMaterial(){
+
+    public String getInsertNewMaterial() {
         return insertNewMaterial;
     }
-    
+
     public void getFromDataBaseToTableView(String materialFormula, String fraze,
-            TableView table, TableColumn column_0, TableColumn column_1, TableColumn column_2, 
-            TableColumn column_3, TableColumn column_4, 
-            TableColumn column_5, TableColumn column_6){
-        
-            dataBaseConnector.lookForDataBase(materialFormula, fraze, table, column_0, column_1, 
-            column_2, column_3, column_4, column_5, column_6);
+            TableView table, TableColumn column_0, TableColumn column_1, TableColumn column_2,
+            TableColumn column_3, TableColumn column_4,
+            TableColumn column_5, TableColumn column_6) {
+
+        dataBaseConnector.lookForDataBase(materialFormula, fraze, table, column_0, column_1,
+                column_2, column_3, column_4, column_5, column_6);
     }
-    
-    public String getselectFromMaterial(){
+
+    public String getselectFromMaterial() {
         return selectFromMaterial;
     }
-    
-    public void getRemoveFromDataBase(String materialFormula, String fraze){
+
+    public void getRemoveFromDataBase(String materialFormula, String fraze) {
         dataBaseConnector.removeFromDataBase(materialFormula, fraze);
     }
-    
-    public String getSelectFromMaterialByID(){
+
+    public String getSelectFromMaterialByID() {
         return selectFromMaterialByID;
     }
-    
-    public void getLookForDataBaseByID(String formula, String lookingFraze, Label infoLabel, 
-            Button removeButton, Button resetButton, Button pickButton, TextField idTextField){
-        dataBaseConnector.lookForDataBaseByID(formula, lookingFraze, infoLabel, removeButton, 
+
+    public void getLookForDataBaseByID(String formula, String lookingFraze, Label infoLabel,
+            Button removeButton, Button resetButton, Button pickButton, TextField idTextField) {
+        dataBaseConnector.lookForDataBaseByID(formula, lookingFraze, infoLabel, removeButton,
                 resetButton, pickButton, idTextField);
     }
-    
-    public String getRemoveFromMaterial(){
+
+    public String getRemoveFromMaterial() {
         return removeFromMaterial;
     }
-    
-    public String getSelectAllFromMaterials(){
+
+    public String getSelectAllFromMaterials() {
         return selectAllFromMaterial;
     }
-    
-    public void getDataFromMaterialToChange(String formula, String lookingFraze, 
-            TextField iD, TextField materialName, TextField netPrice, 
-            DatePicker dayOfPrice, ChoiceBox unitOfMeasure, ChoiceBox vatRate, 
-            TextField supplier, Button save, Button pick, ObservableList listUnit, ObservableList listRate){
-        dataBaseConnector.dataFromMaterialToChange(formula, lookingFraze, iD, 
-                materialName, netPrice, dayOfPrice, unitOfMeasure, vatRate, supplier, 
+
+    public void getDataFromMaterialToChange(String formula, String lookingFraze,
+            TextField iD, TextField materialName, TextField netPrice,
+            DatePicker dayOfPrice, ChoiceBox unitOfMeasure, ChoiceBox vatRate,
+            TextField supplier, Button save, Button pick, ObservableList listUnit, ObservableList listRate) {
+        dataBaseConnector.dataFromMaterialToChange(formula, lookingFraze, iD,
+                materialName, netPrice, dayOfPrice, unitOfMeasure, vatRate, supplier,
                 save, pick, listUnit, listRate);
     }
-    
+
     public void getSaveMaterialData(String name, String unit, BigDecimal price, String rate,
-            String vendor, Date date, int ID){
+            String vendor, Date date, int ID) {
         dataBaseConnector.saveMaterialData(name, unit, price, rate, vendor, date, ID);
     }
 }
