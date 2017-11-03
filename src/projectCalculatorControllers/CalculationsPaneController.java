@@ -27,10 +27,6 @@ public class CalculationsPaneController implements Initializable {
     private SingleCalculationStage singleCalculationStage;
 
     @FXML
-    private ChoiceBox projectTypeChoiceBox;
-    @FXML
-    private ChoiceBox companyAsChoiceBox;
-    @FXML
     private Button startCalculationButton;
     @FXML
     private Pane calculationsPane;
@@ -38,8 +34,6 @@ public class CalculationsPaneController implements Initializable {
     private SplitPane costCenterSplitPane;
     @FXML
     private Button backFromCostCenterToMenuButton;
-    @FXML
-    private ChoiceBox<?> customerChoiceBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,12 +41,6 @@ public class CalculationsPaneController implements Initializable {
         startCalculationButton.setDisable(SingleCalculationStage.getStartCalculationButtonState());
 
         dataBaseCalculations = new DataBaseCalculations();
-
-        projectTypeChoiceBox.setItems(dataBaseCalculations.getProjectsList());
-        projectTypeChoiceBox.getSelectionModel().selectFirst();
-
-        companyAsChoiceBox.setItems(dataBaseCalculations.getCompanyAs());
-        companyAsChoiceBox.getSelectionModel().selectFirst();
 
         backFromCostCenterToMenuButton.setDisable(false);
     }

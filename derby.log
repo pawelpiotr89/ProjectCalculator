@@ -1,8 +1,8 @@
 ----------------------------------------------------------------
-Thu Nov 02 20:55:27 CET 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015f-7e4d-799f-000005ceaa00 
+Fri Nov 03 22:37:46 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015f-83d1-805d-000004695878 
 on database directory C:\Users\Public\ProjectCalculatorDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
-Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run903006750/lib/derby.jar
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run2248466/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_131-b11
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
@@ -12,5 +12,5 @@ os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 02 20:55:27 CET 2017:
-Shutting down instance a816c00e-015f-7e4d-799f-000005ceaa00 on database directory C:\Users\Public\ProjectCalculatorDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Fri Nov 03 22:37:46 CET 2017:
+Shutting down instance a816c00e-015f-83d1-805d-000004695878 on database directory C:\Users\Public\ProjectCalculatorDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
