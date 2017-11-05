@@ -77,6 +77,10 @@ public class SingleCalculationPaneController implements Initializable {
     private GridPane materialCostGridPane13;
     @FXML
     private ChoiceBox<String> projectTypeChoiceBox;
+    @FXML
+    private ChoiceBox<String> projectSubTypeChoiceBox;
+    @FXML
+    private ChoiceBox<String> companyAsChoiceBox;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -90,5 +94,11 @@ public class SingleCalculationPaneController implements Initializable {
         
         preCalculationData.populateChoiceBox(preCalculationData.getSQLProject());
         projectTypeChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
+        
+        preCalculationData.populateChoiceBox(preCalculationData.getSQLProjectSubtype());
+        projectSubTypeChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
+        
+        preCalculationData.populateChoiceBox(preCalculationData.getSQLCompanyAs());
+        companyAsChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
     }  
 }

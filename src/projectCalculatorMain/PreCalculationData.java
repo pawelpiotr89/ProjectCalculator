@@ -19,6 +19,10 @@ public class PreCalculationData {
     private final String sqlGetPersonFromDataBase = "SELECT * FROM CALCULATING_PERSON";
     private final String sqlAddProjectTypeDataBase = "INSERT INTO PROJECT_TYPE (PROJECT_TYPE) VALUES (?)";
     private final String sqlGetProjectTypeFromDataBase = "SELECT * FROM PROJECT_TYPE";
+    private final String sqlAddProjectSubtypeToDataBase = "INSERT INTO PROJECT_SUBTYPE (PROJECT_SUBTYPE) VALUES (?)";
+    private final String sqlGetProjectSubtypeToDataBase = "SELECT * FROM PROJECT_SUBTYPE";
+    private final String sqlAddCompanyAsToDataBase = "INSERT INTO COMPANY_AS (COMPANY_AS) VALUES (?)";
+    private final String sqlGetCompanyAsToDataBase = "SELECT * FROM COMPANY_AS";
     
     public PreCalculationData(){
         dataBaseCalculations = new DataBaseCalculations();
@@ -57,6 +61,20 @@ public class PreCalculationData {
         dataBaseCalculations.closeDataBase();
     }
     
+    public void addProjectSubtypeToDataBase(ActionEvent event, TextField textField, Label label){
+        dataBaseCalculations.addDriver();
+        dataBaseCalculations.connectToDataBase();
+        dataBaseCalculations.addToDataBase(textField, label, sqlGetProjectSubtypeToDataBase, sqlAddProjectSubtypeToDataBase);
+        dataBaseCalculations.closeDataBase();
+    }
+    
+    public void addCompanyAsToDataBase(ActionEvent event, TextField textField, Label label){
+        dataBaseCalculations.addDriver();
+        dataBaseCalculations.connectToDataBase();
+        dataBaseCalculations.addToDataBase(textField, label, sqlGetCompanyAsToDataBase, sqlAddCompanyAsToDataBase);
+        dataBaseCalculations.closeDataBase();
+    }
+    
     public ObservableList getList(){
         return dataBaseCalculations.getList();
     }
@@ -67,5 +85,13 @@ public class PreCalculationData {
     
     public String getSQLProject(){
         return sqlGetProjectTypeFromDataBase;
+    }
+    
+    public String getSQLProjectSubtype(){
+        return sqlGetProjectSubtypeToDataBase;
+    }
+    
+    public String getSQLCompanyAs(){
+        return sqlGetCompanyAsToDataBase;
     }
 }

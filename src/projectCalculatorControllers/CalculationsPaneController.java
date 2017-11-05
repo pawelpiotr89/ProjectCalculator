@@ -48,6 +48,18 @@ public class CalculationsPaneController implements Initializable {
     private Button addProjectButton;
     @FXML
     private Label addProjectTypeLabel;
+    @FXML
+    private TextField ProjectSubtypeTextField;
+    @FXML
+    private Button addProjectSubtypeButton;
+    @FXML
+    private Label addProjectSubtypeLabel;
+    @FXML
+    private TextField CompanyAsTextField;
+    @FXML
+    private Button addCompanyAsButton;
+    @FXML
+    private Label addProjectSubtypeLabel1;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -94,6 +106,16 @@ public class CalculationsPaneController implements Initializable {
     private void addProjectAction(ActionEvent event) {
         preCalculationData.addProjectTypeToDataBase(event, projectTypeTextField, addProjectTypeLabel);
     }
+    
+    @FXML
+    private void addProjectSubtype(ActionEvent event) {
+        preCalculationData.addProjectSubtypeToDataBase(event, ProjectSubtypeTextField, addProjectSubtypeLabel);
+    }
+    
+    @FXML
+    private void addCompanyAs(ActionEvent event) {
+        preCalculationData.addCompanyAsToDataBase(event, CompanyAsTextField, addProjectSubtypeLabel1);
+    }
 
     public void setMainPaneController(MainPaneController mainPaneController) {
         this.mainPaneController = mainPaneController;
@@ -103,5 +125,4 @@ public class CalculationsPaneController implements Initializable {
         exitAlertWindow = new ExitAlertWindow();
         exitAlertWindow.askingQuestion();
     }
-
 }
