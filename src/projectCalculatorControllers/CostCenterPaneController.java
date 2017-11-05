@@ -30,7 +30,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import projectCalculatorMain.ChangeMaterialConfirmationWindow;
-import projectCalculatorMain.DataBaseDetails;
+import projectCalculatorMain.CostCenterDataBaseDetails;
 import projectCalculatorMain.EnterDataConfirmationWindow;
 import projectCalculatorMain.RemoveDataConfirmationWindow;
 
@@ -46,7 +46,7 @@ public class CostCenterPaneController implements Initializable {
     private EnterDataConfirmationWindow enterDataConfirmationWindow;
     private RemoveDataConfirmationWindow removeDataConfirmationWindow;
     private ChangeMaterialConfirmationWindow changeMaterialConfirmationWindow;
-    ObservableList<DataBaseDetails> data;
+    ObservableList<CostCenterDataBaseDetails> data;
 ///////////////////////////Material cost FXML///////////////////////////////////    
     @FXML
     private TitledPane materialCostTitledPane;
@@ -93,21 +93,21 @@ public class CostCenterPaneController implements Initializable {
     @FXML
     private Button materialSearchButton;
     @FXML
-    private TableView<DataBaseDetails> materialDisplayTable;
+    private TableView<CostCenterDataBaseDetails> materialDisplayTable;
     @FXML
-    private TableColumn<DataBaseDetails, String> materialNameColumn;
+    private TableColumn<CostCenterDataBaseDetails, String> materialNameColumn;
     @FXML
-    private TableColumn<DataBaseDetails, String> materialUnitColumn;
+    private TableColumn<CostCenterDataBaseDetails, String> materialUnitColumn;
     @FXML
-    private TableColumn<DataBaseDetails, String> materialPriceColumn;
+    private TableColumn<CostCenterDataBaseDetails, String> materialPriceColumn;
     @FXML
-    private TableColumn<DataBaseDetails, String> materialVatColumn;
+    private TableColumn<CostCenterDataBaseDetails, String> materialVatColumn;
     @FXML
-    private TableColumn<DataBaseDetails, String> materialVendorColumn;
+    private TableColumn<CostCenterDataBaseDetails, String> materialVendorColumn;
     @FXML
-    private TableColumn<DataBaseDetails, String> materialDateColumn;
+    private TableColumn<CostCenterDataBaseDetails, String> materialDateColumn;
     @FXML
-    private TableColumn<DataBaseDetails, String> materialIDColumn;
+    private TableColumn<CostCenterDataBaseDetails, String> materialIDColumn;
     @FXML
     private TextField materialIDTextField;
     @FXML
@@ -377,13 +377,13 @@ public class CostCenterPaneController implements Initializable {
 ////////////////////////////Searching cost TEMPLATE/////////////////////////////  
 
     private void costSearchButtonOnAction(TextField textField, String sql,
-            TableView<DataBaseDetails> tableView, TableColumn<DataBaseDetails, String> tableColumn1,
-            TableColumn<DataBaseDetails, String> tableColumn2,
-            TableColumn<DataBaseDetails, String> tableColumn3,
-            TableColumn<DataBaseDetails, String> tableColumn4,
-            TableColumn<DataBaseDetails, String> tableColumn5,
-            TableColumn<DataBaseDetails, String> tableColumn6,
-            TableColumn<DataBaseDetails, String> tableColumn7) {
+            TableView<CostCenterDataBaseDetails> tableView, TableColumn<CostCenterDataBaseDetails, String> tableColumn1,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn2,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn3,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn4,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn5,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn6,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn7) {
         if (textField.getText().trim().isEmpty()) {
         } else {
             String fraze = "('%" + textField.getText() + "%')";
@@ -441,12 +441,12 @@ public class CostCenterPaneController implements Initializable {
     }
 //////////////////////Display all costs TEMPLATE////////////////////////////////
 
-    private void displayAllCostsButton(TableView<DataBaseDetails> tableView, TableColumn<DataBaseDetails, String> tableColumn1, TableColumn<DataBaseDetails, String> tableColumn2,
-            TableColumn<DataBaseDetails, String> tableColumn3,
-            TableColumn<DataBaseDetails, String> tableColumn4,
-            TableColumn<DataBaseDetails, String> tableColumn5,
-            TableColumn<DataBaseDetails, String> tableColumn6,
-            TableColumn<DataBaseDetails, String> tableColumn7) {
+    private void displayAllCostsButton(TableView<CostCenterDataBaseDetails> tableView, TableColumn<CostCenterDataBaseDetails, String> tableColumn1, TableColumn<CostCenterDataBaseDetails, String> tableColumn2,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn3,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn4,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn5,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn6,
+            TableColumn<CostCenterDataBaseDetails, String> tableColumn7) {
         final String fraze = "";
         dataBaseCenter.makeConnection();
         dataBaseCenter.getFromDataBaseToTableView(dataBaseCenter.getSelectAllFromMaterials(),

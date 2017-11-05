@@ -1,8 +1,8 @@
 ----------------------------------------------------------------
-Fri Nov 03 22:37:46 CET 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015f-83d1-805d-000004695878 
-on database directory C:\Users\Public\ProjectCalculatorDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
-Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run2248466/lib/derby.jar
+Sun Nov 05 17:27:09 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_131-b11
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
@@ -12,5 +12,213 @@ os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Fri Nov 03 22:37:46 CET 2017:
-Shutting down instance a816c00e-015f-83d1-805d-000004695878 on database directory C:\Users\Public\ProjectCalculatorDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Sun Nov 05 17:27:09 CET 2017:
+Shutting down instance a816c00e-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:27:11 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance 601a400f-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:27:12 CET 2017:
+Shutting down instance 601a400f-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:27:12 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance f81e0010-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:27:12 CET 2017:
+Shutting down instance f81e0010-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:27:12 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance 582f8014-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:27:12 CET 2017:
+Shutting down instance 582f8014-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:28:15 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance b8450018-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculatorCostsDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:28:15 CET 2017:
+Shutting down instance b8450018-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculatorCostsDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:28:18 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance 004b0019-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:28:18 CET 2017:
+Shutting down instance 004b0019-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:28:20 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance c851401a-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:28:20 CET 2017:
+Shutting down instance c851401a-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:28:20 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance 2057c01b-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:28:20 CET 2017:
+Shutting down instance 2057c01b-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:28:20 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance 6074401f-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:28:20 CET 2017:
+Shutting down instance 6074401f-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:32:42 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a094c023-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:32:42 CET 2017:
+Shutting down instance a094c023-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:32:42 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance d89d8024-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:32:42 CET 2017:
+Shutting down instance d89d8024-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:32:42 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance 38c30028-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:32:43 CET 2017:
+Shutting down instance 38c30028-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculationPreCalculationDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:34:06 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance 98ec802c-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculatorCostsDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:34:06 CET 2017:
+Shutting down instance 98ec802c-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculatorCostsDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+----------------------------------------------------------------
+Sun Nov 05 17:34:56 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance c0f7802d-015f-8d01-d902-000005db2d88 
+on database directory C:\Users\Public\ProjectCalculatorCostsDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/D:/Programowanie/PakietJava/ProgramyKody/ProgramyDesktoptowe/ProjectCalculator/dist/run1318155115/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Nov 05 17:34:57 CET 2017:
+Shutting down instance c0f7802d-015f-8d01-d902-000005db2d88 on database directory C:\Users\Public\ProjectCalculatorCostsDataBase with class loader sun.misc.Launcher$AppClassLoader@42a57993 

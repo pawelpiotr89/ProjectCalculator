@@ -7,7 +7,7 @@ import javafx.beans.property.StringProperty;
  *
  * @author Roxven89
  */
-public class DataBaseDetails {
+public class CostCenterDataBaseDetails {
 
     private final StringProperty id;
     private final StringProperty name;
@@ -17,7 +17,7 @@ public class DataBaseDetails {
     private final StringProperty vendor;
     private final StringProperty date;
 
-    public DataBaseDetails(String id, String name, String unit, String price, String vat,
+    public CostCenterDataBaseDetails(String id, String name, String unit, String price, String vat,
             String vendor, String date) {
 
         this.id = new SimpleStringProperty(id);
