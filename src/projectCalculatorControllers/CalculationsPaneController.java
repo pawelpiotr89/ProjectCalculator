@@ -60,6 +60,18 @@ public class CalculationsPaneController implements Initializable {
     private Button addCompanyAsButton;
     @FXML
     private Label addProjectSubtypeLabel1;
+    @FXML
+    private TextField CustomerTextField;
+    @FXML
+    private Button addCustomerButton;
+    @FXML
+    private TextField CityRegionTextField;
+    @FXML
+    private Button addCityRegionButton;
+    @FXML
+    private Label addCustomerLabel;
+    @FXML
+    private Label addCityRegionLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -67,7 +79,7 @@ public class CalculationsPaneController implements Initializable {
         startCalculationButton.setDisable(SingleCalculationStage.getStartCalculationButtonState());
 
         backFromCostCenterToMenuButton.setDisable(false);
-        
+
         preCalculationData = new PreCalculationData();
     }
 
@@ -91,30 +103,40 @@ public class CalculationsPaneController implements Initializable {
         menuPaneController.setMainPaneController(mainPaneController);
         mainPaneController.setPane(pane);
     }
-    
+
     @FXML
     private void standardTextFieldActions(KeyEvent event) {
         preCalculationData.standardTextFieldActions(event);
     }
-   
+
     @FXML
     private void addPersonAction(ActionEvent event) {
         preCalculationData.addPersonToDataBase(event, calculatingPersonNameTextField, addPersonLabel);
     }
-    
+
     @FXML
     private void addProjectAction(ActionEvent event) {
         preCalculationData.addProjectTypeToDataBase(event, projectTypeTextField, addProjectTypeLabel);
     }
-    
+
     @FXML
-    private void addProjectSubtype(ActionEvent event) {
+    private void addProjectSubtypeAction(ActionEvent event) {
         preCalculationData.addProjectSubtypeToDataBase(event, ProjectSubtypeTextField, addProjectSubtypeLabel);
     }
-    
+
     @FXML
-    private void addCompanyAs(ActionEvent event) {
+    private void addCompanyAsAction(ActionEvent event) {
         preCalculationData.addCompanyAsToDataBase(event, CompanyAsTextField, addProjectSubtypeLabel1);
+    }
+
+    @FXML
+    private void addCustomerAction(ActionEvent event) {
+        preCalculationData.addCustomerToDataBase(event, CustomerTextField, addCustomerLabel);
+    }
+
+    @FXML
+    private void addCityRegionAction(ActionEvent event) {
+        preCalculationData.addCityRegionToDataBase(event, CityRegionTextField, addCityRegionLabel);
     }
 
     public void setMainPaneController(MainPaneController mainPaneController) {

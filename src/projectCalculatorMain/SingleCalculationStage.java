@@ -2,7 +2,6 @@ package projectCalculatorMain;
 
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;

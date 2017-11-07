@@ -38,7 +38,7 @@
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>
                         </Button>
-                        <Button fx:id="costCenterMenuButton" layoutX="62.0" layoutY="332.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCostCenter" prefHeight="95.0" prefWidth="620.0" text="COSTS CENTER" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button fx:id="costCenterMenuButton" layoutX="62.0" layoutY="191.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCostCenter" prefHeight="95.0" prefWidth="620.0" text="COSTS CENTER" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>
@@ -53,7 +53,7 @@
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>
                         </Button>
-                        <Button layoutX="62.0" layoutY="191.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="PROJECTS" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button layoutX="62.0" layoutY="332.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="PROJECTS" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
                                 <Font name="Verdana Bold" size="50.0" />
                             </font>

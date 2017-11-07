@@ -9,18 +9,21 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import projectCalculatorMain.PreCalculationData;
+
 /**
  * FXML Controller class
  *
  * @author Roxven89
  */
 public class SingleCalculationPaneController implements Initializable {
-    
+
     private PreCalculationData preCalculationData;
-            
+
     @FXML
     private TabPane sinlgeCalculationTabPane;
     @FXML
@@ -81,24 +84,48 @@ public class SingleCalculationPaneController implements Initializable {
     private ChoiceBox<String> projectSubTypeChoiceBox;
     @FXML
     private ChoiceBox<String> companyAsChoiceBox;
+    @FXML
+    private ChoiceBox<String> customerChoiceBox;
+    @FXML
+    private ChoiceBox<String> cityRegionChoiceBox;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         materialCostAnchorPane.maxHeightProperty().bind(materialCostSplitPane.heightProperty().multiply(0.9));
         materialCostAnchorPane.minHeightProperty().bind(materialCostSplitPane.heightProperty().multiply(0.9));
-        
+
         preCalculationData = new PreCalculationData();
-        
+
         preCalculationData.populateChoiceBox(preCalculationData.getSQLPerson());
         calculatingPersonChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
-        
+
         preCalculationData.populateChoiceBox(preCalculationData.getSQLProject());
         projectTypeChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
-        
+
         preCalculationData.populateChoiceBox(preCalculationData.getSQLProjectSubtype());
         projectSubTypeChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
-        
+
         preCalculationData.populateChoiceBox(preCalculationData.getSQLCompanyAs());
         companyAsChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
-    }  
+
+        preCalculationData.populateChoiceBox(preCalculationData.getSQLCustomer());
+        customerChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
+
+        preCalculationData.populateChoiceBox(preCalculationData.getSQLCityRegion());
+        cityRegionChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
+    }
+
+    @FXML
+    private void standardTextFieldActions(KeyEvent event) {
+        TextField textFieldSource = (TextField) event.getSource();
+        String character = event.getCharacter();
+        String charSequence = "";
+        if (event.getSource().equals(textFieldSource)) {
+            charSequence = textFieldSource.getText();
+        }
+        if (charSequence.length() > 39 || charSequence.startsWith(" ")
+                || charSequence.isEmpty() && " ".contains(character)) {
+            event.consume();
+        }
+    }
 }

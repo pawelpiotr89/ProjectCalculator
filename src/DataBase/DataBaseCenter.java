@@ -32,6 +32,10 @@ public class DataBaseCenter {
     private final String ton = "t (ton)";
     private final String piece = "pc (piece)";
     private final String pair = "par (pair)";
+    private final String hour = "h (hour)";
+    private final String day = "d (day)";
+    private final String m2 = "m2 (square meter)";
+    private final String m3 = "m3 (cubic meter)";
 
     private final String insertNewMaterial = "INSERT INTO MATERIALS "
             + "(MATERIAL_NAME, MATERIAL_UNIT, MATERIAL_PRICE, "
@@ -61,7 +65,7 @@ public class DataBaseCenter {
 
         unitOfMeasureList = FXCollections.observableArrayList(millimeter,
                 centimeter, meter, kilometer, gram, kilogram, ton,
-                piece, pair);
+                piece, pair, hour, day, m2, m3);
     }
 
     public ObservableList getVatRateList() {
