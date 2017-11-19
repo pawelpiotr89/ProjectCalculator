@@ -16,6 +16,9 @@ public class WelcomePaneController {
 
     @FXML
     private Button confirmButton;
+    
+    @FXML
+    private Pane welcomePane;
 
     @FXML
     private void loginPasswordConfirmation() {

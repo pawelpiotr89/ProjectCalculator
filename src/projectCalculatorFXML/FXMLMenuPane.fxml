@@ -8,54 +8,54 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="menuPaneController" prefHeight="760.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.MenuPaneController">
+<Pane fx:id="menuPaneController" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.MenuPaneController">
     <children>
-        <SplitPane dividerPositions="0.4" pickOnBounds="false" prefHeight="760.0" prefWidth="1240.0">
+        <SplitPane dividerPositions="0.4" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" pickOnBounds="false" prefHeight="600.0" prefWidth="1024.0">
             <items>
-                <Pane maxWidth="496.0" minWidth="496.0" prefHeight="760.0" prefWidth="496.0">
+                <Pane>
                     <children>
-                        <Label layoutX="109.0" layoutY="279.0" text="Project_Calculator v. 1.0.0." textAlignment="CENTER" textFill="#5f5f5f">
+                        <Label layoutX="50.0" layoutY="167.0" text="Project_Calculator v. 1.0.0." textAlignment="CENTER" textFill="#5f5f5f">
                             <font>
                                 <Font name="Verdana Bold" size="20.0" />
                             </font>
                         </Label>
-                        <Label layoutX="144.0" layoutY="367.0" text="by Paweł Jamnicki" textFill="#5f5f5f">
+                        <Label layoutX="99.0" layoutY="274.0" text="by Paweł Jamnicki" textFill="#5f5f5f">
                             <font>
                                 <Font name="Verdana Bold" size="20.0" />
                             </font>
                         </Label>
-                        <Label layoutX="176.0" layoutY="463.0" text="All rights reserved ®." textFill="#5f5f5f">
+                        <Label layoutX="118.0" layoutY="371.0" text="All rights reserved ®." textFill="#5f5f5f">
                             <font>
                                 <Font name="Verdana Bold Italic" size="14.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-                <Pane maxWidth="744.0" minWidth="744.0" prefHeight="1240.0" prefWidth="744.0">
+                <Pane>
                     <children>
-                        <Button fx:id="calculationsMenuButton" layoutX="62.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCalculationsCenter" prefHeight="95.0" prefWidth="620.0" text="CALCULATIONS" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button fx:id="calculationsMenuButton" layoutX="55.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCalculationsCenter" prefHeight="70.0" prefWidth="500.0" text="CALCULATIONS" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
-                                <Font name="Verdana Bold" size="50.0" />
+                                <Font name="Verdana Bold" size="36.0" />
                             </font>
                         </Button>
-                        <Button fx:id="costCenterMenuButton" layoutX="62.0" layoutY="191.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCostCenter" prefHeight="95.0" prefWidth="620.0" text="COSTS CENTER" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button fx:id="costCenterMenuButton" layoutX="55.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#enterCostCenter" prefHeight="70.0" prefWidth="500.0" text="COSTS CENTER" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
-                                <Font name="Verdana Bold" size="50.0" />
+                                <Font name="Verdana Bold" size="36.0" />
                             </font>
                         </Button>
-                        <Button fx:id="exitButton" layoutX="62.0" layoutY="610.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#programExit" prefHeight="95.0" prefWidth="620.0" text="EXIT" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button fx:id="exitButton" layoutX="55.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#programExit" prefHeight="70.0" prefWidth="500.0" text="EXIT" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
-                                <Font name="Verdana Bold" size="50.0" />
+                                <Font name="Verdana Bold" size="36.0" />
                             </font>
                         </Button>
-                        <Button layoutX="62.0" layoutY="469.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="OPTIONS" textFill="#5e5e5e">
+                        <Button layoutX="55.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="500.0" text="OPTIONS" textFill="#5e5e5e">
                             <font>
-                                <Font name="Verdana Bold" size="50.0" />
+                                <Font name="Verdana Bold" size="36.0" />
                             </font>
                         </Button>
-                        <Button layoutX="62.0" layoutY="332.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="95.0" prefWidth="620.0" text="PROJECTS" textAlignment="CENTER" textFill="#5e5e5e">
+                        <Button layoutX="55.0" layoutY="264.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="500.0" text="PROJECTS" textAlignment="CENTER" textFill="#5e5e5e">
                             <font>
-                                <Font name="Verdana Bold" size="50.0" />
+                                <Font name="Verdana Bold" size="36.0" />
                             </font>
                         </Button>
                     </children>

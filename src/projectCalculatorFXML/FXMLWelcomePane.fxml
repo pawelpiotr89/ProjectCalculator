@@ -11,54 +11,54 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="welcomePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="760.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.WelcomePaneController">
+<Pane fx:id="welcomePane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" pickOnBounds="false" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.WelcomePaneController">
     <children>
-        <Label layoutX="109.0" layoutY="94.0" text="PROJECT_CALCULATOR v. 1.0" textAlignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="121.0" layoutY="72.0" text="PROJECT_CALCULATOR v. 1.0" textAlignment="CENTER">
             <font>
-                <Font name="Verdana Bold" size="63.0" />
+                <Font name="Verdana Bold" size="48.0" />
             </font>
         </Label>
-        <Label layoutX="394.0" layoutY="506.0" text="BY PAWEŁ JAMNICKI" textAlignment="CENTER">
+        <Label layoutX="282.0" layoutY="468.0" text="BY PAWEŁ JAMNICKI" textAlignment="CENTER">
             <font>
                 <Font name="Verdana Bold Italic" size="40.0" />
             </font>
         </Label>
-        <Label layoutX="544.0" layoutY="622.0" text="ALL RIGHTS RESERVED ®." textAlignment="CENTER">
+        <Label layoutX="438.0" layoutY="571.0" text="ALL RIGHTS RESERVED ®." textAlignment="CENTER">
             <font>
                 <Font name="Verdana Italic" size="12.0" />
             </font>
         </Label>
-        <Label layoutX="503.0" layoutY="248.0" text="LOGIN:" textAlignment="CENTER">
+        <Label layoutX="329.0" layoutY="210.0" text="LOGIN:" textAlignment="CENTER">
             <font>
                 <Font name="Verdana" size="30.0" />
             </font>
         </Label>
-        <Label layoutX="424.0" layoutY="314.0" text="PASSWORD:" textAlignment="CENTER">
+        <Label layoutX="290.0" layoutY="281.0" text="PASSWORD:" textAlignment="CENTER">
             <font>
                 <Font name="Verdana" size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="loginName" layoutX="619.0" layoutY="248.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login">
+        <TextField fx:id="loginName" layoutX="512.0" layoutY="210.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Login">
             <font>
                 <Font name="Verdana" size="14.0" />
             </font>
         </TextField>
-        <PasswordField fx:id="passwordLogin" layoutX="619.0" layoutY="314.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password">
+        <PasswordField fx:id="passwordLogin" layoutX="512.0" layoutY="281.0" prefHeight="38.0" prefWidth="167.0" promptText="Type Password">
             <font>
                 <Font name="Verdana" size="14.0" />
             </font>
         </PasswordField>
-        <Button fx:id="confirmButton" layoutX="531.0" layoutY="403.0" mnemonicParsing="false" onAction="#loginPasswordConfirmation" pickOnBounds="false" prefHeight="51.0" prefWidth="179.0" style="-fx-border-color: silver;" text="CONFIRM">
+        <Button fx:id="confirmButton" layoutX="430.0" layoutY="356.0" mnemonicParsing="false" onAction="#loginPasswordConfirmation" pickOnBounds="false" prefHeight="51.0" prefWidth="179.0" style="-fx-border-color: silver;" text="CONFIRM">
             <font>
                 <Font name="Verdana Bold" size="22.0" />
             </font>
         </Button>
-        <Label layoutX="809.0" layoutY="258.0" text="INCORRECT DATA" textAlignment="CENTER" textFill="RED">
+        <Label layoutX="745.0" layoutY="220.0" text="INCORRECT DATA" textAlignment="CENTER" textFill="RED">
             <font>
                 <Font name="Verdana" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="809.0" layoutY="324.0" text="INCORRECT DATA" textAlignment="CENTER" textFill="RED">
+        <Label layoutX="745.0" layoutY="291.0" text="INCORRECT DATA" textAlignment="CENTER" textFill="RED">
             <font>
                 <Font name="Verdana" size="14.0" />
             </font>
