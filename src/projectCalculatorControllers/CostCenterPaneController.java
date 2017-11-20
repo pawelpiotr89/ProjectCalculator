@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Date;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -201,7 +202,7 @@ public class CostCenterPaneController implements Initializable {
         if (event.getSource().equals(textFieldSource)) {
             charSequence = textFieldSource.getText();
         }
-        if (charSequence.length() > 39 || charSequence.startsWith(" ")
+        if (charSequence.length() > 29 || charSequence.startsWith(" ")
                 || charSequence.isEmpty() && " ".contains(character)) {
             event.consume();
         }
@@ -355,7 +356,9 @@ public class CostCenterPaneController implements Initializable {
 
             Optional<ButtonType> result = enterDataConfirmationWindow.getAlert().showAndWait();
             if (result.get() == ButtonType.YES) {
-                double price = Double.parseDouble(costNetPriceTF.getText());
+                BigDecimal price = new BigDecimal(costNetPriceTF.getText());
+                DecimalFormat df = new DecimalFormat("#,###.00");
+                df.format(price);
                 Date date = Date.valueOf(costDatePicker.getValue());
                 SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
                 String newDate = DATE_FORMAT.format(date);

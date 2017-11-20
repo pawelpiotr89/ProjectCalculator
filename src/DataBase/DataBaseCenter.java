@@ -22,20 +22,20 @@ public class DataBaseCenter {
     private final String fiveRate = "5%";
     private final String eightRate = "8%";
     private final String twentyThreeRate = "23%";
-    private final String reverseChargeRate = "RC (reverse charge)";
-    private final String millimeter = "mm (millimeter)";
-    private final String centimeter = "cm (centimeter)";
-    private final String meter = "m (meter)";
-    private final String kilometer = "km (kilometer)";
-    private final String gram = "g (gram)";
-    private final String kilogram = "kg (kilogram)";
-    private final String ton = "t (ton)";
-    private final String piece = "pc (piece)";
-    private final String pair = "par (pair)";
-    private final String hour = "h (hour)";
-    private final String day = "d (day)";
-    private final String m2 = "m2 (square meter)";
-    private final String m3 = "m3 (cubic meter)";
+    private final String reverseChargeRate = "RC";
+    private final String millimeter = "mm";
+    private final String centimeter = "cm";
+    private final String meter = "m";
+    private final String kilometer = "km";
+    private final String gram = "g";
+    private final String kilogram = "kg";
+    private final String ton = "t";
+    private final String piece = "pc";
+    private final String pair = "par";
+    private final String hour = "h";
+    private final String day = "d";
+    private final String m2 = "m2";
+    private final String m3 = "m3";
 
     private final String insertNewMaterial = "INSERT INTO MATERIALS "
             + "(MATERIAL_NAME, MATERIAL_UNIT, MATERIAL_PRICE, "
