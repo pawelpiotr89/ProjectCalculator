@@ -1,5 +1,7 @@
 package projectCalculatorMain;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -11,18 +13,18 @@ public class CostCenterDataBaseDetails {
 
     private final StringProperty id;
     private final StringProperty name;
-    private final StringProperty price;
+    private final DoubleProperty price;
     private final StringProperty unit;
     private final StringProperty vat;
     private final StringProperty vendor;
     private final StringProperty date;
 
-    public CostCenterDataBaseDetails(String id, String name, String unit, String price, String vat,
+    public CostCenterDataBaseDetails(String id, String name, String unit, double price, String vat,
             String vendor, String date) {
 
         this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
-        this.price = new SimpleStringProperty(price);
+        this.price = new SimpleDoubleProperty(price);
         this.unit = new SimpleStringProperty(unit);
         this.vat = new SimpleStringProperty(vat);
         this.vendor = new SimpleStringProperty(vendor);
@@ -37,7 +39,7 @@ public class CostCenterDataBaseDetails {
         return name.get();
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price.get();
     }
 
@@ -65,7 +67,7 @@ public class CostCenterDataBaseDetails {
         name.set(vale);
     }
 
-    public void setPrice(String vale) {
+    public void setPrice(Double vale) {
         price.set(vale);
     }
 
@@ -93,7 +95,7 @@ public class CostCenterDataBaseDetails {
         return name;
     }
 
-    public StringProperty namePrice() {
+    public DoubleProperty namePrice() {
         return price;
     }
 

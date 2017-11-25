@@ -3,8 +3,10 @@ package projectCalculatorControllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
@@ -23,6 +25,7 @@ import projectCalculatorMain.PreCalculationData;
 public class SingleCalculationPaneController implements Initializable {
 
     private PreCalculationData preCalculationData;
+    private boolean materialTabStatus = false;
 
     @FXML
     private TabPane sinlgeCalculationTabPane;
@@ -88,11 +91,25 @@ public class SingleCalculationPaneController implements Initializable {
     private ChoiceBox<String> customerChoiceBox;
     @FXML
     private ChoiceBox<String> cityRegionChoiceBox;
+    @FXML
+    private Button unlocLockMaterialTabButton;
+    @FXML
+    private Button clearMaterialTabButton;
+    @FXML
+    private Button deleteMaterialRowButton;
+    @FXML
+    private TextField singleCalculationQuantity;
+    @FXML
+    private TextField singleCalculationOverhead;
+    @FXML
+    private TextField singleCalculationMaterialID;
+    @FXML
+    private Button addMaterialToTabButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        materialCostAnchorPane.maxHeightProperty().bind(materialCostSplitPane.heightProperty().multiply(0.9));
-        materialCostAnchorPane.minHeightProperty().bind(materialCostSplitPane.heightProperty().multiply(0.9));
+        materialCostAnchorPane.maxHeightProperty().bind(materialCostSplitPane.heightProperty().multiply(0.8));
+        materialCostAnchorPane.minHeightProperty().bind(materialCostSplitPane.heightProperty().multiply(0.8));
 
         preCalculationData = new PreCalculationData();
 
@@ -113,6 +130,15 @@ public class SingleCalculationPaneController implements Initializable {
 
         preCalculationData.populateChoiceBox(preCalculationData.getSQLCityRegion());
         cityRegionChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
+        
+        clearMaterialTabButton.setDisable(true);
+        deleteMaterialRowButton.setDisable(true);
+        singleCalculationQuantity.setDisable(true);
+        singleCalculationOverhead.setDisable(true);
+        singleCalculationMaterialID.setDisable(true);
+        addMaterialToTabButton.setDisable(true);
+        materialCostTableView.setDisable(true);
+
     }
 
     @FXML
@@ -127,5 +153,43 @@ public class SingleCalculationPaneController implements Initializable {
                 || charSequence.isEmpty() && " ".contains(character)) {
             event.consume();
         }
+    }
+
+    @FXML
+    private void unlocLockMaterialTabButtonOnAction(ActionEvent event) {
+        if(materialTabStatus == false){
+            clearMaterialTabButton.setDisable(false);
+            deleteMaterialRowButton.setDisable(false);
+            singleCalculationQuantity.setDisable(false);
+            singleCalculationOverhead.setDisable(false);
+            singleCalculationMaterialID.setDisable(false);
+            addMaterialToTabButton.setDisable(false);
+            materialCostTableView.setDisable(false);
+            materialTabStatus = true;
+            unlocLockMaterialTabButton.setText("LOCK MATERIAL TAB");
+        }
+        else if(materialTabStatus == true){
+            clearMaterialTabButton.setDisable(true);
+            deleteMaterialRowButton.setDisable(true);
+            singleCalculationQuantity.setDisable(true);
+            singleCalculationOverhead.setDisable(true);
+            singleCalculationMaterialID.setDisable(true);
+            addMaterialToTabButton.setDisable(true);
+            materialCostTableView.setDisable(true);
+            materialTabStatus = false;
+            unlocLockMaterialTabButton.setText("UNLOCK MATERIAL TAB");
+        }
+    }
+
+    @FXML
+    private void clearMaterialTabButtonOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void deleteMaterialRowButtonOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void addMaterialToTabButtonOnAction(ActionEvent event) {
     }
 }

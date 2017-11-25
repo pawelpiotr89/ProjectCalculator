@@ -169,7 +169,8 @@ public class DataBaseConnector {
                 String id = String.valueOf(result.getString(1));
                 String name = result.getString(2);
                 String unit = result.getString(3);
-                String price = String.valueOf(result.getBigDecimal(4)) + " zł";
+                BigDecimal bD = result.getBigDecimal(4);
+                Double price = bD.doubleValue();
                 String rate = result.getString(5);
                 String vendor = result.getString(6);
                 String date = String.valueOf(result.getDate(7));
