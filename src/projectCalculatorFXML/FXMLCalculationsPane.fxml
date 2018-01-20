@@ -49,7 +49,7 @@
                                                                         <RowConstraints vgrow="SOMETIMES" />
                                                                     </rowConstraints>
                                                                     <children>
-                                                                        <Button fx:id="startCalculationButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="56.25" maxWidth="512.0" minHeight="56.25" minWidth="512.0" mnemonicParsing="false" onAction="#startCalculationOnAction" prefHeight="56.25" prefWidth="512.0" text="START CALCULATION" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                                                                        <Button fx:id="startCalculationButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="56.25" maxWidth="512.0" minHeight="56.25" minWidth="512.0" mnemonicParsing="false" onAction="#startCalculationOnAction" prefHeight="56.25" prefWidth="512.0" text="START CALCULATION" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
                                                                             <font>
                                                                                 <Font name="Verdana Bold" size="18.0" />
                                                                             </font>

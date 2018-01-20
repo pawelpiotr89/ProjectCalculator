@@ -1,176 +1,572 @@
+Sat Jan 20 14:07:41 CET 2018 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+java.sql.SQLException: Nie znaleziono bazy danych 'C:/Users/Public/ProjectCalculationPreCalculationDataBase'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at DataBase.DataBaseCalculations.<init>(DataBaseCalculations.java:48)
+	at projectCalculatorMain.PreCalculationData.<init>(PreCalculationData.java:32)
+	at projectCalculatorControllers.CalculationsPaneController.initialize(CalculationsPaneController.java:83)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at projectCalculatorControllers.MenuPaneController.enterCalculationsCenter(MenuPaneController.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8413)
+	at javafx.scene.control.Button.fire(Button.java:185)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:96)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$353(GlassViewEventHandler.java:432)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: ERROR XJ004: Nie znaleziono bazy danych 'C:/Users/Public/ProjectCalculationPreCalculationDataBase'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 85 more
+============= begin nested exception, level (1) ===========
+ERROR XJ004: Nie znaleziono bazy danych 'C:/Users/Public/ProjectCalculationPreCalculationDataBase'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at DataBase.DataBaseCalculations.<init>(DataBaseCalculations.java:48)
+	at projectCalculatorMain.PreCalculationData.<init>(PreCalculationData.java:32)
+	at projectCalculatorControllers.CalculationsPaneController.initialize(CalculationsPaneController.java:83)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at projectCalculatorControllers.MenuPaneController.enterCalculationsCenter(MenuPaneController.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8413)
+	at javafx.scene.control.Button.fire(Button.java:185)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:96)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$353(GlassViewEventHandler.java:432)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177)
+	at java.lang.Thread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
 ----------------------------------------------------------------
-Thu Nov 23 19:27:42 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a816c00e-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:07:41 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a816c00e-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:42 CET 2017:
-WyÅ‚Ä…czanie instancji a816c00e-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:07:46 CET 2018:
+Wy³¹czanie instancji a816c00e-0161-13ae-8999-0000066233a8
+Sat Jan 20 14:07:53 CET 2018 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+java.sql.SQLException: Nie znaleziono bazy danych 'C:/Users/Public/ProjectCalculatorCostsDataBase'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at DataBase.DataBaseConnector.<init>(DataBaseConnector.java:93)
+	at DataBase.DataBaseCenter.checkAndCreateDatabase(DataBaseCenter.java:80)
+	at projectCalculatorControllers.CostCenterPaneController.initialize(CostCenterPaneController.java:150)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at projectCalculatorControllers.MenuPaneController.enterCostCenter(MenuPaneController.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8413)
+	at javafx.scene.control.Button.fire(Button.java:185)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:96)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$353(GlassViewEventHandler.java:432)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: ERROR XJ004: Nie znaleziono bazy danych 'C:/Users/Public/ProjectCalculatorCostsDataBase'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 85 more
+============= begin nested exception, level (1) ===========
+ERROR XJ004: Nie znaleziono bazy danych 'C:/Users/Public/ProjectCalculatorCostsDataBase'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at DataBase.DataBaseConnector.<init>(DataBaseConnector.java:93)
+	at DataBase.DataBaseCenter.checkAndCreateDatabase(DataBaseCenter.java:80)
+	at projectCalculatorControllers.CostCenterPaneController.initialize(CostCenterPaneController.java:150)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at projectCalculatorControllers.MenuPaneController.enterCostCenter(MenuPaneController.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8413)
+	at javafx.scene.control.Button.fire(Button.java:185)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:96)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$353(GlassViewEventHandler.java:432)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177)
+	at java.lang.Thread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
 ----------------------------------------------------------------
-Thu Nov 23 19:27:44 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 601a400f-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:07:54 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja b278c0c3-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:44 CET 2017:
-WyÅ‚Ä…czanie instancji 601a400f-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:07:59 CET 2018:
+Wy³¹czanie instancji b278c0c3-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja f81e0010-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:08:30 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 82d70188-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
-WyÅ‚Ä…czanie instancji f81e0010-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:08:30 CET 2018:
+Wy³¹czanie instancji 82d70188-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 80220011-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:08:37 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja e460818c-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
-WyÅ‚Ä…czanie instancji 80220011-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:08:37 CET 2018:
+Wy³¹czanie instancji e460818c-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 40348015-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:08:40 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 45ee0190-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
-WyÅ‚Ä…czanie instancji 40348015-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:08:40 CET 2018:
+Wy³¹czanie instancji 45ee0190-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 004b0019-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:08:53 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a77f8194-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
-WyÅ‚Ä…czanie instancji 004b0019-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:08:53 CET 2018:
+Wy³¹czanie instancji a77f8194-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:27:47 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja c065801d-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:09:00 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 8fe48195-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:48 CET 2017:
-WyÅ‚Ä…czanie instancji c065801d-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:09:00 CET 2018:
+Wy³¹czanie instancji 8fe48195-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:27:48 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 80840021-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:09:00 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja b849c196-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:48 CET 2017:
-WyÅ‚Ä…czanie instancji 80840021-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:09:00 CET 2018:
+Wy³¹czanie instancji b849c196-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:27:48 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 40a68025-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:09:00 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 19e1419a-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:27:48 CET 2017:
-WyÅ‚Ä…czanie instancji 40a68025-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:09:01 CET 2018:
+Wy³¹czanie instancji 19e1419a-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:28:38 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 00cd0029-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:09:01 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 7b7cc19e-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:28:38 CET 2017:
-WyÅ‚Ä…czanie instancji 00cd0029-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:09:01 CET 2018:
+Wy³¹czanie instancji 7b7cc19e-0161-13ae-8999-0000066233a8
 ----------------------------------------------------------------
-Thu Nov 23 19:28:43 CET 2017:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 48d7402a-015f-ea22-af38-000006cc4ba0
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@42a57993 
+Sat Jan 20 14:09:01 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja dd1c41a2-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
+java.runtime.version=1.8.0_162-b12
 user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-Uruchomiono program Å‚adujÄ…cy klasÄ™ bazy danych - derby.database.classpath=''
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 23 19:28:43 CET 2017:
-WyÅ‚Ä…czanie instancji 48d7402a-015f-ea22-af38-000006cc4ba0
+Sat Jan 20 14:09:01 CET 2018:
+Wy³¹czanie instancji dd1c41a2-0161-13ae-8999-0000066233a8
+----------------------------------------------------------------
+Sat Jan 20 14:09:01 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 3ebfc1a6-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_162-b12
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jan 20 14:09:01 CET 2018:
+Wy³¹czanie instancji 3ebfc1a6-0161-13ae-8999-0000066233a8
+----------------------------------------------------------------
+Sat Jan 20 14:09:01 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a06741aa-0161-13ae-8999-0000066233a8
+w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@6d06d69c 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_162-b12
+user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jan 20 14:09:01 CET 2018:
+Wy³¹czanie instancji a06741aa-0161-13ae-8999-0000066233a8

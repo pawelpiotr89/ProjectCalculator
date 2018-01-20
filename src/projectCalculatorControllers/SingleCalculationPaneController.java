@@ -149,8 +149,91 @@ public class SingleCalculationPaneController implements Initializable {
         if (event.getSource().equals(textFieldSource)) {
             charSequence = textFieldSource.getText();
         }
-        if (charSequence.length() > 39 || charSequence.startsWith(" ")
+        if (charSequence.length() > 79 || charSequence.startsWith(" ")
                 || charSequence.isEmpty() && " ".contains(character)) {
+            event.consume();
+        }
+    }
+    
+    @FXML
+    private void processKeyEventQuantity(KeyEvent event) {
+        TextField textFieldSource = (TextField) event.getSource();
+        String character = event.getCharacter();
+        String charSequence = textFieldSource.getText();
+
+        if ("1234567890.".contains(character)) {
+            if (charSequence.startsWith("0") && !charSequence.startsWith("0.") && "1234567890".contains(character)) {
+                event.consume();
+            }
+            if (charSequence.startsWith(".") && !".".contains(character)) {
+                if (".".contains(character)) {
+                    event.consume();
+                }
+                textFieldSource.setText("0.");
+                textFieldSource.end();
+            }
+            if (charSequence.contains(".")) {
+                int index = charSequence.indexOf(".");
+                if (charSequence.length() > (index + 2)) {
+                    event.consume();
+                }
+                if (".".contains(character)) {
+                    event.consume();
+                }
+            }
+        } else {
+            event.consume();
+        }
+        if (charSequence.length() > 9 && !charSequence.contains(".")) {
+            if (".".contains(character)) {
+            } else {
+                event.consume();
+            }
+        }
+    }
+    
+    @FXML
+    private void processKeyEventOverhead(KeyEvent event) {
+        TextField textFieldSource = (TextField) event.getSource();
+        String character = event.getCharacter();
+        String charSequence = textFieldSource.getText();
+
+        if ("1234567890.".contains(character)) {
+            if (charSequence.startsWith("0") && !charSequence.startsWith("0.") && "1234567890".contains(character)) {
+                event.consume();
+            }
+            if (charSequence.startsWith(".") && !".".contains(character)) {
+                if (".".contains(character)) {
+                    event.consume();
+                }
+                textFieldSource.setText("0.");
+                textFieldSource.end();
+            }
+            if (charSequence.contains(".")) {
+                int index = charSequence.indexOf(".");
+                if (charSequence.length() > (index + 2)) {
+                    event.consume();
+                }
+                if (".".contains(character)) {
+                    event.consume();
+                }
+            }
+        } else {
+            event.consume();
+        }
+        if (charSequence.length() > 2 && !charSequence.contains(".")) {
+            if (".".contains(character)) {
+            } else {
+                event.consume();
+            }
+        }
+    }
+    
+    @FXML
+    private void standardIDTextFieldActions(KeyEvent event) {
+        TextField textFieldSource = (TextField) event.getSource();
+        String character = event.getCharacter();
+        if (!"1234567890".contains(character)) {
             event.consume();
         }
     }

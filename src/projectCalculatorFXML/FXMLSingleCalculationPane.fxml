@@ -172,7 +172,7 @@
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="singleCalculationQuantity" minWidth="144.0" promptText="Enter Value" GridPane.columnIndex="4">
+                                          <TextField fx:id="singleCalculationQuantity" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#processKeyEventQuantity" promptText="Enter Value" GridPane.columnIndex="4">
                                              <font>
                                                 <Font name="Verdana" size="12.0" />
                                              </font>
@@ -182,13 +182,13 @@
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="singleCalculationOverhead" minWidth="144.0" promptText="Enter Value" GridPane.columnIndex="7" />
-                                          <Label minWidth="144.0" text="\%" GridPane.columnIndex="8">
+                                          <TextField fx:id="singleCalculationOverhead" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#processKeyEventOverhead" promptText="Enter Value" GridPane.columnIndex="7" />
+                                          <Label minWidth="144.0" text=" %" GridPane.columnIndex="8">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="singleCalculationMaterialID" minWidth="144.0" promptText="Enter ID" GridPane.columnIndex="1" />
+                                          <TextField fx:id="singleCalculationMaterialID" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#standardIDTextFieldActions" promptText="Enter ID" GridPane.columnIndex="1" />
                                           <Button fx:id="addMaterialToTabButton" minWidth="144.0" mnemonicParsing="false" onAction="#addMaterialToTabButtonOnAction" text="ADD MATERIAL" GridPane.columnIndex="9">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
@@ -204,6 +204,11 @@
                         </AnchorPane>
                     </content>
                 </Tab>
+            <Tab text="SEMIPRODUCTS COSTS">
+              <content>
+                <AnchorPane />
+              </content>
+            </Tab>
                 <Tab text="SUBCONTRACTOR COSTS">
                     <content>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
