@@ -163,6 +163,7 @@
     -fx-text-fill: #5F5F5F;
     -fx-alignment: CENTER;
     -fx-font: 10 verdana;
+    -fx-font-weight: bold;
 }
 
 .table-view .column-header {

@@ -1,7 +1,9 @@
 package projectCalculatorMain;
 
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -18,6 +20,9 @@ public class CostCenterDataBaseDetails {
     private final StringProperty vat;
     private final StringProperty vendor;
     private final StringProperty date;
+    private final IntegerProperty position;
+    private final DoubleProperty overhead;
+    private final DoubleProperty quantity;
 
     public CostCenterDataBaseDetails(String id, String name, String unit, double price, String vat,
             String vendor, String date) {
@@ -29,17 +34,48 @@ public class CostCenterDataBaseDetails {
         this.vat = new SimpleStringProperty(vat);
         this.vendor = new SimpleStringProperty(vendor);
         this.date = new SimpleStringProperty(date);
+        this.position = new SimpleIntegerProperty();
+        this.overhead = new SimpleDoubleProperty();
+        this.quantity = new SimpleDoubleProperty();
+    }
+    
+    public CostCenterDataBaseDetails(int position, String id, String name, String unit, double price, String vat,
+            String vendor, String date, double overhead, double quantity) {
+
+        this.id = new SimpleStringProperty(id);
+        this.position = new SimpleIntegerProperty(position);
+        this.name = new SimpleStringProperty(name);
+        this.price = new SimpleDoubleProperty(price);
+        this.unit = new SimpleStringProperty(unit);
+        this.vat = new SimpleStringProperty(vat);
+        this.vendor = new SimpleStringProperty(vendor);
+        this.date = new SimpleStringProperty(date);
+        this.overhead = new SimpleDoubleProperty(overhead);
+        this.quantity = new SimpleDoubleProperty(quantity);
+        
     }
 
     public String getId() {
         return id.get();
+    }
+    
+    public int getPosition() {
+        return position.get();
+    }
+    
+    public double getOverhead() {
+        return overhead.get();
+    }
+    
+    public double getQuantity() {
+        return quantity.get();
     }
 
     public String getName() {
         return name.get();
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price.get();
     }
 
@@ -62,12 +98,24 @@ public class CostCenterDataBaseDetails {
     public void setId(String vale) {
         id.set(vale);
     }
+    
+    public void setPosition(int vale) {
+        position.set(vale);
+    }
+    
+    public void setOverhead(double vale) {
+        overhead.set(vale);
+    }
+    
+    public void setQuantity(double vale) {
+        quantity.set(vale);
+    }
 
     public void setName(String vale) {
         name.set(vale);
     }
 
-    public void setPrice(Double vale) {
+    public void setPrice(double vale) {
         price.set(vale);
     }
 
@@ -87,31 +135,43 @@ public class CostCenterDataBaseDetails {
         date.set(vale);
     }
 
-    public StringProperty nameId() {
+    public StringProperty propertyId() {
         return id;
     }
+    
+    public IntegerProperty propertyPosition() {
+        return position;
+    }
+    
+    public DoubleProperty propertyOverhead() {
+        return overhead;
+    }
+    
+    public DoubleProperty propertyQuantity() {
+        return quantity;
+    }
 
-    public StringProperty nameProperty() {
+    public StringProperty propertyName() {
         return name;
     }
 
-    public DoubleProperty namePrice() {
+    public DoubleProperty propertyPrice() {
         return price;
     }
 
-    public StringProperty nameUnit() {
+    public StringProperty propertyUnit() {
         return unit;
     }
 
-    public StringProperty nameVat() {
+    public StringProperty propertyVat() {
         return vat;
     }
 
-    public StringProperty nameVendor() {
+    public StringProperty propertyVendor() {
         return vendor;
     }
 
-    public StringProperty nameDate() {
+    public StringProperty propertyDate() {
         return date;
     }
 }
