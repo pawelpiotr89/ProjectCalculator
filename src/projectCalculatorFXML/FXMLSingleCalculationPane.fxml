@@ -107,7 +107,7 @@
                                                     <columns>
                                                         <TableColumn fx:id="materialNumberColumn" maxWidth="-1.0" minWidth="35.0" prefWidth="-1.0" resizable="false" text="NO." />
                                           <TableColumn fx:id="materialIDColumn" maxWidth="-1.0" minWidth="35.0" prefWidth="-1.0" text="ID" />
-                                                        <TableColumn fx:id="materialNameColumn" maxWidth="-1.0" minWidth="395.0" prefWidth="-1.0" resizable="false" text="MATERIAL" />
+                                                        <TableColumn fx:id="materialNameColumn" maxWidth="-1.0" minWidth="380.0" prefWidth="-1.0" resizable="false" text="MATERIAL" />
                                                         <TableColumn fx:id="materialPriceColumn" maxWidth="-1.0" minWidth="200.0" prefWidth="-1.0" resizable="false" text="NET PRICE (PLN)" />
                                                         <TableColumn fx:id="materialQuantityColumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" resizable="false" text="QUANTITY" />
                                                         <TableColumn fx:id="materialUnitColumn" maxWidth="-1.0" minWidth="200.0" prefWidth="-1.0" resizable="false" text="UNIT" />
@@ -136,11 +136,12 @@
                                                     </columnConstraints>
                                                     <rowConstraints>
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                         <RowConstraints vgrow="SOMETIMES" />
                                                         <RowConstraints vgrow="SOMETIMES" />
                                                     </rowConstraints>
                                        <children>
-                                          <Button fx:id="unlocLockMaterialTabButton" minWidth="288.0" mnemonicParsing="false" onAction="#unlocLockMaterialTabButtonOnAction" text="UNLOCK MATERIAL TAB" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                          <Button fx:id="unlocLockMaterialTabButton" minWidth="288.0" mnemonicParsing="false" onAction="#unlocLockMaterialTabButtonOnAction" text="UNLOCK MATERIAL TAB" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
@@ -148,7 +149,7 @@
                                                 <Insets />
                                              </opaqueInsets>
                                           </Button>
-                                          <Button fx:id="clearMaterialTabButton" minWidth="288.0" mnemonicParsing="false" onAction="#clearMaterialTabButtonOnAction" text="CLEAR MATERIAL TAB" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                          <Button fx:id="clearMaterialTabButton" minWidth="288.0" mnemonicParsing="false" onAction="#clearMaterialTabButtonOnAction" text="CLEAR MATERIAL TAB" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
@@ -156,7 +157,7 @@
                                                 <Insets />
                                              </opaqueInsets>
                                           </Button>
-                                          <Button fx:id="deleteMaterialRowButton" minWidth="288.0" mnemonicParsing="false" onAction="#deleteMaterialRowButtonOnAction" text="DELETE SELECTED ROW" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                          <Button fx:id="deleteMaterialRowButton" minWidth="288.0" mnemonicParsing="false" onAction="#deleteMaterialRowButtonOnAction" text="DELETE SELECTED ROW" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.rowIndex="3">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
@@ -164,34 +165,34 @@
                                                 <Insets />
                                              </opaqueInsets>
                                           </Button>
-                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="MATERIAL ID: " textAlignment="RIGHT" GridPane.rowIndex="1">
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="MATERIAL ID: " textAlignment="RIGHT" GridPane.rowIndex="2">
                                              <font>
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="QUANTITY: " textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="QUANTITY: " textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                              <font>
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="singleCalculationQuantity" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#processKeyEventQuantity" promptText="Enter Value" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                          <TextField fx:id="singleCalculationQuantity" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#processKeyEventQuantity" promptText="Enter Value" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                              <font>
                                                 <Font name="Verdana" size="12.0" />
                                              </font>
                                           </TextField>
-                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="OVERHEAD:  " textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="OVERHEAD:  " textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="2">
                                              <font>
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="singleCalculationOverhead" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#processKeyEventOverhead" promptText="Enter Value" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                                          <Label minWidth="144.0" text=" %" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                                          <TextField fx:id="singleCalculationOverhead" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#processKeyEventOverhead" promptText="Enter Value" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                          <Label minWidth="144.0" text=" %" GridPane.columnIndex="8" GridPane.rowIndex="2">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="singleCalculationMaterialID" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#standardIDTextFieldActions" promptText="Enter ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Button fx:id="addMaterialToTabButton" minWidth="144.0" mnemonicParsing="false" onAction="#addMaterialToTabButtonOnAction" text="ADD MATERIAL" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                                          <TextField fx:id="singleCalculationMaterialID" alignment="CENTER_RIGHT" minWidth="144.0" onKeyTyped="#standardIDTextFieldActions" promptText="Enter ID" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button fx:id="addMaterialToTabButton" minWidth="144.0" mnemonicParsing="false" onAction="#addMaterialToTabButtonOnAction" text="ADD MATERIAL" GridPane.columnIndex="9" GridPane.rowIndex="2">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
@@ -201,7 +202,7 @@
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="materialNetOutcomeLabel" minWidth="144.0" GridPane.columnIndex="2">
+                                          <Label id="labelOutcome" fx:id="materialNetOutcomeLabel" minWidth="288.0" GridPane.columnIndex="2" GridPane.columnSpan="2">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
@@ -209,12 +210,12 @@
                                                 <Insets />
                                              </GridPane.margin>
                                           </Label>
-                                          <Label fx:id="materialGrossCostsLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="B. GROSS COSTS: " textAlignment="RIGHT" GridPane.columnIndex="3">
+                                          <Label fx:id="materialGrossCostsLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="B. GROSS COSTS: " textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                              <font>
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="materialGrossOutcomeLabel" minWidth="144.0" GridPane.columnIndex="4">
+                                          <Label id="labelOutcome" fx:id="materialGrossOutcomeLabel" minWidth="288.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
@@ -224,17 +225,17 @@
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="materialNetOverheadOutcomeLabel" minWidth="144.0" GridPane.columnIndex="6">
+                                          <Label id="labelOutcome" fx:id="materialNetOverheadOutcomeLabel" minWidth="288.0" GridPane.columnIndex="6" GridPane.columnSpan="2">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="materialTotalCostsLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="D(A+C). TOTAL: " textAlignment="RIGHT" GridPane.columnIndex="7">
+                                          <Label fx:id="materialTotalCostsLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="144.0" text="D(A+C). TOTAL: " textAlignment="RIGHT" GridPane.columnIndex="7" GridPane.rowIndex="1">
                                              <font>
                                                 <Font name="Verdana Bold Italic" size="12.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="materialTotalOutcomeLabel" minWidth="144.0" GridPane.columnIndex="8">
+                                          <Label id="labelOutcome" fx:id="materialTotalOutcomeLabel" minWidth="288.0" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.rowIndex="1">
                                              <font>
                                                 <Font name="Verdana Bold" size="12.0" />
                                              </font>

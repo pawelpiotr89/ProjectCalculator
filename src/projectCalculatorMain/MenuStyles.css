@@ -206,3 +206,7 @@
 .split-pane:vertical > .split-pane-divider {
     -fx-resizable: false;
 }
+
+#labelOutcome{
+    -fx-text-fill: #8FC7FF;
+}

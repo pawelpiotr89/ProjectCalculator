@@ -1,7 +1,10 @@
 package projectCalculatorControllers;
 
 import DataBase.DataBaseCenter;
+
+import java.math.BigInteger;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
@@ -18,6 +22,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import static oracle.jrockit.jfr.events.Bits.intValue;
 import projectCalculatorMain.CostCenterDataBaseDetails;
 import projectCalculatorMain.PreCalculationData;
 
@@ -32,6 +38,7 @@ public class SingleCalculationPaneController implements Initializable {
     private boolean materialTabStatus = false;
     private ObservableList<CostCenterDataBaseDetails> observableList;
     private DataBaseCenter dataBaseCenter = new DataBaseCenter();
+    private DecimalFormat bigIntegerFormat = new DecimalFormat("###,###,###,###,###,###.00");
 
     @FXML
     private TabPane sinlgeCalculationTabPane;
@@ -131,6 +138,22 @@ public class SingleCalculationPaneController implements Initializable {
     private TableColumn<CostCenterDataBaseDetails, String> materialDateColumn; 
     @FXML
     private TableColumn<CostCenterDataBaseDetails, String> materialIDColumn;
+    @FXML
+    private Label materialNetCostsLabel;
+    @FXML
+    private Label materialNetOutcomeLabel;
+    @FXML
+    private Label materialGrossCostsLabel;
+    @FXML
+    private Label materialGrossOutcomeLabel;
+    @FXML
+    private Label materialOverheadCostsLabel;
+    @FXML
+    private Label materialNetOverheadOutcomeLabel;
+    @FXML
+    private Label materialTotalCostsLabel;
+    @FXML
+    private Label materialTotalOutcomeLabel;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -304,5 +327,79 @@ public class SingleCalculationPaneController implements Initializable {
                 materialPriceColumn, materialQuantityColumn, materialUnitColumn, materialVatRateColumn, materialOverheadColumn, 
                 materialVendorColumn, materialDateColumn, materialCostTableView, singleCalculationMaterialID, 
                 singleCalculationQuantity, singleCalculationOverhead);
+        sumGrossCosts(materialGrossOutcomeLabel);
+        totalCostAndOverheads(materialTotalOutcomeLabel);
+    }
+    
+    private int sumNetCosts(Label netCostSumLabel){
+        int totalNetCosts = 0;
+        
+        for (CostCenterDataBaseDetails item : materialCostTableView.getItems()) {
+        double doublePrice = item.getPrice();
+        double doubleQuantity = item.getQuantity();
+        totalNetCosts = totalNetCosts + intValue((doublePrice * doubleQuantity));
+        BigInteger bigTotal = BigInteger.valueOf(totalNetCosts);
+        
+        netCostSumLabel.setText(bigIntegerFormat.format(bigTotal) + " ZŁ");
+        }
+        return totalNetCosts;
+    }
+    
+    private void sumGrossCosts(Label grossCostSumLabel){
+        int totalGrossCosts = 0;
+        double doubleVatRate = 0;
+        
+        for (CostCenterDataBaseDetails item : materialCostTableView.getItems()) {
+        double doublePrice = item.getPrice();
+        double doubleQuantity = item.getQuantity();
+        String stringVatRate = item.getVat();
+        
+        switch(stringVatRate){
+            case "0%":
+                doubleVatRate = 1.00;
+                break;
+            case "5%":
+                doubleVatRate = 1.05;
+                break;
+            case "8%":
+                doubleVatRate = 1.08;
+                break;
+            case "23%":
+                doubleVatRate = 1.23;
+                break;
+            case "RC (Reverse Charge)":
+                doubleVatRate = 1.00;
+                break;
+        }
+        
+        double doubleGrossPrice = (doublePrice * doubleVatRate);
+        totalGrossCosts = totalGrossCosts + intValue((doubleGrossPrice * doubleQuantity));
+        BigInteger bigTotal = BigInteger.valueOf(totalGrossCosts);
+        
+        grossCostSumLabel.setText(bigIntegerFormat.format(bigTotal) + " ZŁ");
+        }
+    }
+    
+    private int sumOverheads(Label overheadCostSumLabel){
+        int totalOverheads = 0;
+        
+        for (CostCenterDataBaseDetails item : materialCostTableView.getItems()) {
+        double doublePrice = item.getPrice();
+        double doubleQuantity = item.getQuantity();
+        double doubleOverhead = item.getOverhead();
+        totalOverheads = totalOverheads + intValue((doublePrice * doubleQuantity * doubleOverhead / 100));
+        BigInteger bigTotal = BigInteger.valueOf(totalOverheads);
+        
+        overheadCostSumLabel.setText(bigIntegerFormat.format(bigTotal) + " ZŁ");
+        }
+        return totalOverheads;
+    }
+    
+    private void totalCostAndOverheads(Label materialSumOutcomeLabel){
+        int totalCosts = 0;
+        
+        BigInteger bigTotalCosts = BigInteger.valueOf((sumNetCosts(materialNetOutcomeLabel) + sumOverheads(materialNetOverheadOutcomeLabel)));
+        
+        materialSumOutcomeLabel.setText(bigIntegerFormat.format(bigTotalCosts) + " ZŁ");
     }
 }

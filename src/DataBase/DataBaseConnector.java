@@ -376,7 +376,14 @@ public class DataBaseConnector {
     public void addRowMaterialDataToTable(TableColumn column0, TableColumn column1, TableColumn column2,
             TableColumn column3, TableColumn column4, TableColumn column5, TableColumn column6, TableColumn column7,
             TableColumn column8, TableColumn column9, TableView tableView, TextField textField, TextField quantityTF, TextField overheadTF) {
+       
+        if(textField.getText().trim().isEmpty() || quantityTF.getText().trim().isEmpty() || overheadTF.getText().trim().isEmpty()){
+        }
         
+        else if(textField.getText().trim().matches("[^0-9]") || quantityTF.getText().trim().matches("[^0-9]") || overheadTF.getText().trim().matches("[^0-9]")){
+        }
+        
+        else{        
     	final String getFromMaterialByID = "SELECT ID, MATERIAL_NAME, MATERIAL_UNIT, "
                 + "MATERIAL_PRICE, MATERIAL_VAT_RATE, MATERIAL_VENDOR, "
                 + "MATERIAL_DATE_OF_ENTRY FROM MATERIALS WHERE ID = ?";
@@ -423,9 +430,10 @@ public class DataBaseConnector {
         column8.setCellValueFactory(new PropertyValueFactory<>("vendor"));
         column9.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        tableView.setItems(list); 
+        tableView.setItems(list);
+        }
     }
-    
+
     public void upPosition(){
         positionCount++;
     }
