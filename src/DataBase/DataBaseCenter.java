@@ -143,8 +143,8 @@ public class DataBaseCenter {
     
     public void getAddRowMaterialDataToTable(TableColumn column0, TableColumn column1, TableColumn column2,
             TableColumn column3, TableColumn column4, TableColumn column5, TableColumn column6, TableColumn column7,
-            TableColumn column8, TableColumn column9, TableView tableView, TextField textField, TextField quantityTF, TextField overheadTF){
+            TableColumn column8, TableColumn column9, TableView tableView, TextField textField, TextField quantityTF, TextField overheadTF, int materialPosition){
         dataBaseConnector.addRowMaterialDataToTable(column0, column1, column2, column3, column4, column5, column6, column7, column8, column9,
-                tableView, textField, quantityTF, overheadTF);
+                tableView, textField, quantityTF, overheadTF, materialPosition);
     } 
 }

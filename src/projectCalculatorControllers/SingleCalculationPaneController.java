@@ -22,7 +22,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import static oracle.jrockit.jfr.events.Bits.intValue;
 import projectCalculatorMain.CostCenterDataBaseDetails;
 import projectCalculatorMain.PreCalculationData;
@@ -36,9 +35,9 @@ public class SingleCalculationPaneController implements Initializable {
 
     private PreCalculationData preCalculationData;
     private boolean materialTabStatus = false;
-    private ObservableList<CostCenterDataBaseDetails> observableList;
-    private DataBaseCenter dataBaseCenter = new DataBaseCenter();
-    private DecimalFormat bigIntegerFormat = new DecimalFormat("###,###,###,###,###,###.00");
+    private final DataBaseCenter dataBaseCenter = new DataBaseCenter();
+    private final DecimalFormat bigIntegerFormat = new DecimalFormat("###,###,###,###,###,###.00");
+    private int positionCount = 0;
 
     @FXML
     private TabPane sinlgeCalculationTabPane;
@@ -314,19 +313,37 @@ public class SingleCalculationPaneController implements Initializable {
 
     @FXML
     private void clearMaterialTabButtonOnAction(ActionEvent event) {
+        materialCostTableView.getItems().clear();
+        resetPosition();
+        materialNetOutcomeLabel.setText("");
+        materialNetOverheadOutcomeLabel.setText("");
+        materialGrossOutcomeLabel.setText("");
+        materialTotalOutcomeLabel.setText("");
     }
 
     @FXML
     private void deleteMaterialRowButtonOnAction(ActionEvent event) {
+        ObservableList<CostCenterDataBaseDetails> selectedMaterials, allMaterials, singleMaterial;
+        allMaterials = materialCostTableView.getItems();
+        selectedMaterials = materialCostTableView.getSelectionModel().getSelectedItems();
+        selectedMaterials.forEach(allMaterials::remove);
+        allMaterials = materialCostTableView.getItems();
+        int size = allMaterials.size();
+        for(int i = 0; i < size; i++){
+        allMaterials.get(i).setPosition(i+1);
+        setPosition(i+1);
+        }
+        materialCostTableView.setItems(allMaterials);
     }
 
     @FXML
     private void addMaterialToTabButtonOnAction() {
         dataBaseCenter.makeConnection();
+        upPosition();
         dataBaseCenter.getAddRowMaterialDataToTable(materialNumberColumn, materialIDColumn, materialNameColumn, 
                 materialPriceColumn, materialQuantityColumn, materialUnitColumn, materialVatRateColumn, materialOverheadColumn, 
                 materialVendorColumn, materialDateColumn, materialCostTableView, singleCalculationMaterialID, 
-                singleCalculationQuantity, singleCalculationOverhead);
+                singleCalculationQuantity, singleCalculationOverhead, getPosition());
         sumGrossCosts(materialGrossOutcomeLabel);
         totalCostAndOverheads(materialTotalOutcomeLabel);
     }
@@ -401,5 +418,27 @@ public class SingleCalculationPaneController implements Initializable {
         BigInteger bigTotalCosts = BigInteger.valueOf((sumNetCosts(materialNetOutcomeLabel) + sumOverheads(materialNetOverheadOutcomeLabel)));
         
         materialSumOutcomeLabel.setText(bigIntegerFormat.format(bigTotalCosts) + " ZŁ");
+    }
+    
+    public void upPosition(){
+        positionCount++;
+    }
+    
+    public void resetPosition(){
+        positionCount = 0;
+    }
+    
+    public int getPosition(){
+        return positionCount;
+    }
+    
+    public void setPosition(int positionCount){
+        this.positionCount = positionCount;
+    }
+    
+    public int complexPositioning(int positionCount){
+        upPosition();
+        this.positionCount = positionCount;
+        return positionCount;
     }
 }
