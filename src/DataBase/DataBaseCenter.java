@@ -78,6 +78,7 @@ public class DataBaseCenter {
 
     public void checkAndCreateDatabase() {
         dataBaseConnector = new DataBaseConnector();
+        dataBaseConnector.checkIfDataBaseExist();
     }
 
     public void makeConnection() {

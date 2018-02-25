@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane minHeight="600.0" minWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectCalculatorControllers.OptionsPaneController">
+   <children>
+      <SplitPane dividerPositions="0.05" minHeight="600.0" minWidth="1024.0" orientation="VERTICAL">
+        <items>
+          <AnchorPane fx:id="backPane">
+               <children>
+                  <Button fx:id="backToMenuButton" minHeight="30.0" minWidth="1024.0" mnemonicParsing="false" onAction="#backToMenu" text="BACK" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="mainPane">
+               <children>
+                  <Pane fx:id="optionsPane" minHeight="600.0" minWidth="1024.0">
+                     <children>
+                        <TabPane minHeight="600.0" minWidth="1024.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="CONFIG PATH">
+                              <content>
+                                <AnchorPane minWidth="1024.0">
+                                       <children>
+                                          <TextField fx:id="currentPathLabel" disable="true" editable="false" layoutX="214.0" layoutY="482.0" minHeight="30.0" minWidth="800.0" />
+                                          <Label layoutX="14.0" layoutY="482.0" minHeight="30.0" minWidth="200.0" text="CURRENT CONFIG PATH: ">
+                                             <font>
+                                                <Font name="Verdana Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</Pane>

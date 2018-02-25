@@ -17,12 +17,12 @@ import javafx.scene.control.TextField;
  */
 public final class DataBaseCalculations {
 
-    private final String dataBaseHost = "jdbc:derby:C:/Users/Public/ProjectCalculationPreCalculationDataBase";
-    private final String dataBaseHostCreate = "jdbc:derby:C:/Users/Public/ProjectCalculationPreCalculationDataBase;create=true;";
+    private final String dataBaseHost = "jdbc:derby:C:\\Users\\Public\\DataBasesPC\\ProjectCalculationPreCalculationDataBase";
+    private final String dataBaseHostCreate = "jdbc:derby:C:\\Users\\Public\\DataBasesPC\\ProjectCalculationPreCalculationDataBase;create=true;";
     private final String driver = "org.apache.derby.jdbc.EmbeddedDriver";
     private final String user = "Swarco";
     private final String password = "Swarco";
-    private final String end = "jdbc:derby:C:/Users/Public/ProjectCalculationPreCalculationDataBase;shutdown=true";
+    private final String end = "jdbc:derby:C:\\Users\\Public\\DataBasesPC\\ProjectCalculationPreCalculationDataBase;shutdown=true";
 
     private final String sqlCreateCalculatingPersonTable = "CREATE TABLE CALCULATING_PERSON (PERSON_NAME VARCHAR (30))";
     private final String sqlCreateProjectTypeTable = "CREATE TABLE PROJECT_TYPE (PROJECT_TYPE VARCHAR(30))";
@@ -38,12 +38,15 @@ public final class DataBaseCalculations {
     private Connection connection;
     private Statement statement;
     private PreparedStatement preparedStatement;
-    private ObservableList<String> list;
+    private final ObservableList<String> list;
 
     public DataBaseCalculations() {
         list = FXCollections.observableArrayList();
+        
+    }
+    
+    public void checkIfDataBaseExist(){
         addDriver();
-
         try {
             connection = DriverManager.getConnection(dataBaseHost, user, password);
         } catch (SQLException error) {

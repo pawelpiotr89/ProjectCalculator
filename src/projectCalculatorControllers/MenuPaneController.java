@@ -1,5 +1,6 @@
 package projectCalculatorControllers;
 
+import DataBase.DataBaseCalculations;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,8 +38,23 @@ public class MenuPaneController {
             pane = loader.load();
         } catch (IOException e) {
         }
+        DataBaseCalculations dataBaseCheck = new DataBaseCalculations();
+        dataBaseCheck.checkIfDataBaseExist();
         CalculationsPaneController calculationsPaneController = loader.getController();
         calculationsPaneController.setMainPaneController(mainPaneController);
+        mainPaneController.setPane(pane);
+    }
+    
+    @FXML
+    private void enterOptions() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/projectCalculatorFXML/FXMLOptionsPane.fxml"));
+        Pane pane = null;
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+        }
+        OptionsPaneController optionsPaneController = loader.getController();
+        optionsPaneController.setMainPaneController(mainPaneController);
         mainPaneController.setPane(pane);
     }
 

@@ -88,7 +88,12 @@
                                                 <Font name="Verdana Bold Italic" size="18.0" />
                                             </font>
                                         </Label>
-                                        <TextField minWidth="360.0" onKeyTyped="#standardTextFieldActions" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                        <TextField fx:id="projectNameField" minWidth="360.0" onKeyTyped="#standardTextFieldActions" promptText="Enter Project/Agreement Name" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <Button fx:id="unlockLockContractDataButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="360.0" mnemonicParsing="false" onAction="#unlockLockContractData" text="UNLOCK CONTRACT DATA" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font name="Verdana Bold" size="18.0" />
+                                 </font>
+                              </Button>
                                     </children>
                                 </GridPane>
                             </children>

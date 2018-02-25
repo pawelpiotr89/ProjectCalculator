@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Sat Feb 03 15:09:55 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a816c00e-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:09 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a816c00e-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -12,12 +12,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:55 CET 2018:
-Wyłączanie instancji a816c00e-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:09 CET 2018:
+Wyłączanie instancji a816c00e-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:58 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 601a400f-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:11 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 601a400f-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -28,12 +28,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:58 CET 2018:
-Wyłączanie instancji 601a400f-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:12 CET 2018:
+Wyłączanie instancji 601a400f-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:58 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja f81e0010-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:12 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a02ac013-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -44,12 +44,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:58 CET 2018:
-Wyłączanie instancji f81e0010-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:12 CET 2018:
+Wyłączanie instancji a02ac013-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:58 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 80220011-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:12 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja e03f4017-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -60,12 +60,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:58 CET 2018:
-Wyłączanie instancji 80220011-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:12 CET 2018:
+Wyłączanie instancji e03f4017-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:58 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 40348015-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:12 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 2057c01b-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -76,12 +76,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
-Wyłączanie instancji 40348015-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:12 CET 2018:
+Wyłączanie instancji 2057c01b-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 004b0019-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:12 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 6074401f-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -92,12 +92,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
-Wyłączanie instancji 004b0019-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:12 CET 2018:
+Wyłączanie instancji 6074401f-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja c065801d-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:12 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a094c023-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -108,12 +108,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
-Wyłączanie instancji c065801d-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:12 CET 2018:
+Wyłączanie instancji a094c023-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 80840021-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:25 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja e0b94027-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -124,12 +124,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
-Wyłączanie instancji 80840021-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:25 CET 2018:
+Wyłączanie instancji e0b94027-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 40a68025-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculationPreCalculationDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:35 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 20e1c02b-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -140,12 +140,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:09:59 CET 2018:
-Wyłączanie instancji 40a68025-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:35 CET 2018:
+Wyłączanie instancji 20e1c02b-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:10:04 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 00cd0029-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:40 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 610e402f-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -156,12 +156,12 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:10:04 CET 2018:
-Wyłączanie instancji 00cd0029-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:41 CET 2018:
+Wyłączanie instancji 610e402f-0161-ce7a-cad7-000005663fb0
 ----------------------------------------------------------------
-Sat Feb 03 15:10:05 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja c0f7802d-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
+Sun Feb 25 20:40:43 CET 2018:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja a13ec033-0161-ce7a-cad7-000005663fb0
+w katalogu bazy danych C:\Users\Public\DataBasesPC\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_162-b12
@@ -172,245 +172,5 @@ os.version=10.0
 derby.system.home=null
 Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Feb 03 15:10:05 CET 2018:
-Wyłączanie instancji c0f7802d-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:06 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 81260031-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:06 CET 2018:
-Wyłączanie instancji 81260031-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:06 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 41588035-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:06 CET 2018:
-Wyłączanie instancji 41588035-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:06 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 018f0039-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:06 CET 2018:
-Wyłączanie instancji 018f0039-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:07 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja c1c9803d-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:07 CET 2018:
-Wyłączanie instancji c1c9803d-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:07 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 82080041-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:07 CET 2018:
-Wyłączanie instancji 82080041-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:07 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 424a8045-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:07 CET 2018:
-Wyłączanie instancji 424a8045-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:07 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 02910049-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
-Wyłączanie instancji 02910049-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja c2db804d-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
-Wyłączanie instancji c2db804d-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 832a0051-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
-Wyłączanie instancji 832a0051-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 437c8055-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
-Wyłączanie instancji 437c8055-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 03d30059-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:08 CET 2018:
-Wyłączanie instancji 03d30059-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:16 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja c42d805d-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:16 CET 2018:
-Wyłączanie instancji c42d805d-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:17 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 848c0061-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:17 CET 2018:
-Wyłączanie instancji 848c0061-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:19 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 44ee8065-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:19 CET 2018:
-Wyłączanie instancji 44ee8065-0161-5c00-8d0d-0000056d8b78
-----------------------------------------------------------------
-Sat Feb 03 15:10:19 CET 2018:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) systemu Derby: instancja 05550069-0161-5c00-8d0d-0000056d8b78
-w katalogu bazy danych C:\Users\Public\ProjectCalculatorCostsDataBase sun.misc.Launcher$AppClassLoader@3d4eac69 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_162-b12
-user.dir=D:\Programowanie\PakietJava\ProgramyKody\ProgramyDesktoptowe\ProjectCalculator
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Uruchomiono program ładujący klasę bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Feb 03 15:10:20 CET 2018:
-Wyłączanie instancji 05550069-0161-5c00-8d0d-0000056d8b78
+Sun Feb 25 20:40:43 CET 2018:
+Wyłączanie instancji a13ec033-0161-ce7a-cad7-000005663fb0

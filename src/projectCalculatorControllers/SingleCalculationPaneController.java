@@ -35,6 +35,7 @@ public class SingleCalculationPaneController implements Initializable {
 
     private PreCalculationData preCalculationData;
     private boolean materialTabStatus = false;
+    private boolean contractDataStatus = false;
     private final DataBaseCenter dataBaseCenter = new DataBaseCenter();
     private final DecimalFormat bigIntegerFormat = new DecimalFormat("###,###,###,###,###,###.00");
     private int positionCount = 0;
@@ -153,6 +154,10 @@ public class SingleCalculationPaneController implements Initializable {
     private Label materialTotalCostsLabel;
     @FXML
     private Label materialTotalOutcomeLabel;
+    @FXML
+    private Button unlockLockContractDataButton;
+    @FXML
+    private TextField projectNameField;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -178,6 +183,14 @@ public class SingleCalculationPaneController implements Initializable {
 
         preCalculationData.populateChoiceBox(preCalculationData.getSQLCityRegion());
         cityRegionChoiceBox.setItems(FXCollections.observableArrayList(preCalculationData.getList()));
+        
+        projectTypeChoiceBox.setDisable(true);
+        projectSubTypeChoiceBox.setDisable(true);
+        companyAsChoiceBox.setDisable(true);
+        customerChoiceBox.setDisable(true);
+        cityRegionChoiceBox.setDisable(true);
+        projectNameField.setDisable(true);
+        calculatingPersonChoiceBox.setDisable(true);
         
         clearMaterialTabButton.setDisable(true);
         deleteMaterialRowButton.setDisable(true);
@@ -284,6 +297,32 @@ public class SingleCalculationPaneController implements Initializable {
             event.consume();
         }
     }
+    
+    @FXML
+    private void unlockLockContractData(ActionEvent event) {
+        if(contractDataStatus == false){
+            projectTypeChoiceBox.setDisable(false);
+            projectSubTypeChoiceBox.setDisable(false);
+            companyAsChoiceBox.setDisable(false);
+            customerChoiceBox.setDisable(false);
+            cityRegionChoiceBox.setDisable(false);
+            projectNameField.setDisable(false);
+            calculatingPersonChoiceBox.setDisable(false);
+            contractDataStatus = true;
+            unlockLockContractDataButton.setText("LOCK CONTRACT DATA");
+        }
+        else if(contractDataStatus == true){
+            projectTypeChoiceBox.setDisable(true);
+            projectSubTypeChoiceBox.setDisable(true);
+            companyAsChoiceBox.setDisable(true);
+            customerChoiceBox.setDisable(true);
+            cityRegionChoiceBox.setDisable(true);
+            projectNameField.setDisable(true);
+            calculatingPersonChoiceBox.setDisable(true);
+            contractDataStatus = false;
+            unlockLockContractDataButton.setText("UNLOCK CONTRACT DATA");
+        }
+    }
 
     @FXML
     private void unlocLockMaterialTabButtonOnAction(ActionEvent event) {
@@ -315,10 +354,8 @@ public class SingleCalculationPaneController implements Initializable {
     private void clearMaterialTabButtonOnAction(ActionEvent event) {
         materialCostTableView.getItems().clear();
         resetPosition();
-        materialNetOutcomeLabel.setText("");
-        materialNetOverheadOutcomeLabel.setText("");
-        materialGrossOutcomeLabel.setText("");
-        materialTotalOutcomeLabel.setText("");
+        clearMaterialOutcomeLabels();
+        clearMaterialInputTextFields();
     }
 
     @FXML
@@ -334,10 +371,20 @@ public class SingleCalculationPaneController implements Initializable {
         setPosition(i+1);
         }
         materialCostTableView.setItems(allMaterials);
+        clearMaterialOutcomeLabels();
+        clearMaterialInputTextFields();
+        
+        sumGrossCosts(materialGrossOutcomeLabel);
+        totalCostAndOverheads(materialTotalOutcomeLabel);
     }
 
     @FXML
     private void addMaterialToTabButtonOnAction() {
+        if(singleCalculationMaterialID.getText().trim().isEmpty() || 
+                singleCalculationQuantity.getText().trim().isEmpty() || 
+                singleCalculationOverhead.getText().trim().isEmpty()){
+        }
+        else{
         dataBaseCenter.makeConnection();
         upPosition();
         dataBaseCenter.getAddRowMaterialDataToTable(materialNumberColumn, materialIDColumn, materialNameColumn, 
@@ -346,6 +393,8 @@ public class SingleCalculationPaneController implements Initializable {
                 singleCalculationQuantity, singleCalculationOverhead, getPosition());
         sumGrossCosts(materialGrossOutcomeLabel);
         totalCostAndOverheads(materialTotalOutcomeLabel);
+        clearMaterialInputTextFields();
+        }
     }
     
     private int sumNetCosts(Label netCostSumLabel){
@@ -413,11 +462,14 @@ public class SingleCalculationPaneController implements Initializable {
     }
     
     private void totalCostAndOverheads(Label materialSumOutcomeLabel){
-        int totalCosts = 0;
         
         BigInteger bigTotalCosts = BigInteger.valueOf((sumNetCosts(materialNetOutcomeLabel) + sumOverheads(materialNetOverheadOutcomeLabel)));
         
-        materialSumOutcomeLabel.setText(bigIntegerFormat.format(bigTotalCosts) + " ZŁ");
+        if(bigTotalCosts.doubleValue() == 0){    
+        }
+        else{
+            materialSumOutcomeLabel.setText(bigIntegerFormat.format(bigTotalCosts) + " ZŁ");
+        }
     }
     
     public void upPosition(){
@@ -440,5 +492,18 @@ public class SingleCalculationPaneController implements Initializable {
         upPosition();
         this.positionCount = positionCount;
         return positionCount;
+    }
+    
+    public void clearMaterialOutcomeLabels(){
+        materialNetOutcomeLabel.setText("");
+        materialNetOverheadOutcomeLabel.setText("");
+        materialGrossOutcomeLabel.setText("");
+        materialTotalOutcomeLabel.setText("");
+    }
+    
+    public void clearMaterialInputTextFields(){
+        singleCalculationQuantity.clear();
+        singleCalculationOverhead.clear();
+        singleCalculationMaterialID.clear();
     }
 }
